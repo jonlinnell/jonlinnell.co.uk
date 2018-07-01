@@ -5,3 +5,9 @@
 .about {
   background-color: $light;
 }
+
+.accolade-animation-container > span {
+  position: absolute;
+  display: inline-block;
+  will-change: transform, opacity;
+}

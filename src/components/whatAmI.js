@@ -1,42 +1,39 @@
 import React, { PureComponent } from 'react'
+import { Transition, animated } from 'react-spring'
+
+import AnimatedAccolade from './animatedAccolade.js'
+
+const accolades = [
+  style => <AnimatedAccolade style={style} string="surprisingly articulate primate." />,
+  style => <AnimatedAccolade style={style} string="reluctant runner." />,
+  style => <AnimatedAccolade style={style} string="devourer of curries." />,
+  style => <AnimatedAccolade style={style} string="proud owner of three different cheese graters." />,
+  style => <AnimatedAccolade style={style} string="cheese connoiseur." />,
+  style => <AnimatedAccolade style={style} string="aspiring francophone." />,
+  style => <AnimatedAccolade style={style} string="definitely NaN." />,
+  style => <AnimatedAccolade style={style} string="essentially just a robot made of meat." />,
+]
 
 class whatAmI extends PureComponent {
   constructor() {
     super()
 
-    console.log(React.version)
-
     this.state = {
-      whatAmI: 'slow internet connection',
-      cancelRefresh: null
+      index: 0
     }
   }
 
   randomiseString() {
-    const things = [
-      'surprisingly articulate primate',
-      'reluctant runner',
-      'devourer of curries',
-      'proud owner of three different cheese graters',
-      'cheese connoiseur',
-      'aspiring francophone',
-      'NaN - I am a human being, thank you very much',
-      'prototype meat robot',
-    ]
-
-    const entry = Math.floor(Math.random() * Math.floor(things.length))
-
     this.setState({
-      whatAmI: things[entry]
+      index: Math.floor(Math.random() * Math.floor(accolades.length))
     })
-
   }
 
   componentDidMount() {
     this.randomiseString()
 
     this.setState({
-      cancelRefresh: setInterval(() => this.randomiseString(), 10000)
+      cancelRefresh: setInterval(() => this.randomiseString(), 3000)
     })
   }
 
@@ -46,7 +43,18 @@ class whatAmI extends PureComponent {
 
   render() {
     return (
-      <p>I'm a web developer, photographer, and {`${this.state.whatAmI}`}.</p>
+      // NOT YET RESPONSIVE. Looks bad on small devices.
+      <p className="accolade-animation-container">
+        I'm a web developer, photographer, and&nbsp;
+        <Transition
+            native
+            from={{ opacity: 0, transform: 'translate3d(0, -100%, 0)' }}
+            enter={{ opacity: 1, transform: 'translate3d(0, 0, 0)' }}
+            leave={{ opacity: 0, transform: 'translate3d(0, 100%, 0)' }}
+        >
+          {accolades[this.state.index]}
+        </Transition>
+      </p>
     )
   }
 
