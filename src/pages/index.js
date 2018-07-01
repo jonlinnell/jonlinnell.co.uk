@@ -15,7 +15,7 @@ import WhatAmI from '../components/WhatAmI'
 
 const columnSize = {
   mobile: 12,
-  default: 3
+  default: 4
 }
 
 const IndexPage = () => (
@@ -29,24 +29,26 @@ const IndexPage = () => (
         <Container>
           <Title isSize={1}>Hello, I'm Jon</Title>
           <WhatAmI />
-          <Link to="/page-2">See more of my work here.</Link>
+          <Link to="/page-2">See more of my work here &rarr;</Link>
         </Container>
       </HeroBody>
     </Hero>
 
     <Section className='about'>
-      <Title style={{ textAlign: 'center' }} isSize={3}>This is some more content</Title>
-      <Columns isCentered>
-        <Column isSize={columnSize} isOffset={{ mobile: 0, default: 2 }}>
-          <p>test</p>
-        </Column>
-        <Column isSize={columnSize}>
-          <p>test</p>
-        </Column>
-        <Column isSize={columnSize}>
-          <p>test</p>
-        </Column>
-      </Columns>
+      <Container>
+        <Title style={{ textAlign: 'center' }} isSize={3}>Things I do</Title>
+        <Columns isCentered>
+          <Column isSize={columnSize} hasTextAlign="centered">
+            <Title isSize={5}>Web Development</Title>
+          </Column>
+          <Column isSize={columnSize} hasTextAlign="centered">
+            <Title isSize={5}>Photography</Title>
+          </Column>
+          <Column isSize={columnSize} hasTextAlign="centered">
+            <Title isSize={5}>Systems Administration</Title>
+          </Column>
+        </Columns>
+      </Container>
     </Section>
   </div>
 )

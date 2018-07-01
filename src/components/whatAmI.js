@@ -32,13 +32,7 @@ class whatAmI extends PureComponent {
   componentDidMount() {
     this.randomiseString()
 
-    this.setState({
-      cancelRefresh: setInterval(() => this.randomiseString(), 3000)
-    })
-  }
-
-  componentWillUnmount() {
-    this.state.cancelRefresh()
+    setInterval(() => this.randomiseString(), 5000)
   }
 
   render() {
