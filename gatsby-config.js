@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Bulma Default',
+    title: 'Jon Linnell',
   },
-  pathPrefix: '/gatsby-bulma-default',
+  pathPrefix: '/jonlinnell',
   plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-sass'],
 }

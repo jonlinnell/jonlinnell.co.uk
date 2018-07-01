@@ -1,11 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import {
-  Hero,
-  HeroHeader,
-  HeroBody
-} from 'bloomer'
 
 import Header from '../components/header'
 import './index.scss'
@@ -19,14 +14,10 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Hero isFullHeight isColor="primary">
-      <HeroHeader>
-        <Header siteTitle={data.site.siteMetadata.title} />
-      </HeroHeader>
-      <HeroBody>
-        {children()}
-      </HeroBody>
-    </Hero>
+    <Header siteTitle={data.site.siteMetadata.title} />
+    <div>
+      {children()}
+    </div>
   </div>
 )
 
