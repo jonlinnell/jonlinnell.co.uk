@@ -1,12 +1,15 @@
 import React, { PureComponent } from 'react'
 import Link from 'gatsby-link'
 import {
+  Icon,
   Navbar,
   NavbarBrand,
-  NavbarItem,
-  NavbarMenu,
   NavbarBurger,
-  NavbarLink
+  NavbarEnd,
+  NavbarItem,
+  NavbarLink,
+  NavbarMenu,
+  NavbarStart,
 } from 'bloomer'
 
 class Header extends PureComponent {
@@ -33,9 +36,19 @@ class Header extends PureComponent {
           />
         </NavbarBrand>
         <NavbarMenu isActive={this.state.burgerActive}>
-          <NavbarItem>
-            <Link to="/page-2">Page 2</Link>
-          </NavbarItem>
+          <NavbarStart>
+            <NavbarItem>
+              <Link to="/page-2">Page 2</Link>
+            </NavbarItem>
+          </NavbarStart>
+          <NavbarEnd>
+            <NavbarItem>
+              <Icon isSize="medium" style={{ color: '#55acee' }} className="fa fa-twitter" />
+            </NavbarItem>
+            <NavbarItem>
+              <Icon isSize="medium" className="fa fa-github" />
+            </NavbarItem>
+          </NavbarEnd>
         </NavbarMenu>
       </Navbar>
     )

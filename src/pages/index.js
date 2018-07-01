@@ -32,7 +32,7 @@ const IndexPage = () => (
       </HeroBody>
     </Hero>
 
-    <Section className='about-section'>
+    <Section className='about'>
       <Title style={{ textAlign: 'center' }} isSize={3}>This is some more content</Title>
       <Columns isCentered>
         <Column isSize={columnSize} isOffset={{ mobile: 0, default: 2 }}>
