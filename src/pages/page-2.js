@@ -1,12 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import {
+  Section,
+  Title,
+} from 'bloomer'
 
 const SecondPage = () => (
-  <div>
-    <h1>Hi from the second page</h1>
+  <Section>
+    <Title isSize={1}>Hi from the second page</Title>
     <p>Welcome to page 2</p>
     <Link to="/">Go back to the homepage</Link>
-  </div>
+  </Section>
 )
 
 export default SecondPage

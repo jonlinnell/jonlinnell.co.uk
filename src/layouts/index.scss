@@ -53,3 +53,5 @@ $success: hsl(131, 48%, 76%);
 
 // 6. Import the rest of Bulma
 @import "~bulma/bulma.sass";
+
+@import "./custom.scss"
