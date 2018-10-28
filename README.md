@@ -1,9 +1,10 @@
-# jonlinnell.co.uk
+# React-Static - Basic Example
 
-**See it live** https://jonlinnell.co.uk
+This example is the most basic version of react-static available. It includes:
+- Babel
+- CSS imports
+- Image imports
+- File imports
+- Automatic Routing
 
-## Credits
-Built using
-- [Gatsby](https://gatsbyjs.org/)
-- [Bulma](https://bulma.io/)
-- [Bloomer](https://bloomer.js.org/)
+To get started, run `react-static create` and use the `basic` template.
