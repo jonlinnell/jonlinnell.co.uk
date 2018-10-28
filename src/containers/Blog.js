@@ -5,7 +5,7 @@ import { withRouteData, Link } from 'react-static'
 
 export default withRouteData(({ posts }) => (
   <div>
-    <h1>It's blog time.</h1>
+    <h1>It&apos;s blog time.</h1>
     <br />
     All Posts:
     <ul>
