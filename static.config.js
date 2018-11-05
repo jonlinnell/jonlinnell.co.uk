@@ -1,8 +1,10 @@
 import axios from 'axios'
+import React from 'react'
+import { ServerStyleSheet } from 'styled-components'
 
 export default {
   getSiteData: () => ({
-    title: 'React Static',
+    title: 'Jon Linnell',
   }),
   getRoutes: async () => {
     const { data: posts } = await axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -35,4 +37,27 @@ export default {
       },
     ]
   },
+  renderToHtml: (render, Comp, meta) => {
+    const sheet = new ServerStyleSheet()
+    const html = render(sheet.collectStyles(<Comp />))
+    meta.styleTags = sheet.getStyleElement()
+
+    return html
+  },
+  Document: ({
+    Html,
+    Head,
+    Body,
+    children,
+    renderMeta,
+  }) => (
+    <Html>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {renderMeta.styleTags}
+      </Head>
+      <Body>{children}</Body>
+    </Html>
+  ),
 }

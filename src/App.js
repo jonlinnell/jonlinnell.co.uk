@@ -1,24 +1,26 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Router, Link } from 'react-static'
 import { hot } from 'react-hot-loader'
+
+import 'normalize.css'
 
 /* eslint-disable-next-line import/no-unresolved */
 import Routes from 'react-static-routes'
 
-import './app.css'
+import Navbar from './components/Navbar'
 
 const App = () => (
   <Router>
-    <div>
-      <nav>
+    <Fragment>
+      <Navbar>
         <Link exact to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/blog">Blog</Link>
-      </nav>
+      </Navbar>
       <div className="content">
         <Routes />
       </div>
-    </div>
+    </Fragment>
   </Router>
 )
 
