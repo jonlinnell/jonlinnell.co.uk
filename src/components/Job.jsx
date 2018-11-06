@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose'
 
-const Company = styled.p`
+const Post = styled.p`
   font-size: 24px;
   font-weight: 400;
 `
 
-const Post = styled.p`
+const Company = styled.p`
   font-size: 18px;
 `
 
@@ -80,8 +80,8 @@ class Job extends PureComponent {
 
     return (
       <JobContainer>
-        <Company>{company}</Company>
         <Post>{post}</Post>
+        <Company>{company}</Company>
         <p>{ location }</p>
         <Dates>
           <span>

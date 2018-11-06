@@ -11,12 +11,13 @@ import {
 
 import React from 'react'
 
-import posed, { PoseGroup } from 'react-pose'
+import posed from 'react-pose'
 
 import ProfilePicture from '../components/ProfilePicture'
 import SectionTitle from '../components/SectionTitle'
 import CVContainer from '../components/CVContainer'
 import Job from '../components/Job'
+import ContactLine from '../components/ContactLine'
 
 import headshot from '../images/headshot.jpg'
 
@@ -31,18 +32,27 @@ export default () => (
             <Title>Jon Linnell</Title>
             <Subtitle>JavaScript Developer (FE, BE, FS,) and IT professional</Subtitle>
             <ProfilePicture image={headshot} />
+            <ContactLine iconClass="fa-envelope-o" href="mailto:jonlinnell@icloud.com">jonlinnell@icloud.com</ContactLine>
+            <ContactLine iconClass="fa-instagram" href="https://instagram.com/jonlinnell">jonlinnell</ContactLine>
+            <ContactLine iconClass="fa-twitter" href="https://twitter.com/jplinnell">jplinnell</ContactLine>
+            <ContactLine iconClass="fa-github" href="https://github.com/jonlinnell">jonlinnell</ContactLine>
           </HeroBody>
         </Hero>
       </Column>
       <Column isSize={9}>
         <CVContainer>
-          <Container>
+          <Container isFluid>
             <SectionTitle isSize={2}>Summary</SectionTitle>
-            <p>
-              I am a professional, lateral-thinking problem solver, turning my talents to IT management, projects, and software development.
-            </p>
+            <Columns>
+              <Column isSize="1/3">
+                <p>I am a professional, outgoing problem-solver, turning my talents to IT management, projects, and software development.</p>
+              </Column>
+              <Column isSize="1/3">
+                <p>I am currently looking for employment as a software developer; either frontend using React, backend using Node.js, or fullstack.</p>
+              </Column>
+            </Columns>
           </Container>
-          <Container>
+          <Container isFluid>
             <SectionTitle>Experience</SectionTitle>
             <JobsContainer>
               <Job
@@ -97,10 +107,10 @@ export default () => (
               </Job>
             </JobsContainer>
           </Container>
-          <Container>
+          <Container isFluid>
             <SectionTitle>Projects</SectionTitle>
           </Container>
-          <Container>
+          <Container isFluid>
             <SectionTitle>Skills</SectionTitle>
           </Container>
         </CVContainer>

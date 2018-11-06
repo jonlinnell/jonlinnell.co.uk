@@ -6,6 +6,7 @@ const ProfilePicture = styled.img`
     width: 100%;
     height: auto;
     border-radius: 50%;
+    margin: 12px 0;
 `
 
 export default ({ image }) => (

@@ -3,7 +3,10 @@ import { Router } from 'react-static'
 import { hot } from 'react-hot-loader'
 
 import 'normalize.css'
+import 'font-awesome/css/font-awesome.min.css'
+
 import 'bulma/css/bulma.min.css'
+
 import './bulmaswatch.min.css'
 
 /* eslint-disable-next-line import/no-unresolved */
