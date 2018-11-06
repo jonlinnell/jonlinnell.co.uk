@@ -22,6 +22,9 @@ const Present = styled.span`
 
 const JobContainer = styled.li`
   margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `
 
 const SeeMoreButton = styled.button`
@@ -30,6 +33,7 @@ const SeeMoreButton = styled.button`
   color: rgb(140, 140, 140);
   font-style: italic;
   padding: 0;
+  margin-left: auto;
 `
 
 const Details = posed.div({
