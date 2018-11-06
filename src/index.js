@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 // Your top level component
 import App from './App'
@@ -23,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const theme = {
+  primary: 'rgb(255, 100, 0)',
+}
+
 // Render your app
 if (typeof document !== 'undefined') {
   const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate || ReactDOM.render
@@ -30,7 +34,9 @@ if (typeof document !== 'undefined') {
     renderMethod(
       <Fragment>
         <GlobalStyle />
-        <Comp />
+        <ThemeProvider theme={theme}>
+          <Comp />
+        </ThemeProvider>
       </Fragment>,
       document.getElementById('root')
     )

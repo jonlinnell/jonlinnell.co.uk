@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "bloomer": "^0.6.3",
+    "bulma": "^0.7.2",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "normalize.css": "^8.0.0",

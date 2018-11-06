@@ -11,8 +11,8 @@ export default {
       component: 'src/containers/Home',
     },
     {
-      path: '/about',
-      component: 'src/containers/About',
+      path: '/cv',
+      component: 'src/containers/CV',
     },
     {
       is404: true,
