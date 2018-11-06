@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
+import posed from 'react-pose'
 
 const Company = styled.p`
   font-size: 24px;
@@ -23,10 +24,25 @@ const JobContainer = styled.li`
   margin-bottom: 12px;
 `
 
-const JobHeader = styled.div`
-  display: flex;
-  align-items: flex-start;
-  align-content: center;
+const SeeMoreButton = styled.button`
+  border: none;
+  background: none;
+  color: rgb(140, 140, 140);
+  font-style: italic;
+  padding: 0;
+`
+
+const Details = posed.div({
+  open: { height: 'auto' },
+  closed: { height: 0 },
+})
+
+const DetailsWrapper = styled(Details)`
+  overflow: hidden
+
+  & > p {
+    margin-bottom: 6px;
+  }
 `
 
 class Job extends PureComponent {
@@ -52,6 +68,7 @@ class Job extends PureComponent {
       end,
       company,
       post,
+      location,
       children,
     } = this.props
 
@@ -59,11 +76,9 @@ class Job extends PureComponent {
 
     return (
       <JobContainer>
-        <JobHeader>
-          <Company>{company}</Company>
-          <button type="button" onClick={this.toggleOpen}>yes</button>
-        </JobHeader>
+        <Company>{company}</Company>
         <Post>{post}</Post>
+        <p>{ location }</p>
         <Dates>
           <span>
             {start}
@@ -72,14 +87,15 @@ class Job extends PureComponent {
           {
             end === 'present'
               ? <Present>present</Present>
-              : end}
+              : end
+          }
         </Dates>
-        {
-          isOpen
-            ? <div>{children}</div>
-            : null
-        }
-        
+        <DetailsWrapper pose={isOpen ? 'open' : 'closed'}>
+          { children }
+        </DetailsWrapper>
+        <SeeMoreButton onClick={this.toggleOpen}>
+          { isOpen ? 'See less...' : 'See more...' }
+        </SeeMoreButton>
       </JobContainer>
     )
   }
