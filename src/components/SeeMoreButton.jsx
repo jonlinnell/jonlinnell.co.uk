@@ -7,4 +7,8 @@ export default styled.button`
   font-style: italic;
   padding: 6px;
   margin-left: auto;
+
+  &:focus {
+    outline: none;
+  }
 `

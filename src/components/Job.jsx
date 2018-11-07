@@ -47,10 +47,14 @@ class Job extends PureComponent {
     super(props)
 
     this.state = {
-      isOpen: false,
+      isOpen: props.isOpen,
     }
 
     this.toggleOpen = this.toggleOpen.bind(this)
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps)
   }
 
   toggleOpen() {
