@@ -54,7 +54,8 @@ export default () => (
                 <p>Over the course of my professional career, I have built up a bedrock of experience working with people in task-oriented environments, with a strong focus on the customer (or the user, if you prefer that terminology) and an emphasis on professionalism and a holistic approach to my work,</p>
               </Column>
               <Column isSize="1/3">
-                <p>If you would like to get in touch with me, please send me an email, find me on LinkedIn, or comment on one of my photos on Instagram, if you really want. My contact details are available to your left.</p>
+                <p>If you would like to get in touch with me, please send me an email, find me on LinkedIn, or comment on one of my photos on Instagram, if you feel like it.</p>
+                <p>My contact details are listed on the left.</p>
               </Column>
             </Columns>
           </Container>
@@ -117,7 +118,8 @@ export default () => (
             <SectionTitle>Skills</SectionTitle>
             <ul>
               <Skill title="HTML5, CSS3">
-                <p>HTML5 and CSS3 have been at the forefront of my work since before React existed. As the literal foundations of anything rendered in a browser, I recognise that a good understanding of these technologies is absolutely crucial.</p>
+                <p>HTML5 and CSS3 have been at the forefront of my work for longer than any of the modern JS libraries that seem to get all the attention today.</p>
+                <p>As the literal foundation on which anything rendered in a browser is built, I recognise that a good understanding of these technologies is absolutely crucial to their effective utilisation.</p>
               </Skill>
               <Skill title="React">
                 <p>React is my go-to UI library for all web projects. I find it to be the most dynamic, straightforward, and logical way to build a user interface for the web.</p>
@@ -126,9 +128,13 @@ export default () => (
               <Skill title="Node.js">
                 <p>I began learning Node.js in 2015, and I haven&apos;t regretted it for a moment. The benefits of writing frontend and backend code in the same language are well documented, and for me it makes universal apps and full-stack development incredibly efficient and straightforward to accomplish. </p>
               </Skill>
-              <Skill title="Apollo">
+              <Skill title="Apollo, GraphQL">
                 <p>In mid-2018, I began a project that would require some complex data storage and retrieval. I decided to combine this with an opportunity to learn GraphQL, by way of Apollo. I integrated Apollo Server into my backend code, and built the frontend with Apollo from the start.</p>
-                <p>Although I have much more to learn in this area, I can immediately see the benefits of using GraphQL over traditional REST APIs (where possible.)</p>
+                <p>Although I have much more to learn in this area, I can immediately see the benefits of using GraphQL over traditional REST APIs (where possible,) and I intend to prioritise development this skill in the future.</p>
+              </Skill>
+              <Skill title="CSS-in-JS, styled-components">
+                <p>Although I have some experience with SASS, Less, and CSS preprocessors in general, they sometimes feel like a stopgap solution to a problem that requires an entirely new outlook. My favoured approach is CSS-in-JS, by way of Styled Components.</p>
+                <p>Maintaining a separate part of a codebase in another language with poor integration seems a little inefficient; I prefer the declarative and component-oriented nature of SC, and I&apos;ve made great use of it in recent projects.</p>
               </Skill>
               <Skill title="Redux">
                 <p>In the time before React&apos;s Context API became more widely used, I used Redux for all global state management. I&apos;ve used Redux for a few projects, and although I&apos;ve now replaced it with Context and Apollo in a few of them, I still use it, and it is a skill I actively maintain.</p>
@@ -136,12 +142,18 @@ export default () => (
               <Skill title="Git, GitHub">
                 <p>All of my projects rely on Git for revision control. I generally try to stick to a clear branching practice for resolving bugs and developing new features, before merging changes into a development branch for testing, then to master for deployment.</p>
               </Skill>
-              <Skill title="CSS-in-JS, styled-components">
-                <p>Although I have some experience with SASS, Less, and CSS preprocessors in general, they sometimes feel like a stopgap solution to a problem that requires an entirely new outlook. My favoured approach is CSS-in-JS, by way of Styled Components.</p>
-                <p>Maintaining a separate part of a codebase in another language with poor integration seems a little inefficient; I prefer the declarative and component-oriented nature of SC, and I&apos;ve made great use of it in recent projects.</p>
+              <Skill title="Amazon Web Services">
+                <p>As the trend towards decentralised cloud-computing continues to gain momentum, I have invested some time in learning how to use AWS effectively.</p>
+                <p>Although lack of practical necessity has limited my development in this area to an extent, it is a skill that I intend to improve in the near future.</p>
+              </Skill>
+              <Skill title="Databases">
+                <p>I generally use MySQL in my projects, using the Sequelize library.</p>
               </Skill>
               <Skill title="Webpack" />
+              <Skill title="Adobe Illustrator, Photoshop, InDesign" />
               <Skill title="Linux" />
+              <Skill title="macOS" />
+              <Skill title="Windows 10" />
             </ul>
           </Container>
           <Container isFluid>
