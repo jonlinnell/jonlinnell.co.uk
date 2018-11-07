@@ -63,9 +63,9 @@ class CV extends PureComponent {
     this.toggleSkills = this.toggleSkills.bind(this)
   }
 
-  toggleJobs = () => this.setState({ jobsIsOpen: !this.state.jobsIsOpen })
+  toggleJobs = () => this.setState(prevState => ({ jobsIsOpen: !prevState.jobsIsOpen }))
 
-  toggleSkills = () => this.setState({ skillsIsOpen: !this.state.skillsIsOpen })
+  toggleSkills = () => this.setState(prevState => ({ skillsIsOpen: !prevState.skillsIsOpen }))
 
   render() {
     const { jobsIsOpen, skillsIsOpen } = this.state
@@ -79,11 +79,36 @@ class CV extends PureComponent {
                 <Title>Jon Linnell</Title>
                 <Subtitle>JavaScript Developer and IT professional</Subtitle>
                 <ProfilePicture image={headshot} />
-                <ContactLine iconClass="fa-envelope-o" href="mailto:jonlinnell@icloud.com">jonlinnell@icloud.com</ContactLine>
-                <ContactLine iconClass="fa-linkedin" href="https://www.linkedin.com/in/jplinnell/">jplinnell</ContactLine>
-                <ContactLine iconClass="fa-instagram" href="https://instagram.com/jonlinnell">jonlinnell</ContactLine>
-                <ContactLine iconClass="fa-twitter" href="https://twitter.com/jplinnell">jplinnell</ContactLine>
-                <ContactLine iconClass="fa-github" href="https://github.com/jonlinnell">jonlinnell</ContactLine>
+                <ContactLine
+                  iconClass="fa-envelope-o"
+                  href="mailto:jonlinnell@icloud.com"
+                >
+                  jonlinnell@icloud.com
+                </ContactLine>
+                <ContactLine
+                  iconClass="fa-linkedin"
+                  href="https://www.linkedin.com/in/jplinnell/"
+                >
+                  jplinnell
+                </ContactLine>
+                <ContactLine
+                  iconClass="fa-instagram"
+                  href="https://instagram.com/jonlinnell"
+                >
+                  jonlinnell
+                </ContactLine>
+                <ContactLine
+                  iconClass="fa-twitter"
+                  href="https://twitter.com/jplinnell"
+                >
+                  jplinnell
+                </ContactLine>
+                <ContactLine
+                  iconClass="fa-github"
+                  href="https://github.com/jonlinnell"
+                >
+                  jonlinnell
+                </ContactLine>
               </HeroBody>
             </Hero>
           </Column>
@@ -93,14 +118,30 @@ class CV extends PureComponent {
                 <SectionTitle isSize={2}>Summary</SectionTitle>
                 <Columns>
                   <Column isSize="1/3">
-                    <p>I am a professional, outgoing problem-solver, turning my talents to IT management, projects, and software development. I am currently looking for employment as a JavaScript developer, using React and Node.js.</p>
+                    <p>
+                      I am a professional, outgoing problem-solver, turning my talents to IT
+                      management, projects, and software development. I am currently looking
+                      for employment as a JavaScript developer, using React and Node.js.
+                    </p>
                   </Column>
                   <Column isSize="1/3">
-                    <p>Over the course of my professional career, I have built up a bedrock of experience working with people in task-oriented environments, with a strong focus on the customer, an emphasis on professionalism, and a holistic approach to my work,</p>
+                    <p>
+                      Over the course of my professional career, I have built up a bedrock of
+                      experience working with people in task-oriented environments, with a strong
+                      focus on the customer, an emphasis on professionalism, and a holistic
+                      approach to my work,
+                    </p>
                   </Column>
                   <Column isSize="1/3">
-                    <p>If you would like to get in touch with me, please send me an email, find me on LinkedIn, or comment on one of my photos on Instagram, if you feel like it.</p>
-                    <p>My contact details are listed under my photo (on the left on a desktop, above on a phone/smaller screen.)</p>
+                    <p>
+                      If you would like to get in touch with me, please send me an email, find me
+                      on LinkedIn, or comment on one of my photos on Instagram, if you feel like
+                      it.
+                    </p>
+                    <p>
+                      My contact details are listed under my photo (on the left on a desktop, above
+                      on a phone/smaller screen.)
+                    </p>
                   </Column>
                 </Columns>
               </Container>
@@ -122,11 +163,29 @@ class CV extends PureComponent {
                     company="Loughborough University (London)"
                     post="Senior Support Officer for IT"
                     location="London, UK 🇬🇧"
-                    isOpen={ jobsIsOpen }
+                    isOpen={jobsIsOpen}
                   >
-                    <p>My current role comprises management of IT facilities and support at Loughborough University&apos;s London campus. My primary responsibility is guaranteeing an excellent level of IT provision and support to staff, researchers, and students, employing my extensive interests and experiences in IT for the benefit of the campus and its users.</p>
-                    <p>Taking up the post just a month prior to the opening of the new campus in London, I was involved in the planning, deployment, and on-going support of the new services and systems being provisioned to the new campus. When the London campus moved from its temporary home to its permanent building, I was tasked with maintaining IT service continuity, and ensuring a coordinated effort by all parties to execute the move effectively.</p>
-                    <p>I am often called upon to utilise my wider skills and expertise to augment my work. My other professional interests include audiovisual systems, web development, digital content production, and graphic design, all of which I have been able to use as part of my role.</p>
+                    <p>
+                      My current role comprises management of IT facilities and support at
+                      Loughborough University&apos;s London campus. My primary responsibility
+                      is guaranteeing an excellent level of IT provision and support to staff,
+                      researchers, and students, employing my extensive interests and
+                      experiences in IT for the benefit of the campus and its users.
+                    </p>
+                    <p>
+                      Taking up the post just a month prior to the opening of the new campus in
+                      London, I was involved in the planning, deployment, and on-going support
+                      of the new services and systems being provisioned to the new campus. When
+                      the London campus moved from its temporary home to its permanent building,
+                      I was tasked with maintaining IT service continuity, and ensuring a
+                      coordinated effort by all parties to execute the move effectively.
+                    </p>
+                    <p>
+                      I am often called upon to utilise my wider skills and expertise to augment
+                      my work. My other professional interests include audiovisual systems, web
+                      development, digital content production, and graphic design, all of which
+                      I have been able to use as part of my role.
+                    </p>
                   </Job>
                   <Job
                     start="July 2014"
@@ -134,10 +193,21 @@ class CV extends PureComponent {
                     company="Loughborough University"
                     post="IT Support Analyst"
                     location="Loughborough, UK 🇬🇧"
-                    isOpen={ jobsIsOpen }
+                    isOpen={jobsIsOpen}
                   >
-                    <p>I previously worked at Loughborough University&apos;s PC Clinic, a popular face-to-face helpdesk service for staff and students.</p>
-                    <p>Alongside my regular support duties, I was involved in the university&apos; telephony infrastructure modernisation programme, rolling out a VoIP telephony system to the university. I was part of the team performing the upgrades at the consumer level, while working with the department to maintain service continuity. My duties included coordinating logistics, configuring hardware, liaising with departments to schedule upgrades, and providing aftercare.</p>
+                    <p>
+                      I previously worked at Loughborough University&apos;s PC Clinic, a popular
+                      face-to-face helpdesk service for staff and students.
+                    </p>
+                    <p>
+                      Alongside my regular support duties, I was involved in the university&apos;s
+                      telephony infrastructure modernisation programme, rolling out a VoIP
+                      telephony system to the university. I was part of the team performing the
+                      upgrades at the consumer level, while working with the department to maintain
+                      service continuity. My duties included coordinating logistics, configuring
+                      hardware, liaising with departments to schedule upgrades, and providing
+                      aftercare.
+                    </p>
                   </Job>
                   <Job
                     start="September 2013"
@@ -145,11 +215,25 @@ class CV extends PureComponent {
                     company="Lycée Pierre Méchain"
                     post="English Language Assistant Teacher"
                     location="Laon, France 🇫🇷"
-                    isOpen={ jobsIsOpen }
+                    isOpen={jobsIsOpen}
                   >
-                    <p>My work as an English language teacher included assisting with the teaching of English in the high school, mostly by providing lessons in English language and conversation classes, as well as assisting in-class with teachers and their students.</p>
-                    <p>I also worked with the teaching staff in other professional capacities, such as assisting in the preparation of lessons, preparing and marking exams, covering classes and so on.</p>
-                    <p>I mainly tutored 20 classes of between 6 and 13 students per group, I worked in-class with a further 12 less developed groups and their respective teachers. I also ran extracurricular conversation classes for staff and students.</p>
+                    <p>
+                      My work as an English language teacher included assisting with the teaching
+                      of English in the high school, mostly by providing lessons in English
+                      language and conversation classes, as well as assisting in-class with
+                      teachers and their students.
+                    </p>
+                    <p>
+                      I also worked with the teaching staff in other professional capacities, such
+                      as assisting in the preparation of lessons, preparing and marking exams,
+                      covering classes and so on.
+                    </p>
+                    <p>
+                      I mainly tutored 20 classes of between 6 and 13 students per group, I worked
+                      in-class with a further 12 less developed groups and their respective
+                      teachers. I also ran extracurricular conversation classes for staff and
+                      students.
+                    </p>
                   </Job>
                   <Job
                     start="July 2012"
@@ -157,7 +241,7 @@ class CV extends PureComponent {
                     company="Loughborough University"
                     post="IT Support Analyst"
                     location="Loughborough, UK 🇬🇧"
-                    isOpen={ jobsIsOpen }
+                    isOpen={jobsIsOpen}
                   >
                     <em>Please see above...</em>
                   </Job>
@@ -167,9 +251,13 @@ class CV extends PureComponent {
                     company="Amathole Museum"
                     post="IT/AV Coordinator"
                     location="King Williams Town, South Africa 🇿🇦"
-                    isOpen={ jobsIsOpen }
+                    isOpen={jobsIsOpen}
                   >
-                    <p>While living in South Africa, I worked at the Amathole Museum as an IT/AV coordinator, managing IT provision across the site, for academic and research teams as well as customers and visitors.</p>
+                    <p>
+                      While living in South Africa, I worked at the Amathole Museum as an IT/AV
+                      coordinator, managing IT provision across the site, for academic and research
+                      teams as well as customers and visitors.
+                    </p>
                   </Job>
                 </JobsContainer>
               </Container>
@@ -185,37 +273,96 @@ class CV extends PureComponent {
                   </ExpandButton>
                 </SectionHeaderWithButton>
                 <ul>
-                  <Skill title="HTML5, CSS3" isOpen={ skillsIsOpen }>
-                    <p>HTML5 and CSS3 have been at the forefront of my work for longer than any of the modern JS libraries that seem to get much of the attention today.</p>
-                    <p>As the literal foundation on which anything rendered in a browser is built, I recognise that a good understanding of these technologies is absolutely crucial to their effective utilisation.</p>
+                  <Skill title="HTML5, CSS3" isOpen={skillsIsOpen}>
+                    <p>
+                      HTML5 and CSS3 have been at the forefront of my work for longer than any of
+                      the modern JS libraries that seem to get much of the attention today.
+                    </p>
+                    <p>
+                      As the literal foundation on which anything rendered in a browser is built,
+                      I recognise that a good understanding of these technologies is absolutely
+                      crucial to their effective utilisation.
+                    </p>
                   </Skill>
-                  <Skill title="React" isOpen={ skillsIsOpen }>
-                    <p>React is the UI library with which I feel most comfortable, and as such I generally use it for all web projects. I find it to be the most dynamic, straightforward, and logical way to build a user interface for the web.</p>
-                    <p>I began learning React in 2016, and it has since become the tool that I reach for in almost every use case.</p>
+                  <Skill title="React" isOpen={skillsIsOpen}>
+                    <p>
+                      React is the UI library with which I feel most comfortable, and as such I
+                      generally use it for all web projects. I find it to be the most dynamic,
+                      straightforward, and logical way to build a user interface for the web.
+                    </p>
+                    <p>
+                      I began learning React in 2016, and it has since become the tool that I
+                      reach for in almost every use case.
+                    </p>
                   </Skill>
-                  <Skill title="Node.js" isOpen={ skillsIsOpen }>
-                    <p>I began learning Node.js in 2015. The benefits of writing frontend and backend code in the same language are well documented, and for me it makes universal apps and full-stack development incredibly efficient and straightforward to accomplish. </p>
+                  <Skill title="Node.js" isOpen={skillsIsOpen}>
+                    <p>
+                      I began learning Node.js in 2015. The benefits of writing frontend and
+                      backend code in the same language are well documented, and for me it makes
+                      universal apps and full-stack development incredibly efficient and
+                      straightforward to accomplish.
+                    </p>
                   </Skill>
-                  <Skill title="Apollo, GraphQL" isOpen={ skillsIsOpen }>
-                    <p>In mid-2018, I began a project that would require some complex data storage and retrieval. I decided to combine this with an opportunity to learn GraphQL, by way of Apollo. I integrated Apollo Server into my backend code, and built the frontend with Apollo from the start.</p>
-                    <p>Although I have much more to learn in this area, I can immediately see the benefits of using GraphQL over traditional REST APIs (where possible,) and I intend to prioritise development of this skill in the future.</p>
+                  <Skill title="Apollo, GraphQL" isOpen={skillsIsOpen}>
+                    <p>
+                      In mid-2018, I began a project that would require some complex data storage
+                      and retrieval. I decided to combine this with an opportunity to learn
+                      GraphQL, by way of Apollo. I integrated Apollo Server into my backend code,
+                      and built the frontend with Apollo from the start.
+                    </p>
+                    <p>
+                      Although I have much more to learn in this area, I can immediately see the
+                      benefits of using GraphQL over traditional REST APIs (where possible,) and
+                      I intend to prioritise development of this skill in the future.
+                    </p>
                   </Skill>
-                  <Skill title="CSS-in-JS, styled-components" isOpen={ skillsIsOpen }>
-                    <p>Although I have some experience with SASS, Less, and CSS preprocessors in general, they sometimes feel like a stopgap solution to a problem that requires an entirely new outlook. My favoured approach is CSS-in-JS, by way of Styled Components.</p>
-                    <p>Maintaining a separate part of a codebase in another language with poor integration seems a little inefficient; I prefer the declarative and component-oriented nature of SC, and I&apos;ve made great use of it in recent projects.</p>
+                  <Skill title="CSS-in-JS, styled-components" isOpen={skillsIsOpen}>
+                    <p>
+                      Although I have some experience with SASS, Less, and CSS preprocessors in
+                      general, they sometimes feel like a stopgap solution to a problem that
+                      requires an entirely new outlook. My favoured approach is CSS-in-JS, by way
+                      of Styled Components.
+                    </p>
+                    <p>
+                      Maintaining a separate part of a codebase in another language with poor
+                      integration seems a little inefficient; I prefer the declarative and
+                      component-oriented nature of SC, and I&apos;ve made great use of it in
+                      recent projects.
+                    </p>
                   </Skill>
-                  <Skill title="Redux" isOpen={ skillsIsOpen }>
-                    <p>In the time before React&apos;s Context API became more widely used, I used Redux for all global state management. I&apos;ve used Redux for a few projects, and although I&apos;ve now replaced it with React&apos;s Context API and Apollo in a few of them, I still use it, and it is a skill I actively maintain.</p>
+                  <Skill title="Redux" isOpen={skillsIsOpen}>
+                    <p>
+                      In the time before React&apos;s Context API became more widely used, I used
+                      Redux for all global state management. I&apos;ve used Redux for a few
+                      projects, and although I&apos;ve now replaced it with React&apos;s Context
+                      API and Apollo in a few of them, I still use it, and it is a skill I actively
+                      maintain.
+                    </p>
                   </Skill>
-                  <Skill title="Git, GitHub" isOpen={ skillsIsOpen }>
-                    <p>All of my projects rely on Git for revision control. I generally try to stick to a clear branching practice for resolving bugs and developing new features, before merging changes into a development branch for testing, then to master for deployment.</p>
+                  <Skill title="Git, GitHub" isOpen={skillsIsOpen}>
+                    <p>
+                      All of my projects rely on Git for revision control. I generally try to stick
+                      to a clear branching practice for resolving bugs and developing new features,
+                      before merging changes into a development branch for testing, then to master
+                      for deployment.
+                    </p>
                   </Skill>
-                  <Skill title="Amazon Web Services" isOpen={ skillsIsOpen }>
-                    <p>As the trend towards decentralised cloud-computing continues to gain momentum, I have invested some time in learning how to use AWS effectively.</p>
-                    <p>Although lack of practical necessity has limited my development in this area so far, it is a skill that I intend to improve in the near future.</p>
+                  <Skill title="Amazon Web Services" isOpen={skillsIsOpen}>
+                    <p>
+                      As the trend towards decentralised cloud-computing continues to gain
+                      momentum, I have invested some time in learning how to use AWS
+                      effectively.
+                    </p>
+                    <p>
+                      Although lack of practical necessity has limited my development in this
+                      area so far, it is a skill that I intend to improve in the near future.
+                    </p>
                   </Skill>
-                  <Skill title="Databases" isOpen={ skillsIsOpen }>
-                    <p>I generally use MySQL in my projects, using the Sequelize library for data modelling and abstraction away from SQL in the app.</p>
+                  <Skill title="Databases" isOpen={skillsIsOpen}>
+                    <p>
+                      I generally use MySQL in my projects, using the Sequelize library for data
+                      modelling and abstraction away from SQL in the app.
+                    </p>
                   </Skill>
                   <Skill title="Webpack" />
                   <Skill title="Adobe Illustrator, Photoshop, InDesign" />
