@@ -22,7 +22,7 @@ const TitleWrapper = styled.div`
 
 const Title = styled.h2`
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
 `
 
 const Details = styled.div`
