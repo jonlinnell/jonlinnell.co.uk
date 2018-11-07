@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose'
 
+import SeeMoreButton from './SeeMoreButton'
+
 const Post = styled.p`
   font-size: 24px;
   font-weight: 400;
@@ -25,15 +27,6 @@ const JobContainer = styled.li`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`
-
-const SeeMoreButton = styled.button`
-  border: none;
-  background: none;
-  color: rgb(140, 140, 140);
-  font-style: italic;
-  padding: 0;
-  margin-left: auto;
 `
 
 const Details = posed.div({
