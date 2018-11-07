@@ -45,10 +45,13 @@ export default () => (
             <SectionTitle isSize={2}>Summary</SectionTitle>
             <Columns>
               <Column isSize="1/3">
-                <p>I am a professional, outgoing problem-solver, turning my talents to IT management, projects, and software development.</p>
+                <p>I am a professional, outgoing problem-solver, turning my talents to IT management, projects, and software development. I am currently looking for employment as a software developer; either frontend using React, backend using Node.js, or fullstack.</p>
               </Column>
               <Column isSize="1/3">
-                <p>I am currently looking for employment as a software developer; either frontend using React, backend using Node.js, or fullstack.</p>
+                <p>Over the course of my professional career, I have built up a bedrock of experience working with people in task-oriented environments, with a strong focus on the customer (or the user, if you prefer that terminology) and an emphasis on professionalism and a holistic approach to my work,</p>
+              </Column>
+              <Column isSize="1/3">
+                <p>If you would like to get in touch with me, please send me an email, find me on LinkedIn, or comment on one of my photos on Instagram, if you really want. My contact details are available to your left.</p>
               </Column>
             </Columns>
           </Container>
