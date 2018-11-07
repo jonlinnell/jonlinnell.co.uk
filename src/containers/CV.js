@@ -55,7 +55,7 @@ export default () => (
               </Column>
               <Column isSize="1/3">
                 <p>If you would like to get in touch with me, please send me an email, find me on LinkedIn, or comment on one of my photos on Instagram, if you feel like it.</p>
-                <p>My contact details are listed on the left.</p>
+                <p>My contact details are listed under my photo (on the left on a desktop, above on a phone/smaller screen.)</p>
               </Column>
             </Columns>
           </Container>
@@ -130,7 +130,7 @@ export default () => (
               </Skill>
               <Skill title="Apollo, GraphQL">
                 <p>In mid-2018, I began a project that would require some complex data storage and retrieval. I decided to combine this with an opportunity to learn GraphQL, by way of Apollo. I integrated Apollo Server into my backend code, and built the frontend with Apollo from the start.</p>
-                <p>Although I have much more to learn in this area, I can immediately see the benefits of using GraphQL over traditional REST APIs (where possible,) and I intend to prioritise development this skill in the future.</p>
+                <p>Although I have much more to learn in this area, I can immediately see the benefits of using GraphQL over traditional REST APIs (where possible,) and I intend to prioritise development of this skill in the future.</p>
               </Skill>
               <Skill title="CSS-in-JS, styled-components">
                 <p>Although I have some experience with SASS, Less, and CSS preprocessors in general, they sometimes feel like a stopgap solution to a problem that requires an entirely new outlook. My favoured approach is CSS-in-JS, by way of Styled Components.</p>
