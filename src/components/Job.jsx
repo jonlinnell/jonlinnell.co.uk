@@ -73,7 +73,7 @@ class Job extends PureComponent {
 
     return (
       <JobContainer>
-        <Post>{post}</Post>
+        <Post onClick={this.toggleOpen}>{post}</Post>
         <Company>{company}</Company>
         <p>{ location }</p>
         <Dates>

@@ -62,7 +62,7 @@ class Skill extends PureComponent {
     return (
       <SkillWrapper>
         <TitleWrapper>
-          <Title>{ title }</Title>
+          <Title onClick={this.toggleOpen}>{ title }</Title>
           {
             children
               ? (
