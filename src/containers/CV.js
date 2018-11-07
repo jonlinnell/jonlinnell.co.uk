@@ -30,7 +30,7 @@ export default () => (
         <Hero>
           <HeroBody>
             <Title>Jon Linnell</Title>
-            <Subtitle>JavaScript Developer (FE, BE, FS,) and IT professional</Subtitle>
+            <Subtitle>JavaScript Developer and IT professional</Subtitle>
             <ProfilePicture image={headshot} />
             <ContactLine iconClass="fa-envelope-o" href="mailto:jonlinnell@icloud.com">jonlinnell@icloud.com</ContactLine>
             <ContactLine iconClass="fa-linkedin" href="https://www.linkedin.com/in/jplinnell/">jplinnell</ContactLine>
