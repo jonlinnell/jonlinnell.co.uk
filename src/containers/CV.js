@@ -205,7 +205,7 @@ class CV extends PureComponent {
                     <p>Maintaining a separate part of a codebase in another language with poor integration seems a little inefficient; I prefer the declarative and component-oriented nature of SC, and I&apos;ve made great use of it in recent projects.</p>
                   </Skill>
                   <Skill title="Redux" isOpen={ skillsIsOpen }>
-                    <p>In the time before React&apos;s Context API became more widely used, I used Redux for all global state management. I&apos;ve used Redux for a few projects, and although I&apos;ve now replaced it with React&apos; Context API and Apollo in a few of them, I still use it, and it is a skill I actively maintain.</p>
+                    <p>In the time before React&apos;s Context API became more widely used, I used Redux for all global state management. I&apos;ve used Redux for a few projects, and although I&apos;ve now replaced it with React&apos;s Context API and Apollo in a few of them, I still use it, and it is a skill I actively maintain.</p>
                   </Skill>
                   <Skill title="Git, GitHub" isOpen={ skillsIsOpen }>
                     <p>All of my projects rely on Git for revision control. I generally try to stick to a clear branching practice for resolving bugs and developing new features, before merging changes into a development branch for testing, then to master for deployment.</p>
