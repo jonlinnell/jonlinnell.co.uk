@@ -11,6 +11,7 @@ const ContactLine = styled.div`
 
 const ContactInfo = styled.a`
   margin-left: 8px;
+  color: white;
 
   &:hover {
     text-decoration: underline;

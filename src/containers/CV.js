@@ -33,6 +33,7 @@ export default () => (
             <Subtitle>JavaScript Developer (FE, BE, FS,) and IT professional</Subtitle>
             <ProfilePicture image={headshot} />
             <ContactLine iconClass="fa-envelope-o" href="mailto:jonlinnell@icloud.com">jonlinnell@icloud.com</ContactLine>
+            <ContactLine iconClass="fa-linkedin" href="https://www.linkedin.com/in/jplinnell/">jplinnell</ContactLine>
             <ContactLine iconClass="fa-instagram" href="https://instagram.com/jonlinnell">jonlinnell</ContactLine>
             <ContactLine iconClass="fa-twitter" href="https://twitter.com/jplinnell">jplinnell</ContactLine>
             <ContactLine iconClass="fa-github" href="https://github.com/jonlinnell">jonlinnell</ContactLine>
