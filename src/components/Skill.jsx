@@ -2,6 +2,8 @@ import React, { PureComponent, Fragment } from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose'
 
+import { Icon } from 'bloomer'
+
 import SeeMoreButton from './SeeMoreButton'
 
 const SkillWrapper = styled.li`
@@ -14,7 +16,7 @@ const SkillWrapper = styled.li`
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-items: center;
 
   width: 100%;
@@ -71,7 +73,7 @@ class Skill extends PureComponent {
             children
               ? (
                 <SeeMoreButton onClick={this.toggleOpen}>
-                  { isOpen ? '-' : '+' }
+                  <Icon className={`fa ${isOpen ? 'fa-minus' : 'fa-plus'}`} />
                 </SeeMoreButton>
               )
               : null
