@@ -12,7 +12,7 @@ const Company = styled.p`
 `
 
 const Dates = styled.p`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 200;
 `
 

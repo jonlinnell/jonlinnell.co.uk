@@ -17,6 +17,7 @@ import ProfilePicture from '../components/ProfilePicture'
 import SectionTitle from '../components/SectionTitle'
 import CVContainer from '../components/CVContainer'
 import Job from '../components/Job'
+import Qualification from '../components/Qualification'
 import ContactLine from '../components/ContactLine'
 
 import headshot from '../images/headshot.jpg'
@@ -112,10 +113,22 @@ export default () => (
             </JobsContainer>
           </Container>
           <Container isFluid>
-            <SectionTitle>Projects</SectionTitle>
+            <SectionTitle>Skills</SectionTitle>
+            <ul>
+              <li>React</li>
+              <li>Redux</li>
+              <li>Node.js</li>
+              <li>Git, GitHub</li>
+            </ul>
           </Container>
           <Container isFluid>
-            <SectionTitle>Skills</SectionTitle>
+            <SectionTitle>Education</SectionTitle>
+            <Qualification
+              start="2011"
+              end="2015"
+              institution="Loughborough University"
+              qualifications="BSc Media and Communication, Upper Second (69%)"
+            />
           </Container>
         </CVContainer>
       </Column>
