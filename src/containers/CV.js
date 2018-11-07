@@ -48,10 +48,10 @@ export default () => (
             <SectionTitle isSize={2}>Summary</SectionTitle>
             <Columns>
               <Column isSize="1/3">
-                <p>I am a professional, outgoing problem-solver, turning my talents to IT management, projects, and software development. I am currently looking for employment as a software developer; either frontend using React, backend using Node.js, or fullstack.</p>
+                <p>I am a professional, outgoing problem-solver, turning my talents to IT management, projects, and software development. I am currently looking for employment as a JavaScript developer, using React and Node.js.</p>
               </Column>
               <Column isSize="1/3">
-                <p>Over the course of my professional career, I have built up a bedrock of experience working with people in task-oriented environments, with a strong focus on the customer (or the user, if you prefer that terminology) and an emphasis on professionalism and a holistic approach to my work,</p>
+                <p>Over the course of my professional career, I have built up a bedrock of experience working with people in task-oriented environments, with a strong focus on the customer, an emphasis on professionalism, and a holistic approach to my work,</p>
               </Column>
               <Column isSize="1/3">
                 <p>If you would like to get in touch with me, please send me an email, find me on LinkedIn, or comment on one of my photos on Instagram, if you feel like it.</p>
@@ -69,9 +69,9 @@ export default () => (
                 post="Senior Support Officer for IT"
                 location="London, UK 🇬🇧"
               >
-                <p>My current role comprises management and oversight of the IT services, facilities, and associated support structures at Loughborough University&apos;s London campus. My primary responsibilities are guaranteeing an excellent level of IT provision and technical support to staff and students, and employing my extensive interests and experiences in IT for the benefit of our staff, students, and the campus as a whole.</p>
+                <p>My current role comprises management of IT facilities and support at Loughborough University&apos;s London campus. My primary responsibility is guaranteeing an excellent level of IT provision and support to staff, researchers, and students, employing my extensive interests and experiences in IT for the benefit of the campus and its users.</p>
                 <p>Taking up the post just a month prior to the opening of the new campus in London, I was involved in the planning, deployment, and on-going support of the new services and systems being provisioned to the new campus. When the London campus moved from its temporary home to its permanent building, I was tasked with maintaining IT service continuity, and ensuring a coordinated effort by all parties to execute the move effectively.</p>
-                <p>I have an excellent knowledge of HE policy, procedure, systems, and internal mechanisms, and I am often called upon to utilise my skills and expertise to improve and integrate technical aspects into these. My wider interests include audiovisual systems, web development, digital content production, and graphic design, all of which I have been able to use as part of my role.</p>
+                <p>I am often called upon to utilise my wider skills and expertise to augment my work. My other professional interests include audiovisual systems, web development, digital content production, and graphic design, all of which I have been able to use as part of my role.</p>
               </Job>
               <Job
                 start="July 2014"
@@ -80,19 +80,19 @@ export default () => (
                 post="IT Support Analyst"
                 location="Loughborough, UK 🇬🇧"
               >
-                <p>I previously worked in first-line support for Loughborough University&apos;s PC Clinic, a popular face-to-face helpdesk service for staff and students.</p>
-                <p>Alongside my regular support duties, I was involved in the implementation of an extensive, campus-wide telephony infrastructure upgrade from an analogue network to a VoIP system. I was part of the team performing the upgrades at the consumer level, while working with the department to maintain service continuity. My duties included coordinating logistics, configuring hardware, liaising with departments to schedule upgrades, and providing aftercare.</p>
+                <p>I previously worked at Loughborough University&apos;s PC Clinic, a popular face-to-face helpdesk service for staff and students.</p>
+                <p>Alongside my regular support duties, I was involved in the university&apos; telephony infrastructure modernisation programme, rolling out a VoIP telephony system to the university. I was part of the team performing the upgrades at the consumer level, while working with the department to maintain service continuity. My duties included coordinating logistics, configuring hardware, liaising with departments to schedule upgrades, and providing aftercare.</p>
               </Job>
               <Job
                 start="September 2013"
                 end="June 2014"
                 company="Lycée Pierre Méchain"
-                post="English Language Teacher"
+                post="English Language Assistant Teacher"
                 location="Laon, France 🇫🇷"
               >
-                <p>My duties as an English language tutor included assisting with the teaching of English in the high school by providing lessons in English language and conversation classes, as well as working in-class with teachers and their students.</p>
+                <p>My work as an English language teacher included assisting with the teaching of English in the high school, mostly by providing lessons in English language and conversation classes, as well as assisting in-class with teachers and their students.</p>
                 <p>I also worked with the teaching staff in other professional capacities, such as assisting in the preparation of lessons, preparing and marking exams, covering classes and so on.</p>
-                <p>I mainly tutored 20 classes of between 6 and 13 students per group, I worked in-class with a further 12 less developed groups and their respective teachers, and I also ran extracurricular conversation classes for staff and students.</p>
+                <p>I mainly tutored 20 classes of between 6 and 13 students per group, I worked in-class with a further 12 less developed groups and their respective teachers. I also ran extracurricular conversation classes for staff and students.</p>
               </Job>
               <Job
                 start="July 2012"
@@ -110,7 +110,7 @@ export default () => (
                 post="IT/AV Coordinator"
                 location="King Williams Town, South Africa 🇿🇦"
               >
-                <p>While living in South Africa, I worked for the Amathole Museum as an IT/AV coordinator, managing IT provision across the site, for academic and research teams as well as customers and visitors.</p>
+                <p>While living in South Africa, I worked at the Amathole Museum as an IT/AV coordinator, managing IT provision across the site, for academic and research teams as well as customers and visitors.</p>
               </Job>
             </JobsContainer>
           </Container>
@@ -118,15 +118,15 @@ export default () => (
             <SectionTitle>Skills</SectionTitle>
             <ul>
               <Skill title="HTML5, CSS3">
-                <p>HTML5 and CSS3 have been at the forefront of my work for longer than any of the modern JS libraries that seem to get all the attention today.</p>
+                <p>HTML5 and CSS3 have been at the forefront of my work for longer than any of the modern JS libraries that seem to get much of the attention today.</p>
                 <p>As the literal foundation on which anything rendered in a browser is built, I recognise that a good understanding of these technologies is absolutely crucial to their effective utilisation.</p>
               </Skill>
               <Skill title="React">
-                <p>React is my go-to UI library for all web projects. I find it to be the most dynamic, straightforward, and logical way to build a user interface for the web.</p>
+                <p>React is the UI library with which I feel most comfortable, and as such I generally use it for all web projects. I find it to be the most dynamic, straightforward, and logical way to build a user interface for the web.</p>
                 <p>I began learning React in 2016, and it has since become the tool that I reach for in almost every use case.</p>
               </Skill>
               <Skill title="Node.js">
-                <p>I began learning Node.js in 2015, and I haven&apos;t regretted it for a moment. The benefits of writing frontend and backend code in the same language are well documented, and for me it makes universal apps and full-stack development incredibly efficient and straightforward to accomplish. </p>
+                <p>I began learning Node.js in 2015. The benefits of writing frontend and backend code in the same language are well documented, and for me it makes universal apps and full-stack development incredibly efficient and straightforward to accomplish. </p>
               </Skill>
               <Skill title="Apollo, GraphQL">
                 <p>In mid-2018, I began a project that would require some complex data storage and retrieval. I decided to combine this with an opportunity to learn GraphQL, by way of Apollo. I integrated Apollo Server into my backend code, and built the frontend with Apollo from the start.</p>
@@ -137,17 +137,17 @@ export default () => (
                 <p>Maintaining a separate part of a codebase in another language with poor integration seems a little inefficient; I prefer the declarative and component-oriented nature of SC, and I&apos;ve made great use of it in recent projects.</p>
               </Skill>
               <Skill title="Redux">
-                <p>In the time before React&apos;s Context API became more widely used, I used Redux for all global state management. I&apos;ve used Redux for a few projects, and although I&apos;ve now replaced it with Context and Apollo in a few of them, I still use it, and it is a skill I actively maintain.</p>
+                <p>In the time before React&apos;s Context API became more widely used, I used Redux for all global state management. I&apos;ve used Redux for a few projects, and although I&apos;ve now replaced it with React&apos; Context API and Apollo in a few of them, I still use it, and it is a skill I actively maintain.</p>
               </Skill>
               <Skill title="Git, GitHub">
                 <p>All of my projects rely on Git for revision control. I generally try to stick to a clear branching practice for resolving bugs and developing new features, before merging changes into a development branch for testing, then to master for deployment.</p>
               </Skill>
               <Skill title="Amazon Web Services">
                 <p>As the trend towards decentralised cloud-computing continues to gain momentum, I have invested some time in learning how to use AWS effectively.</p>
-                <p>Although lack of practical necessity has limited my development in this area to an extent, it is a skill that I intend to improve in the near future.</p>
+                <p>Although lack of practical necessity has limited my development in this area so far, it is a skill that I intend to improve in the near future.</p>
               </Skill>
               <Skill title="Databases">
-                <p>I generally use MySQL in my projects, using the Sequelize library.</p>
+                <p>I generally use MySQL in my projects, using the Sequelize library for data modelling and abstraction away from SQL in the app.</p>
               </Skill>
               <Skill title="Webpack" />
               <Skill title="Adobe Illustrator, Photoshop, InDesign" />
@@ -162,7 +162,7 @@ export default () => (
               start="2011"
               end="2015"
               institution="Loughborough University"
-              qualifications="BSc Media and Communication, Upper Second (69%)"
+              qualifications="BSc Communication and Media Studies; Second class, upper division (69%)"
             />
           </Container>
         </CVContainer>
