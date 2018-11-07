@@ -54,7 +54,7 @@ class Job extends PureComponent {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState(newProps)
+    this.setState({ isOpen: newProps.isOpen })
   }
 
   toggleOpen() {

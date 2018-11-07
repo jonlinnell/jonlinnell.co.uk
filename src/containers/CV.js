@@ -24,7 +24,7 @@ import Skill from '../components/Skill'
 
 import headshot from '../images/headshot.jpg'
 
-const JobsHeader = styled.div`
+const SectionHeaderWithButton = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,12 +60,15 @@ class CV extends PureComponent {
     }
 
     this.toggleJobs = this.toggleJobs.bind(this)
+    this.toggleSkills = this.toggleSkills.bind(this)
   }
 
   toggleJobs = () => this.setState({ jobsIsOpen: !this.state.jobsIsOpen })
 
+  toggleSkills = () => this.setState({ skillsIsOpen: !this.state.skillsIsOpen })
+
   render() {
-    const { jobsIsOpen } = this.state
+    const { jobsIsOpen, skillsIsOpen } = this.state
 
     return (
       <Section>
@@ -102,7 +105,7 @@ class CV extends PureComponent {
                 </Columns>
               </Container>
               <Container isFluid>
-                <JobsHeader>
+                <SectionHeaderWithButton>
                   <Title isMarginless>Experience</Title>
                   <ExpandButton type="button" onClick={this.toggleJobs}>
                     {
@@ -111,7 +114,7 @@ class CV extends PureComponent {
                         : 'Expand all'
                     }
                   </ExpandButton>
-                </JobsHeader>
+                </SectionHeaderWithButton>
                 <JobsContainer>
                   <Job
                     start="July 2015"
@@ -171,38 +174,47 @@ class CV extends PureComponent {
                 </JobsContainer>
               </Container>
               <Container isFluid>
-                <SectionTitle>Skills</SectionTitle>
+                <SectionHeaderWithButton>
+                  <Title isMarginless>Skills</Title>
+                  <ExpandButton onClick={this.toggleSkills}>
+                    {
+                      skillsIsOpen
+                        ? 'Hide all'
+                        : 'Expand all'
+                    }
+                  </ExpandButton>
+                </SectionHeaderWithButton>
                 <ul>
-                  <Skill title="HTML5, CSS3">
+                  <Skill title="HTML5, CSS3" isOpen={ skillsIsOpen }>
                     <p>HTML5 and CSS3 have been at the forefront of my work for longer than any of the modern JS libraries that seem to get much of the attention today.</p>
                     <p>As the literal foundation on which anything rendered in a browser is built, I recognise that a good understanding of these technologies is absolutely crucial to their effective utilisation.</p>
                   </Skill>
-                  <Skill title="React">
+                  <Skill title="React" isOpen={ skillsIsOpen }>
                     <p>React is the UI library with which I feel most comfortable, and as such I generally use it for all web projects. I find it to be the most dynamic, straightforward, and logical way to build a user interface for the web.</p>
                     <p>I began learning React in 2016, and it has since become the tool that I reach for in almost every use case.</p>
                   </Skill>
-                  <Skill title="Node.js">
+                  <Skill title="Node.js" isOpen={ skillsIsOpen }>
                     <p>I began learning Node.js in 2015. The benefits of writing frontend and backend code in the same language are well documented, and for me it makes universal apps and full-stack development incredibly efficient and straightforward to accomplish. </p>
                   </Skill>
-                  <Skill title="Apollo, GraphQL">
+                  <Skill title="Apollo, GraphQL" isOpen={ skillsIsOpen }>
                     <p>In mid-2018, I began a project that would require some complex data storage and retrieval. I decided to combine this with an opportunity to learn GraphQL, by way of Apollo. I integrated Apollo Server into my backend code, and built the frontend with Apollo from the start.</p>
                     <p>Although I have much more to learn in this area, I can immediately see the benefits of using GraphQL over traditional REST APIs (where possible,) and I intend to prioritise development of this skill in the future.</p>
                   </Skill>
-                  <Skill title="CSS-in-JS, styled-components">
+                  <Skill title="CSS-in-JS, styled-components" isOpen={ skillsIsOpen }>
                     <p>Although I have some experience with SASS, Less, and CSS preprocessors in general, they sometimes feel like a stopgap solution to a problem that requires an entirely new outlook. My favoured approach is CSS-in-JS, by way of Styled Components.</p>
                     <p>Maintaining a separate part of a codebase in another language with poor integration seems a little inefficient; I prefer the declarative and component-oriented nature of SC, and I&apos;ve made great use of it in recent projects.</p>
                   </Skill>
-                  <Skill title="Redux">
+                  <Skill title="Redux" isOpen={ skillsIsOpen }>
                     <p>In the time before React&apos;s Context API became more widely used, I used Redux for all global state management. I&apos;ve used Redux for a few projects, and although I&apos;ve now replaced it with React&apos; Context API and Apollo in a few of them, I still use it, and it is a skill I actively maintain.</p>
                   </Skill>
-                  <Skill title="Git, GitHub">
+                  <Skill title="Git, GitHub" isOpen={ skillsIsOpen }>
                     <p>All of my projects rely on Git for revision control. I generally try to stick to a clear branching practice for resolving bugs and developing new features, before merging changes into a development branch for testing, then to master for deployment.</p>
                   </Skill>
-                  <Skill title="Amazon Web Services">
+                  <Skill title="Amazon Web Services" isOpen={ skillsIsOpen }>
                     <p>As the trend towards decentralised cloud-computing continues to gain momentum, I have invested some time in learning how to use AWS effectively.</p>
                     <p>Although lack of practical necessity has limited my development in this area so far, it is a skill that I intend to improve in the near future.</p>
                   </Skill>
-                  <Skill title="Databases">
+                  <Skill title="Databases" isOpen={ skillsIsOpen }>
                     <p>I generally use MySQL in my projects, using the Sequelize library for data modelling and abstraction away from SQL in the app.</p>
                   </Skill>
                   <Skill title="Webpack" />
