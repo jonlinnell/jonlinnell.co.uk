@@ -29,11 +29,11 @@ export default ({
 }) => (
   <QualificationContainer>
     <Qualifications>{ qualifications }</Qualifications>
-    <Institution>{institution}</Institution>
+    <Institution>{ institution }</Institution>
     <Dates>
-      {start}
+      { start }
       &mdash;
-      {end}
+      { end }
     </Dates>
   </QualificationContainer>
 )
