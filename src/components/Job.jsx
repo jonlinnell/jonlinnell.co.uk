@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose'
 
@@ -16,10 +16,6 @@ const Company = styled.p`
 const Dates = styled.p`
   font-size: 14px;
   font-weight: 200;
-`
-
-const Present = styled.span`
-  font-style: italic; 
 `
 
 const JobContainer = styled.li`
@@ -75,21 +71,35 @@ class Job extends PureComponent {
 
     const { isOpen } = this.state
 
+    let dates
+
+    if (start === end) {
+      dates = <span>start</span>
+    } else if (!end) {
+      dates = (
+        <Fragment>
+          <span>{ start }</span>
+          &nbsp;&mdash;&nbsp;
+          <em>present</em>
+        </Fragment>
+      )
+    } else {
+      dates = (
+        <Fragment>
+          <span>{ start }</span>
+          &nbsp;&mdash;&nbsp;
+          <span>{ end }</span>
+        </Fragment>
+      )
+    }
+
     return (
       <JobContainer>
         <Post onClick={this.toggleOpen}>{post}</Post>
         <Company>{company}</Company>
         <p>{ location }</p>
         <Dates>
-          <span>
-            {start}
-          </span>
-          &mdash;
-          {
-            end === 'present'
-              ? <Present>present</Present>
-              : end
-          }
+          { dates }
         </Dates>
         <DetailsWrapper pose={isOpen ? 'open' : 'closed'}>
           { children }
