@@ -1,10 +1,6 @@
-# React-Static - Basic Example
+# jonlinnell.co.uk
 
-This example is the most basic version of react-static available. It includes:
-- Babel
-- CSS imports
-- Image imports
-- File imports
-- Automatic Routing
-
-To get started, run `react-static create` and use the `basic` template.
+This is a personal site written with [react-static](https://github.com/nozzle/react-static). It inludes:
+- a landing page
+- a CV
+- a photography gallery
