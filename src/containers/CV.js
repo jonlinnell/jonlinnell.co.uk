@@ -129,7 +129,7 @@ class CV extends PureComponent {
                       Over the course of my professional career, I have built up a bedrock of
                       experience working with people in task-oriented environments, with a strong
                       focus on the customer, an emphasis on professionalism, and a holistic
-                      approach to my work,
+                      approach to my work.
                     </p>
                   </Column>
                   <Column isSize="1/3">
@@ -159,7 +159,6 @@ class CV extends PureComponent {
                 <JobsContainer>
                   <Job
                     start="July 2015"
-                    end="present"
                     company="Loughborough University (London)"
                     post="Senior Support Officer for IT"
                     location="London, UK 🇬🇧"
@@ -211,7 +210,7 @@ class CV extends PureComponent {
                   </Job>
                   <Job
                     start="September 2013"
-                    end="June 2014"
+                    end="May 2014"
                     company="Lycée Pierre Méchain"
                     post="English Language Assistant Teacher"
                     location="Laon, France 🇫🇷"
