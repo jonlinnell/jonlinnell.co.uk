@@ -86,6 +86,11 @@ class CV extends PureComponent {
                   jonlinnell@icloud.com
                 </ContactLine>
                 <ContactLine
+                  iconClass="fa-phone"
+                >
+                  &#48;&#55;&#53;&#50;&#55;&#53;&#51;&#55;&#52;&#53;&#51;
+                </ContactLine>
+                <ContactLine
                   iconClass="fa-linkedin"
                   href="https://www.linkedin.com/in/jplinnell/"
                 >
