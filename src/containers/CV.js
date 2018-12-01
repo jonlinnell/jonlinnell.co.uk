@@ -146,7 +146,7 @@ class CV extends PureComponent {
                       <Job
                         key={qh(`${job.title}${job.start}`)}
                         isOpen={jobsIsOpen}
-                        job={job}
+                        {...job}
                       />
                     ))
                   }
@@ -168,8 +168,8 @@ class CV extends PureComponent {
                     skills.map(skill => (
                       <Skill
                         key={qh(skill.title)}
-                        skill={skill}
                         isOpen={skillsIsOpen}
+                        {...skill}
                       />
                     ))
                   }

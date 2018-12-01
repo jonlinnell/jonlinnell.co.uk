@@ -62,14 +62,12 @@ class Job extends PureComponent {
 
   render() {
     const {
-      job: {
-        description,
-        employer,
-        end,
-        location,
-        start,
-        title,
-      },
+      description,
+      employer,
+      end,
+      location,
+      start,
+      title,
     } = this.props
 
     const { isOpen } = this.state

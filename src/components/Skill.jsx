@@ -67,7 +67,7 @@ class Skill extends PureComponent {
   }
 
   render() {
-    const { skill: { title, description } } = this.props
+    const { title, description } = this.props
     const { isOpen } = this.state
 
     return (
