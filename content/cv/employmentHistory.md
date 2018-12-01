@@ -4,7 +4,7 @@
 - start: July 2015
 - end: 2018
 My current role comprises management of IT facilities and support at Loughborough University's London campus. My primary responsibility is guaranteeing an excellent level of IT provision and support to staff, researchers, and students, employing my extensive interests and experiences in IT for the benefit of the campus and its users.
-Taking up the post just a month prior to the opening of the new campus in London, I was involved in the planning, deployment, and on-going support of the new services and systems being provisioned to the new campus. When the London campus moved from its temporary home to its permanent building, I was tasked with maintaining IT service continuity, and ensuring a coordinated effort by all parties to execute the move effectively.
+Taking up the post just a month prior to the opening of the new campus in London, I was involved in the planning, deployment, and on-going support of the new services and systems being provisioned to the new campus. When the London campus moved from its temporary home to its permanent building, I was tasked with maintaining service continuity, and ensuring a coordinated effort by all parties to execute the move effectively.
 I am often called upon to utilise my wider skills and expertise to augment my work. My other professional interests include audiovisual systems, web development, digital content production, and graphic design, all of which I have been able to use as part of my role.
 
 # IT Support Analyst
