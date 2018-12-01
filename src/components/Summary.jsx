@@ -16,7 +16,13 @@ const Summary = ({ summary }) => {
         columns.map(column => (
           <Column key={qh(JSON.stringify(column))} isSize={`1/${COLUMNS}`}>
             {
-              column.map(paragraph => <p key={qh(paragraph)}>{ paragraph }</p>)
+              console.log(JSON.stringify(`single column: ${column}`, null, 2))
+            }
+            {
+              column.map((paragraph) => {
+                console.log(JSON.stringify(paragraph))
+                return <p key={qh(paragraph)}>{ paragraph }</p>
+              })
             }
           </Column>
         ))
