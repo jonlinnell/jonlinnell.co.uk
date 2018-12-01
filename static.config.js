@@ -1,7 +1,11 @@
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
-import { getSkills, getSummary } from './src/lib/cv'
+import {
+  getSkills,
+  getSummary,
+  getEmploymentHistory,
+} from './src/lib/cv'
 
 export default {
   getSiteData: () => ({
@@ -18,6 +22,7 @@ export default {
       getData: async () => ({
         skills: await getSkills(),
         summary: await getSummary(),
+        employmentHistory: await getEmploymentHistory(),
       }),
     },
     {

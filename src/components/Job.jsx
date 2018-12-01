@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose'
+import qh from 'quick-hash'
 
 import SeeMoreButton from './SeeMoreButton'
 
@@ -9,7 +10,7 @@ const Post = styled.p`
   font-weight: 400;
 `
 
-const Company = styled.p`
+const Employer = styled.p`
   font-size: 18px;
 `
 
@@ -61,12 +62,14 @@ class Job extends PureComponent {
 
   render() {
     const {
-      start,
-      end,
-      company,
-      post,
-      location,
-      children,
+      job: {
+        description,
+        employer,
+        end,
+        location,
+        start,
+        title,
+      },
     } = this.props
 
     const { isOpen } = this.state
@@ -95,14 +98,14 @@ class Job extends PureComponent {
 
     return (
       <JobContainer>
-        <Post onClick={this.toggleOpen}>{post}</Post>
-        <Company>{ company }</Company>
+        <Post onClick={this.toggleOpen}>{ title }</Post>
+        <Employer>{ employer }</Employer>
         <p>{ location }</p>
         <Dates>
           { dates }
         </Dates>
         <DetailsWrapper pose={isOpen ? 'open' : 'closed'}>
-          { children }
+          { description.map(paragraph => (<p key={qh(paragraph)}>{ paragraph }</p>)) }
         </DetailsWrapper>
         <SeeMoreButton onClick={this.toggleOpen}>
           { isOpen ? 'See less...' : 'See more...' }
