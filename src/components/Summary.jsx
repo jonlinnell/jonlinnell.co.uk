@@ -4,10 +4,6 @@ import styled from 'styled-components'
 
 import { Columns, Column } from 'bloomer'
 
-const Paragraph = styled.p`
-  text-decoration: underline;
-`
-
 const COLUMNS = 3
 
 const Summary = ({ summary }) => {
@@ -26,7 +22,7 @@ const Summary = ({ summary }) => {
             {
               column.map((paragraph) => {
                 console.log(JSON.stringify(paragraph))
-                return <Paragraph key={qh(paragraph)}>{ paragraph }</Paragraph>
+                return <p key={qh(paragraph)}>{ paragraph }</p>
               })
             }
           </Column>
