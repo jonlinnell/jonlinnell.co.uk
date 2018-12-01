@@ -8,6 +8,8 @@ const COLUMNS = 3
 const Summary = ({ summary }) => {
   const columns = summary.splice(0, COLUMNS)
 
+  console.log(JSON.stringify(`Columns: ${columns}`, null, 2))
+
   return (
     <Columns>
       {
