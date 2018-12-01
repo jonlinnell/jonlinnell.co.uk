@@ -24,6 +24,7 @@ import ProfilePicture from '../components/ProfilePicture'
 import Qualification from '../components/Qualification'
 import SectionTitle from '../components/SectionTitle'
 import Skill from '../components/Skill'
+import Summary from '../components/Summary'
 
 import headshot from '../images/headshot.jpg'
 
@@ -60,7 +61,6 @@ class CV extends PureComponent {
     this.state = {
       skillsIsOpen: false,
       jobsIsOpen: false,
-      skills: props.skills,
     }
 
     this.toggleJobs = this.toggleJobs.bind(this)
@@ -73,6 +73,8 @@ class CV extends PureComponent {
 
   render() {
     const { jobsIsOpen, skillsIsOpen } = this.state
+
+    const { skills, summary } = this.props
 
     return (
       <Section>
@@ -125,34 +127,7 @@ class CV extends PureComponent {
             <CVContainer>
               <Container isFluid>
                 <SectionTitle isSize={2}>Summary</SectionTitle>
-                <Columns>
-                  <Column isSize="1/4">
-                    <p>
-                      I am a professional, outgoing problem-solver, turning my talents to IT
-                      management, projects, and software development. I am currently looking
-                      for employment as a JavaScript developer, using React and Node.js.
-                    </p>
-                  </Column>
-                  <Column isSize="1/4">
-                    <p>
-                      Over the course of my professional career, I have built up a bedrock of
-                      experience working with people in task-oriented environments, with a strong
-                      focus on the customer, an emphasis on professionalism, and a holistic
-                      approach to my work.
-                    </p>
-                  </Column>
-                  <Column isSize="1/4">
-                    <p>
-                      If you would like to get in touch with me, please send me an email, find me
-                      on LinkedIn, or comment on one of my photos on Instagram, if you feel like
-                      it.
-                    </p>
-                    <p>
-                      My contact details are listed under my photo (on the left on a desktop, above
-                      on a phone/smaller screen.)
-                    </p>
-                  </Column>
-                </Columns>
+                <Summary summary={summary} />
               </Container>
               <Container isFluid>
                 <SectionHeaderWithButton>
@@ -282,7 +257,7 @@ class CV extends PureComponent {
                 </SectionHeaderWithButton>
                 <ul>
                   {
-                    this.state.skills.map(skill => <Skill key={qh(skill.title)} skill={skill} isOpen={skillsIsOpen} />)
+                    skills.map(skill => <Skill key={qh(skill.title)} skill={skill} isOpen={skillsIsOpen} />)
                   }
                 </ul>
               </Container>

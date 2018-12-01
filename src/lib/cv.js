@@ -1,7 +1,25 @@
 import path from 'path'
 import fs from 'fs'
 
-const CONTENT_DIR = `${__dirname}/../content/cv`
+const CONTENT_DIR = `${__dirname}/../../content/cv`
+
+export const getSummary = () => new Promise((resolve, reject) => {
+  fs.readFile(path.resolve(`${CONTENT_DIR}/summary.md`), 'utf8', (error, buf) => {
+    if (error) reject(error)
+
+    const lines = (buf.toString().split('\n'))
+
+    resolve(lines.reduce((accumulator, line) => {
+      if (line.match(/^# /)) {
+        accumulator[parseInt(line.match(/^# ([0-9])/)[1], 10)] = []
+      } else if (line.length > 0) {
+        accumulator[accumulator.length - 1].push(line)
+      }
+
+      return accumulator.filter(element => element !== null)
+    }, []))
+  })
+})
 
 export const getSkills = () => new Promise((resolve, reject) => {
   fs.readFile(path.resolve(`${CONTENT_DIR}/skills.md`), 'utf8', (error, buf) => {

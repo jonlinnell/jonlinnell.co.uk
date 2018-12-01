@@ -1,7 +1,7 @@
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
-import { getSkills } from './src/lib/cv'
+import { getSkills, getSummary } from './src/lib/cv'
 
 export default {
   getSiteData: () => ({
@@ -15,7 +15,10 @@ export default {
     {
       path: '/cv',
       component: 'src/containers/CV',
-      getData: async () => ({ skills: await getSkills() }),
+      getData: async () => ({
+        skills: await getSkills(),
+        summary: await getSummary(),
+      }),
     },
     {
       is404: true,
