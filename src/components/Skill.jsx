@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import posed from 'react-pose'
+import qh from 'quick-hash'
 
 import { Icon } from 'bloomer'
 
@@ -30,8 +31,12 @@ const Title = styled.h2`
 const Details = styled.div`
   overflow: hidden;
 
-  & > p {
-    margin-bottom: 6px;
+  & p {
+    margin-bottom: 12px;
+  }
+
+  & p:last-of-type {
+    margin-bottom: 0;
   }
 `
 
@@ -62,7 +67,7 @@ class Skill extends PureComponent {
   }
 
   render() {
-    const { title, children } = this.props
+    const { skill: { title, description } } = this.props
     const { isOpen } = this.state
 
     return (
@@ -70,7 +75,7 @@ class Skill extends PureComponent {
         <TitleWrapper>
           <Title onClick={this.toggleOpen}>{ title }</Title>
           {
-            children
+            description.length > 0
               ? (
                 <SeeMoreButton onClick={this.toggleOpen}>
                   <Icon className={`fa ${isOpen ? 'fa-minus' : 'fa-plus'}`} />
@@ -81,7 +86,7 @@ class Skill extends PureComponent {
         </TitleWrapper>
         <Details>
           <PosedDetails pose={isOpen ? 'open' : 'closed'}>
-            { children }
+            { description.map(line => <p key={qh(line)}>{ line }</p>) }
           </PosedDetails>
         </Details>
       </SkillWrapper>

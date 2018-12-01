@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
+  "browser": {
+    "fs": false,
+    "path": false
+  },
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
@@ -20,6 +24,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "font-awesome": "^4.7.0",
     "normalize.css": "^8.0.0",
+    "quick-hash": "^1.0.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-hot-loader": "^4.0.0-beta.21",

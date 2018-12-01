@@ -1,6 +1,8 @@
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
+import { getSkills } from './src/lib/cv'
+
 export default {
   getSiteData: () => ({
     title: 'Jon Linnell',
@@ -13,6 +15,7 @@ export default {
     {
       path: '/cv',
       component: 'src/containers/CV',
+      getData: async () => ({ skills: await getSkills() }),
     },
     {
       is404: true,
