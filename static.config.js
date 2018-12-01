@@ -8,6 +8,7 @@ import {
 } from './src/lib/cv'
 
 export default {
+  siteRoot: 'https://jonlinnell.co.uk/',
   getSiteData: () => ({
     title: 'Jon Linnell',
   }),
