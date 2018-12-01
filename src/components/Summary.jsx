@@ -1,7 +1,12 @@
 import React from 'react'
 import qh from 'quick-hash'
+import styled from 'styled-components'
 
 import { Columns, Column } from 'bloomer'
+
+const Paragraph = styled.p`
+  text-decoration: underline;
+`
 
 const COLUMNS = 3
 
@@ -21,7 +26,7 @@ const Summary = ({ summary }) => {
             {
               column.map((paragraph) => {
                 console.log(JSON.stringify(paragraph))
-                return <p key={qh(paragraph)}>{ paragraph }</p>
+                return <Paragraph key={qh(paragraph)}>{ paragraph }</Paragraph>
               })
             }
           </Column>
