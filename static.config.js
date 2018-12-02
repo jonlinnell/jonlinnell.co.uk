@@ -22,8 +22,8 @@ export default {
       component: 'src/containers/CV',
       getData: async () => ({
         skills: await getSkills(),
-        summary: await getSummary(),
         employmentHistory: await getEmploymentHistory(),
+        summary: await getSummary(),
       }),
     },
     {
