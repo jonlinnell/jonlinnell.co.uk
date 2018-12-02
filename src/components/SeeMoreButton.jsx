@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export default styled.button`
   border: none;
@@ -11,4 +11,11 @@ export default styled.button`
   &:focus {
     outline: none;
   }
+
+  ${({ responsiveShift }) => (responsiveShift ? css`
+    @media screen and (min-width: 767px) {
+      position: relative;
+      top: -24px;
+    }
+  ` : null)}
 `

@@ -105,9 +105,15 @@ class Job extends PureComponent {
         <DetailsWrapper pose={isOpen ? 'open' : 'closed'}>
           { description.map(paragraph => (<p key={qh(paragraph)}>{ paragraph }</p>)) }
         </DetailsWrapper>
-        <SeeMoreButton onClick={this.toggleOpen}>
-          { isOpen ? 'See less...' : 'See more...' }
-        </SeeMoreButton>
+        {
+          description.length > 0
+            ? (
+              <SeeMoreButton responsiveShift onClick={this.toggleOpen}>
+                { isOpen ? 'See less...' : 'See more...' }
+              </SeeMoreButton>
+            )
+            : <div style={{ height: '18px' }}>&nbsp;</div>
+        }
       </JobContainer>
     )
   }
