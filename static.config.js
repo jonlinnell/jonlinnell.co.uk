@@ -2,6 +2,7 @@ import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 import {
+  getBasics,
   getSkills,
   getSummary,
   getEmploymentHistory,
@@ -21,6 +22,7 @@ export default {
       path: '/cv',
       component: 'src/containers/CV',
       getData: async () => ({
+        basics: await getBasics(),
         skills: await getSkills(),
         employmentHistory: await getEmploymentHistory(),
         summary: await getSummary(),

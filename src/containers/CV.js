@@ -12,6 +12,7 @@ import {
 import React, { PureComponent } from 'react'
 
 import { withRouteData } from 'react-static'
+import { Helmet } from 'react-helmet'
 
 import posed from 'react-pose'
 import styled from 'styled-components'
@@ -74,16 +75,27 @@ class CV extends PureComponent {
   render() {
     const { jobsIsOpen, skillsIsOpen } = this.state
 
-    const { skills, summary, employmentHistory } = this.props
+    const {
+      basics: {
+        name,
+        strapline,
+      },
+      skills,
+      summary,
+      employmentHistory,
+    } = this.props
 
     return (
       <Section>
+        <Helmet>
+          <title>{ `${name} – CV` }</title>
+        </Helmet>
         <Columns>
           <Column isSize={3}>
             <Hero>
               <HeroBody>
-                <Title>Jon Linnell</Title>
-                <Subtitle>JavaScript Developer and IT professional</Subtitle>
+                <Title>{ name }</Title>
+                <Subtitle isSpaced>{ strapline }</Subtitle>
                 <ProfilePicture image={headshot} />
                 <ContactLine
                   iconClass="fa-envelope-o"
