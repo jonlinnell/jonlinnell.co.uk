@@ -9,7 +9,7 @@ collections:
   - label: CV
     name: cv
     editor:
-    - preview: false
+      preview: false
     files:
     - label: Basics
       name: basics
