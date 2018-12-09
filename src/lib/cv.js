@@ -35,6 +35,8 @@ export const getContacts = () => new Promise((resolve, reject) => {
       if (line.match(/^# /)) {
         const key = line.match(/^# ([A-Za-z]+)/)[1].toLowerCase()
         accumulator[faIconMap[key] || key] = null
+      } else if (line.length > 0) {
+        accumulator[Object.keys(accumulator).pop()] = line
       }
 
       return accumulator

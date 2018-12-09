@@ -80,7 +80,6 @@ class CV extends PureComponent {
         name,
         strapline,
       },
-      contacts,
       skills,
       summary,
       employmentHistory,
