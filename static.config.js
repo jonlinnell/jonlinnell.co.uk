@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 import {
@@ -8,6 +8,8 @@ import {
   getSummary,
   getEmploymentHistory,
 } from './src/lib/cv'
+
+const netlifyAuthRedirectScript = 'if (window.netlifyIdentity) { window.netlifyIdentity.on(\'init\', (user) => { if (!user) { window.netlifyIdentity.on(\'login\', () => { document.location.href = \'/admin/\' }) } }) }'
 
 export default {
   siteRoot: 'https://jonlinnell.co.uk/',
@@ -53,9 +55,15 @@ export default {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
         {renderMeta.styleTags}
       </Head>
-      <Body>{children}</Body>
+      <Body>
+        <Fragment>
+          { children }
+          <script dangerouslySetInnerHTML={{ __html: netlifyAuthRedirectScript }} />
+        </Fragment>
+      </Body>
     </Html>
   ),
 }
