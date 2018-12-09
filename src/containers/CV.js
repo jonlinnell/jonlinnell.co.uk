@@ -12,6 +12,7 @@ import {
 import React, { PureComponent } from 'react'
 
 import { withRouteData } from 'react-static'
+import { Helmet } from 'react-helmet'
 
 import posed from 'react-pose'
 import styled from 'styled-components'
@@ -74,52 +75,32 @@ class CV extends PureComponent {
   render() {
     const { jobsIsOpen, skillsIsOpen } = this.state
 
-    const { skills, summary, employmentHistory } = this.props
+    const {
+      basics: {
+        name,
+        strapline,
+      },
+      contacts,
+      skills,
+      summary,
+      employmentHistory,
+    } = this.props
 
     return (
       <Section>
+        <Helmet>
+          <title>{ `${name} – CV` }</title>
+        </Helmet>
         <Columns>
           <Column isSize={3}>
             <Hero>
               <HeroBody>
-                <Title>Jon Linnell</Title>
-                <Subtitle>JavaScript Developer and IT professional</Subtitle>
+                <Title>{ name }</Title>
+                <Subtitle isSpaced>{ strapline }</Subtitle>
                 <ProfilePicture image={headshot} />
-                <ContactLine
-                  iconClass="fa-envelope-o"
-                  href="mailto:jonlinnell@icloud.com"
-                >
-                  jonlinnell@icloud.com
-                </ContactLine>
-                <ContactLine
-                  iconClass="fa-phone"
-                >
-                  &#48;&#55;&#53;&#50;&#55;&#53;&#51;&#55;&#52;&#53;&#51;
-                </ContactLine>
-                <ContactLine
-                  iconClass="fa-linkedin"
-                  href="https://www.linkedin.com/in/jplinnell/"
-                >
-                  jplinnell
-                </ContactLine>
-                <ContactLine
-                  iconClass="fa-instagram"
-                  href="https://instagram.com/jonlinnell"
-                >
-                  jonlinnell
-                </ContactLine>
-                <ContactLine
-                  iconClass="fa-twitter"
-                  href="https://twitter.com/jplinnell"
-                >
-                  jplinnell
-                </ContactLine>
-                <ContactLine
-                  iconClass="fa-github"
-                  href="https://github.com/jonlinnell"
-                >
-                  jonlinnell
-                </ContactLine>
+                {
+                  contacts.map(contact => <ContactLine key={Object.keys(contact)} {...contact} />)
+                }
               </HeroBody>
             </Hero>
           </Column>
