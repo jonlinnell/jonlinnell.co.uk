@@ -21,6 +21,29 @@ export const getBasics = () => new Promise((resolve, reject) => {
   })
 })
 
+export const getContacts = () => new Promise((resolve, reject) => {
+  fs.readFile(path.resolve(`${__dirname}/content/cv/contact.md`), 'utf8', (error, buf) => {
+    if (error) reject(error)
+
+    const faIconMap = {
+      email: 'envelope',
+    }
+
+    const lines = buf.toString().split('\n')
+
+    resolve(lines.reduce((accumulator, line, i) => {
+      if (line.match(/^# /)) {
+        const key = line.match(/^# ([A-Za-z]+)/)[1].toLowerCase()
+        accumulator[faIconMap[key] || key] = null
+      } else if (line.length > 0) {
+        accumulator[Object.keys(accumulator).pop()] = line
+      }
+
+      return accumulator
+    }, {}))
+  })
+})
+
 export const getSummary = () => new Promise((resolve, reject) => {
   fs.readFile(path.resolve(`${CONTENT_DIR}/summary.md`), 'utf8', (error, buf) => {
     if (error) reject(error)
