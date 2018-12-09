@@ -22,14 +22,14 @@ export const getBasics = () => new Promise((resolve, reject) => {
 })
 
 export const getContacts = () => new Promise((resolve, reject) => {
-  fs.readFile(path.resolve(`${__dirname}/content/cv/contact.md`), 'utf8', (error, buf) => {
+  fs.readFile(path.resolve(`${CONTENT_DIR}/contact.md`), 'utf8', (error, buf) => {
     if (error) reject(error)
 
     const faIconMap = {
       email: 'envelope',
     }
 
-    const lines = buf.toString().split('\n')
+    const lines = buf.split('\n')
 
     resolve(lines.reduce((accumulator, line, i) => {
       if (line.match(/^# /)) {

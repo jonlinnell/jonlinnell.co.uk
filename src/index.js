@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import netlifyIdentity from 'netlify-identity-widget'
 
 // Your top level component
 import App from './App'
@@ -41,6 +42,9 @@ if (typeof document !== 'undefined') {
       document.getElementById('root')
     )
   }
+
+  document.createElement('div')
+  netlifyIdentity.init()
 
   // Render!
   render(App)

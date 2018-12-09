@@ -80,6 +80,7 @@ class CV extends PureComponent {
         name,
         strapline,
       },
+      contacts,
       skills,
       summary,
       employmentHistory,
@@ -97,9 +98,6 @@ class CV extends PureComponent {
                 <Title>{ name }</Title>
                 <Subtitle isSpaced>{ strapline }</Subtitle>
                 <ProfilePicture image={headshot} />
-                {
-                  contacts.map(contact => <ContactLine key={Object.keys(contact)} {...contact} />)
-                }
               </HeroBody>
             </Hero>
           </Column>
