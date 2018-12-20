@@ -2,8 +2,8 @@ backend:
   name: github
   repo: jonlinnell/jonlinnell.co.uk
 
-media_folder: "public/content"
-public_folder: "content/"
+media_folder: public/content
+public_folder: content/
 
 collections:
   - label: CV
@@ -13,11 +13,11 @@ collections:
     files:
     - label: Basics
       name: basics
-      file: "public/content/cv/basics.json"
+      file: public/content/cv/basics.json
       format: json
       fields:
-        - {label: Name, name: name, widget: string}
-        - {label: Strapline, name: strapline, widget: string}
+        - { label: Name, name: name, widget: string }
+        - { label: Strapline, name: strapline, widget: string }
     - name: contact
       label: Contact
       file: contact.json
@@ -70,4 +70,3 @@ collections:
         - { label: End date, name: endDate, widget: date, required: false }
         - { label: Post, name: post, widget: string }
         - { label: Description, name: description, widget: text, required: false }
-
