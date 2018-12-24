@@ -18,7 +18,7 @@ const TitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-items: center;
+  justify-items: middle;
 
   width: 100%;
 `
@@ -75,7 +75,7 @@ class Skill extends PureComponent {
         <TitleWrapper>
           <Title onClick={this.toggleOpen}>{ skill }</Title>
           {
-            description
+            description[0].length > 0
               ? (
                 <SeeMoreButton onClick={this.toggleOpen}>
                   <Icon className={`fa ${isOpen ? 'fa-minus' : 'fa-plus'}`} />

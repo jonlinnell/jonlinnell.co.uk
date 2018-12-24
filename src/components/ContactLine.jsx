@@ -15,11 +15,10 @@ const links = {
 
 const generatePlatformLink = (platform, description) => `${links[platform]}${description}`
 
-const ContactLine = styled.div`
+const ContactLine = styled.li`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-items: center;
 `
 
 const ContactInfo = styled.a`
@@ -35,6 +34,6 @@ const ContactInfo = styled.a`
 export default ({ icon, platform, description }) => (
   <ContactLine>
     <Icon className={`fa ${icon}`} />
-    <ContactInfo href={generatePlatformLink(platform, description)} target="_blank">{ description }</ContactInfo>
+    <ContactInfo href={generatePlatformLink(platform, description)} target="_blank">{ platform }</ContactInfo>
   </ContactLine>
 )

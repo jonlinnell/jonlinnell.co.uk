@@ -32,7 +32,9 @@ const Details = posed.div({
 })
 
 const DetailsWrapper = styled(Details)`
-  overflow: hidden
+  overflow: hidden;
+
+  margin-top: 12px;
 
   & > p {
     margin-bottom: 6px;
@@ -108,9 +110,9 @@ class Job extends PureComponent {
           }
         </DetailsWrapper>
         {
-          description.length > 0
+          description[0].length > 0
             ? (
-              <SeeMoreButton responsiveShift onClick={this.toggleOpen}>
+              <SeeMoreButton onClick={this.toggleOpen}>
                 { isOpen ? 'See less...' : 'See more...' }
               </SeeMoreButton>
             )

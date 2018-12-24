@@ -18,7 +18,7 @@ import posed from 'react-pose'
 import styled from 'styled-components'
 import qh from 'quick-hash'
 
-import ContactLine from '../components/ContactLine'
+import Contacts from '../components/Contacts'
 import CVContainer from '../components/CVContainer'
 import Job from '../components/Job'
 import ProfilePicture from '../components/ProfilePicture'
@@ -96,14 +96,10 @@ class CV extends PureComponent {
           <Column isSize={3}>
             <Hero>
               <HeroBody>
+                <ProfilePicture image={headshot} />
                 <Title>{ name }</Title>
                 <Subtitle isSpaced>{ strapline }</Subtitle>
-                <ProfilePicture image={headshot} />
-                {
-                  contacts.map(contact => (
-                    <ContactLine key={contact.platform} {...contact} />
-                  ))
-                }
+                <Contacts contacts={contacts} />
               </HeroBody>
             </Hero>
           </Column>
