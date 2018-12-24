@@ -67,15 +67,15 @@ class Skill extends PureComponent {
   }
 
   render() {
-    const { title, description } = this.props
+    const { skill, description } = this.props
     const { isOpen } = this.state
 
     return (
       <SkillWrapper>
         <TitleWrapper>
-          <Title onClick={this.toggleOpen}>{ title }</Title>
+          <Title onClick={this.toggleOpen}>{ skill }</Title>
           {
-            description.length > 0
+            description
               ? (
                 <SeeMoreButton onClick={this.toggleOpen}>
                   <Icon className={`fa ${isOpen ? 'fa-minus' : 'fa-plus'}`} />
@@ -86,7 +86,9 @@ class Skill extends PureComponent {
         </TitleWrapper>
         <Details>
           <PosedDetails pose={isOpen ? 'open' : 'closed'}>
-            { description.map(line => <p key={qh(line)}>{ line }</p>) }
+            {
+              description.map(line => <p key={qh(line)}>{ line }</p>)
+            }
           </PosedDetails>
         </Details>
       </SkillWrapper>

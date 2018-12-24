@@ -29,7 +29,8 @@
       "post": "IT Support Analyst",
       "location": "Loughborough, UK 🇬🇧",
       "startDate": "2012-07-01T13:53:33.446Z",
-      "endDate": "2013-08-01T13:53:33.458Z"
+      "endDate": "2013-08-01T13:53:33.458Z",
+      "description": ""
     },
     {
       "organisation": "Germanischer Lloyd, DNV GL",
@@ -52,7 +53,8 @@
       "post": "IT Support Administrator, Computer Skills Tutor",
       "location": "King Williams Town, South Africa 🇿🇦",
       "startDate": "2010-07-14T23:00:00.000Z",
-      "endDate": "2011-05-01T13:55:13.374Z"
+      "endDate": "2011-05-01T13:55:13.374Z",
+      "description": ""
     }
   ]
 }

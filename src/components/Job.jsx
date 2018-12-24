@@ -62,24 +62,24 @@ class Job extends PureComponent {
 
   render() {
     const {
-      description,
-      employer,
-      end,
+      organisation,
+      post,
       location,
-      start,
-      title,
+      startDate,
+      endDate,
+      description,
     } = this.props
 
     const { isOpen } = this.state
 
     let dates
 
-    if (start === end) {
-      dates = <span>start</span>
-    } else if (!end) {
+    if (startDate === endDate) {
+      dates = <span>startDate</span>
+    } else if (endDate === 'Invalid date') {
       dates = (
         <Fragment>
-          <span>{ start }</span>
+          <span>{ startDate }</span>
           &nbsp;&mdash;&nbsp;
           <em>present</em>
         </Fragment>
@@ -87,23 +87,25 @@ class Job extends PureComponent {
     } else {
       dates = (
         <Fragment>
-          <span>{ start }</span>
+          <span>{ startDate }</span>
           &nbsp;&mdash;&nbsp;
-          <span>{ end }</span>
+          <span>{ endDate }</span>
         </Fragment>
       )
     }
 
     return (
       <JobContainer>
-        <Post onClick={this.toggleOpen}>{ title }</Post>
-        <Employer>{ employer }</Employer>
+        <Post onClick={this.toggleOpen}>{ post }</Post>
+        <Employer>{ organisation }</Employer>
         <p>{ location }</p>
         <Dates>
           { dates }
         </Dates>
         <DetailsWrapper pose={isOpen ? 'open' : 'closed'}>
-          { description.map(paragraph => (<p key={qh(paragraph)}>{ paragraph }</p>)) }
+          {
+            description.map(paragraph => (<p key={qh(paragraph)}>{ paragraph }</p>))
+          }
         </DetailsWrapper>
         {
           description.length > 0

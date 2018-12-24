@@ -1,27 +1,19 @@
 import React from 'react'
-import qh from 'quick-hash'
-import styled from 'styled-components'
 
 import { Columns, Column } from 'bloomer'
 
-const COLUMNS = 3
-
-const Summary = ({ summary }) => {
-  const columns = summary.slice(0, COLUMNS)
-
-  return (
-    <Columns>
-      {
-        columns.map(column => (
-          <Column key={qh(JSON.stringify(column))} isSize={`1/${COLUMNS}`}>
-            {
-              column.map(paragraph => <p key={qh(paragraph)}>{ paragraph }</p>)
-            }
-          </Column>
-        ))
-      }
-    </Columns>
-  )
-}
+const Summary = ({ col1, col2, col3 }) => (
+  <Columns>
+    <Column isSize="1/3">
+      <p>{ col1 }</p>
+    </Column>
+    <Column isSize="1/3">
+      <p>{ col2 }</p>
+    </Column>
+    <Column isSize="1/3">
+      <p>{ col3 }</p>
+    </Column>
+  </Columns>
+)
 
 export default Summary

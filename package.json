@@ -23,6 +23,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "font-awesome": "^4.7.0",
+    "moment": "^2.23.0",
     "netlify-identity-widget": "^1.5.2",
     "normalize.css": "^8.0.0",
     "quick-hash": "^1.0.4",

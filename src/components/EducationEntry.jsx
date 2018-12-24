@@ -14,7 +14,7 @@ const Qualifications = styled.p`
   font-size: 18px;
 `
 
-const QualificationContainer = styled.li`
+const EducationEntryContainer = styled.li`
   margin-bottom: 12px;
   display: flex;
   flex-direction: column;
@@ -22,18 +22,18 @@ const QualificationContainer = styled.li`
 `
 
 export default ({
-  start,
-  end,
+  startDate,
+  endDate,
   qualifications,
   institution,
 }) => (
-  <QualificationContainer>
+  <EducationEntryContainer>
     <Qualifications>{ qualifications }</Qualifications>
     <Institution>{ institution }</Institution>
     <Dates>
-      { start }
+      { startDate }
       &mdash;
-      { end }
+      { endDate }
     </Dates>
-  </QualificationContainer>
+  </EducationEntryContainer>
 )

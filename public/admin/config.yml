@@ -15,8 +15,8 @@ collections:
       file: public/content/cv/basics.json
       format: json
       fields:
-        - { label: Name, name: name, widget: string }
-        - { label: Strapline, name: strapline, widget: string }
+        - { label: Name, name: name, widget: string, required: true }
+        - { label: Strapline, name: strapline, widget: string, required: true }
     - name: contact
       label: Contact
       file: public/content/cv/contact.json
@@ -27,8 +27,8 @@ collections:
         label: Contact
         widget: list
         fields:
-          - { label: Platform, name: platform, widget: select, options: ["Email", "Phone", "Website", "Facebook", "Twitter", "Linkedin", "Instagram", "GitHub"] }
-          - { label: Description, name: description, widget: string }
+          - { label: Platform, name: platform, widget: select, options: ["Email", "Phone", "Website", "Facebook", "Twitter", "Linkedin", "Instagram", "GitHub"], required: true }
+          - { label: Description, name: description, widget: string, required: true }
     - name: skills
       label: Skills
       file: public/content/cv/skills.json
@@ -39,14 +39,14 @@ collections:
         label: Skills
         widget: list
         fields:
-          - { label: Skill, name: skill, widget: string }
+          - { label: Skill, name: skill, widget: string, required: true }
           - { label: Descriptions, name: description, widget: text }
     - name: summary
       label: Summary
       file: public/content/cv/summary.json
       format: json
       fields:
-        - { label: Column 1, name: col1, widget: text }
+        - { label: Column 1, name: col1, widget: text, required: true }
         - { label: Column 2, name: col2, widget: text }
         - { label: Column 3, name: col3, widget: text }
     - name: education
@@ -59,8 +59,8 @@ collections:
         name: education
         widget: list
         fields:
-          - { label: Institution, name: institution, widget: string }
-          - { label: Start date, name: startDate, widget: date }
+          - { label: Institution, name: institution, widget: string, required: true }
+          - { label: Start date, name: startDate, widget: date, required: true }
           - { label: End date, name: endDate, widget: date, required: false }
           - { label: Qualifications, name: qualifications, widget: string }
     - name: employment
@@ -73,9 +73,9 @@ collections:
           label: Job
           widget: list
           fields:
-            - { label: Organisation, name: organisation, widget: string }
-            - { label: Post, name: post, widget: string }
+            - { label: Organisation, name: organisation, widget: string: required: true }
+            - { label: Post, name: post, widget: string: required: true }
             - { label: Location, name: location, widget: string }
-            - { label: Start date, name: startDate, widget: date }
+            - { label: Start date, name: startDate, widget: date: required: true }
             - { label: End date, name: endDate, widget: date, required: false }
             - { label: Description, name: description, widget: text, required: false }

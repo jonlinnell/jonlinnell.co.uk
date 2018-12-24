@@ -2,6 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { Icon } from 'bloomer'
 
+const links = {
+  Email: 'mailto:',
+  Phone: 'tel:',
+  Website: 'https://',
+  Facebook: 'https://facebook.com/',
+  Twitter: 'https://twitter.com/',
+  Linkedin: 'https://linkedin.com/in/',
+  Instagram: 'https://instagram.com/',
+  GitHub: 'https://github.com/',
+}
+
+const generatePlatformLink = (platform, description) => `${links[platform]}${description}`
+
 const ContactLine = styled.div`
   display: flex;
   flex-direction: row;
@@ -19,9 +32,9 @@ const ContactInfo = styled.a`
   }
 `
 
-export default ({ iconClass, children, href }) => (
+export default ({ icon, platform, description }) => (
   <ContactLine>
-    <Icon className={`fa ${iconClass}`} />
-    <ContactInfo href={href} target="_blank">{ children }</ContactInfo>
+    <Icon className={`fa ${icon}`} />
+    <ContactInfo href={generatePlatformLink(platform, description)} target="_blank">{ description }</ContactInfo>
   </ContactLine>
 )

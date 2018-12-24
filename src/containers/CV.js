@@ -22,7 +22,7 @@ import ContactLine from '../components/ContactLine'
 import CVContainer from '../components/CVContainer'
 import Job from '../components/Job'
 import ProfilePicture from '../components/ProfilePicture'
-import Qualification from '../components/Qualification'
+import EducationEntry from '../components/EducationEntry'
 import SectionTitle from '../components/SectionTitle'
 import Skill from '../components/Skill'
 import Summary from '../components/Summary'
@@ -83,7 +83,8 @@ class CV extends PureComponent {
       contacts,
       skills,
       summary,
-      employmentHistory,
+      employment,
+      education,
     } = this.props
 
     return (
@@ -98,6 +99,11 @@ class CV extends PureComponent {
                 <Title>{ name }</Title>
                 <Subtitle isSpaced>{ strapline }</Subtitle>
                 <ProfilePicture image={headshot} />
+                {
+                  contacts.map(contact => (
+                    <ContactLine key={contact.platform} {...contact} />
+                  ))
+                }
               </HeroBody>
             </Hero>
           </Column>
@@ -105,7 +111,7 @@ class CV extends PureComponent {
             <CVContainer>
               <Container isFluid>
                 <SectionTitle>Summary</SectionTitle>
-                <Summary summary={summary} />
+                <Summary {...summary} />
               </Container>
               <Container isFluid>
                 <SectionHeaderWithButton>
@@ -120,9 +126,9 @@ class CV extends PureComponent {
                 </SectionHeaderWithButton>
                 <JobsContainer>
                   {
-                    employmentHistory.map(job => (
+                    employment.map(job => (
                       <Job
-                        key={qh(`${job.title}${job.start}`)}
+                        key={qh(`${job.organisation}${job.startDate}`)}
                         isOpen={jobsIsOpen}
                         {...job}
                       />
@@ -145,7 +151,7 @@ class CV extends PureComponent {
                   {
                     skills.map(skill => (
                       <Skill
-                        key={qh(skill.title)}
+                        key={qh(skill.skill)}
                         isOpen={skillsIsOpen}
                         {...skill}
                       />
@@ -155,12 +161,14 @@ class CV extends PureComponent {
               </Container>
               <Container isFluid>
                 <SectionTitle>Education</SectionTitle>
-                <Qualification
-                  start="2011"
-                  end="2015"
-                  institution="Loughborough University"
-                  qualifications="BSc Communication and Media Studies; Second class, upper division (69%)"
-                />
+                {
+                  education.map(educationEntry => (
+                    <EducationEntry
+                      key={qh(`${educationEntry.institution}${educationEntry.startDate}`)}
+                      {...educationEntry}
+                    />
+                  ))
+                }
               </Container>
             </CVContainer>
           </Column>

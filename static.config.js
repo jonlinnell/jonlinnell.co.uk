@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
-import {
-  getBasics,
-  getContacts,
-  getSkills,
-  getSummary,
-  getEmploymentHistory,
-} from './src/lib/cv'
+import getBasics from './src/lib/cv/basics'
+import getContacts from './src/lib/cv/contacts'
+import getEducation from './src/lib/cv/education'
+import getEmployment from './src/lib/cv/employment'
+import getSkills from './src/lib/cv/skills'
+import getSummary from './src/lib/cv/summary'
 
 const netlifyAuthRedirectScript = 'if (window.netlifyIdentity) { window.netlifyIdentity.on(\'init\', (user) => { if (!user) { window.netlifyIdentity.on(\'login\', () => { document.location.href = \'/admin/\' }) } }) }'
 
@@ -27,8 +26,9 @@ export default {
       getData: async () => ({
         basics: await getBasics(),
         contacts: await getContacts(),
+        education: await getEducation(),
+        employment: await getEmployment(),
         skills: await getSkills(),
-        employmentHistory: await getEmploymentHistory(),
         summary: await getSummary(),
       }),
     },
