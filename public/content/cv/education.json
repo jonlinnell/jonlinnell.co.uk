@@ -1,6 +1,10 @@
 {
-  "institution": "Loughborough University",
-  "startDate": "2011-10-03T13:33:30.549Z",
-  "endDate": "2015-07-15T13:33:42.168Z",
-  "qualifications": "BSc Communications and Media Studies (Upper Second Class)"
+  "education": [
+    {
+      "institution": "Loughborough University",
+      "startDate": "2011-10-01T19:10:05.223Z",
+      "endDate": "2015-07-15T19:10:05.237Z",
+      "qualifications": "BSc Communications and Media Studies (Upper Second Class)"
+    }
+  ]
 }
