@@ -1,1 +1,32 @@
-{}
+{
+  "contact": [
+    {
+      "platform": "Email",
+      "description": "jonlinnell@icloud.com"
+    },
+    {
+      "platform": "Phone",
+      "description": "+44 (0) 7527537453"
+    },
+    {
+      "platform": "Website",
+      "description": "jonlinnell.co.uk"
+    },
+    {
+      "platform": "Twitter",
+      "description": "jplinnell"
+    },
+    {
+      "platform": "Linkedin",
+      "description": "jplinnell"
+    },
+    {
+      "platform": "Instagram",
+      "description": "jonlinnell"
+    },
+    {
+      "platform": "GitHub",
+      "description": "jonlinnell"
+    }
+  ]
+}
