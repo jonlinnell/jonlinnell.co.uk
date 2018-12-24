@@ -73,9 +73,9 @@ collections:
           label: Job
           widget: list
           fields:
-            - { label: Organisation, name: organisation, widget: string: required: true }
-            - { label: Post, name: post, widget: string: required: true }
+            - { label: Organisation, name: organisation, widget: string, required: true }
+            - { label: Post, name: post, widget: string, required: true }
             - { label: Location, name: location, widget: string }
-            - { label: Start date, name: startDate, widget: date: required: true }
+            - { label: Start date, name: startDate, widget: date, required: true }
             - { label: End date, name: endDate, widget: date, required: false }
             - { label: Description, name: description, widget: text, required: false }
