@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: jonlinnell/jonlinnell.co.uk
+  name: git-gateway
 
 media_folder: public/content
 public_folder: content/
@@ -20,27 +19,28 @@ collections:
         - { label: Strapline, name: strapline, widget: string }
     - name: contact
       label: Contact
-      file: contact.json
+      file: public/content/cv/contact.json
       format: json
+      widget: list
       fields:
-        - name: contact
-          label: Contact Information,
-          widget: list,
-          fields:
-            - { label: Platform, name: platform, widget: select, options: ["Email", "Phone", "Website", "Facebook", "Twitter", "Linkedin", "Instagram", "GitHub"] }
-            - { label: Description, name: description, widget: string }
+      - name: contact
+        label: Contact
+        widget: list
+        fields:
+          - { label: Platform, name: platform, widget: select, options: ["Email", "Phone", "Website", "Facebook", "Twitter", "Linkedin", "Instagram", "GitHub"] }
+          - { label: Description, name: description, widget: string }
     - name: skills
       label: Skills
       file: public/content/cv/skills.json
       format: json
       widget: list
       fields:
-        - name: 'skills'
-          label: Skills
-          widget: list
-          fields:
-            - { label: Skill, name: skill, widget: string }
-            - { label: Descriptions, name: description, widget: text }
+      - name: skills
+        label: Skills
+        widget: list
+        fields:
+          - { label: Skill, name: skill, widget: string }
+          - { label: Descriptions, name: description, widget: text }
     - name: summary
       label: Summary
       file: public/content/cv/summary.json
@@ -55,18 +55,27 @@ collections:
       format: json
       widget: list
       fields:
-        - { label: Institution, name: institution, widget: string }
-        - { label: Start date, name: startDate, widget: date }
-        - { label: End date, name: endDate, widget: date, required: false }
-        - { label: Qualifications, name: qualifications, widget: string }
+      - label: Education
+        name: education
+        widget: list
+        fields:
+          - { label: Institution, name: institution, widget: string }
+          - { label: Start date, name: startDate, widget: date }
+          - { label: End date, name: endDate, widget: date, required: false }
+          - { label: Qualifications, name: qualifications, widget: string }
     - name: employment
       label: Employment
       file: public/content/cv/employment.json
       format: json
       widget: list
       fields:
-        - { label: Organisation, name: organisation, widget: string }
-        - { label: Start date, name: startDate, widget: date }
-        - { label: End date, name: endDate, widget: date, required: false }
-        - { label: Post, name: post, widget: string }
-        - { label: Description, name: description, widget: text, required: false }
+        - name: job
+          label: Job
+          widget: list
+          fields:
+            - { label: Organisation, name: organisation, widget: string }
+            - { label: Post, name: post, widget: string }
+            - { label: Location, name: location, widget: string }
+            - { label: Start date, name: startDate, widget: date }
+            - { label: End date, name: endDate, widget: date, required: false }
+            - { label: Description, name: description, widget: text, required: false }
