@@ -27,7 +27,7 @@ import SectionTitle from '../components/SectionTitle'
 import Skill from '../components/Skill'
 import Summary from '../components/Summary'
 
-import headshot from '../images/headshot.jpg'
+import headshot from '../images/headshot.png'
 
 const SectionHeaderWithButton = styled.div`
   display: flex;
