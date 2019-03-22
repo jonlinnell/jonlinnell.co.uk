@@ -1,23 +1,16 @@
-import React, { Fragment } from 'react'
-import { Router } from 'react-static'
-import { hot } from 'react-hot-loader'
+import React from 'react';
+import { Root, Routes, withSiteData } from 'react-static';
 
-import 'normalize.css'
-import 'font-awesome/css/font-awesome.min.css'
+import GlobalStyle from './style/globalStyle';
 
-import 'bulma/css/bulma.min.css'
-
-import './bulmaswatch.min.css'
-
-/* eslint-disable-next-line import/no-unresolved */
-import Routes from 'react-static-routes'
-
-const App = () => (
-  <Router>
-    <Fragment>
+const App = withSiteData(({ title }) => {
+  document.title = title;
+  return (
+    <Root>
+      <GlobalStyle />
       <Routes />
-    </Fragment>
-  </Router>
-)
+    </Root>
+  );
+});
 
-export default hot(module)(App)
+export default App;
