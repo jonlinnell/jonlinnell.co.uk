@@ -1,0 +1,9 @@
+node_modules/
+
+coverage/
+
+/tmp/
+/dist/
+/artifacts/
+
+.DS_Store
