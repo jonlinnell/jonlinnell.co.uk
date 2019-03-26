@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # dependencies
 /node_modules
 
@@ -18,6 +17,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-=======
-node_modules
->>>>>>> deb514e9d209d21ae35d9e641312b1dd0d641459
+
+/tmp
