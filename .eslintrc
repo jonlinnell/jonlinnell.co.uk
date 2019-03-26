@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
+  "extends": ["airbnb"],
   "rules": {
     "react/prop-types": "warn",
     "comma-dangle": ["error", "always-multiline"]

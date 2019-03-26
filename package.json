@@ -1,12 +1,17 @@
 {
   "name": "react-static-example-basic",
+<<<<<<< HEAD
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
+=======
+  "private": true,
+>>>>>>> deb514e9d209d21ae35d9e641312b1dd0d641459
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
+<<<<<<< HEAD
     "lint": "eslint --ext js --ext jsx src static.config.js"
   },
   "dependencies": {
@@ -22,5 +27,23 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4"
+=======
+    "bundle": "react-static bundle",
+    "export": "react-static export",
+    "serve": "serve dist -p 3000 -s",
+    "lint": "eslint --ext .js --ext .jsx src/"
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "axios": "^0.18.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-hot-loader": "^4.3.12",
+    "react-static": "^6.0.18",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "serve": "10.1.1"
+>>>>>>> deb514e9d209d21ae35d9e641312b1dd0d641459
   }
 }
