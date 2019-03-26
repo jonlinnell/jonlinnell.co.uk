@@ -3,43 +3,24 @@
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
-  "browser": {
-    "fs": false,
-    "path": false
-  },
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
-    "bundle": "react-static bundle",
-    "export": "react-static export",
-    "serve": "serve dist -p 3000",
-    "lint": "eslint --ext .js --ext .jsx src/"
+    "lint": "eslint --ext js --ext jsx src static.config.js"
   },
   "dependencies": {
-    "axios": "^0.16.2",
-    "bloomer": "^0.6.3",
-    "bulma": "^0.7.2",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "font-awesome": "^4.7.0",
-    "normalize.css": "^8.0.0",
-    "quick-hash": "^1.0.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-helmet": "^5.2.0",
-    "react-hot-loader": "^4.0.0-beta.21",
-    "react-pose": "^4.0.1",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.3.1",
-    "react-static": "^5.9.12",
-    "styled-components": "^4.0.3"
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-hot-loader": "^4.8.0",
+    "react-router": "^5.0.0",
+    "react-static": "^6.3.6"
   },
   "devDependencies": {
-    "eslint": "^5.8.0",
+    "eslint": "^5.15.3",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-react-tools": "1.x.x",
-    "eslint-plugin-react": "^7.11.1",
-    "serve": "^6.1.0"
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4"
   }
 }
