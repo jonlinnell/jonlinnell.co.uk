@@ -47,6 +47,7 @@ export default () => {
     'chronic loser at Scrabble',
     'cyclist (not the Lycra-wearing kind)',
     'former ERASMUS student',
+    'hipster parody',
   ];
 
   useEffect(() => {
