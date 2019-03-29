@@ -1,20 +1,44 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import Typed from 'typed.js';
 
+import media from '../style/mediaQueries';
+
 import HeroTitle from './HeroTitle';
+
+const LargeHeroTitle = styled(HeroTitle)`
+  font-size: 1.4rem;
+  height: calc(1.4rem * 4);
+
+  @media (max-width: 1164px) {
+    height: calc(1.4rem * 7);
+  }
+
+  ${media.desktop`
+    height: calc(1.4rem * 3);
+  `}
+
+  ${media.tablet`
+    height: calc(1.4rem * 4);
+  `}
+
+  ${media.phone`
+    height: calc(1.4rem * 7.5);
+  `}
+`;
 
 export default () => {
   const ref = React.createRef();
   const strings = [
+    'Francophile, <em>depuis que je vis et travaille au nord de la France</em>',
+    'owner of two Nikon DSLRs, ^1000 and nowhere near as many lenses as I want',
     'cheese connoisseur',
     'lover of country walks with dogs',
     'master of a spicy curry',
-    'owner of two Nikon DSLRs, ^1000 and nowhere near as many lenses as I want',
     'adopted east Londoner',
     'Hackney Wickian',
     'Loughborough University alumnus',
-    'Francophile, <em>depuis que je vis et travaille au nord de la France</em>',
-    'Midlander exiled in the South',
+    'Midlander in exile in the South (voluntarily)',
     'dog person',
     'drinker of pretentious craft beer',
     'Leicester native',
@@ -40,8 +64,8 @@ export default () => {
   }, []);
 
   return (
-    <HeroTitle>
+    <LargeHeroTitle>
       I&apos;m a fullstack JavaScript developer, photographer, and <span ref={ref} />
-    </HeroTitle>
+    </LargeHeroTitle>
   );
 };
