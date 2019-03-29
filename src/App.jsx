@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import media from './style/mediaQueries';
 
 import Footer from './components/Footer';
+import JonIs from './components/JonIs';
 
 import logoGithubWhite from './images/github_white.png';
 import logoInstaWhite from './images/insta_white.png';
@@ -85,7 +86,7 @@ const App = () => (
     <ContentWrapper>
       <HeroTitle>Hi, I&apos;m Jon Linnell.</HeroTitle>
       <HeroTitle>
-        I&apos;m a fullstack JavaScript developer, photographer, and real human being.
+        I&apos;m a fullstack JavaScript developer, photographer, and <JonIs />
       </HeroTitle>
 
       <HeroText>
