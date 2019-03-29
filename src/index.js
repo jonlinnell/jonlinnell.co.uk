@@ -3,8 +3,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from './style/GlobalStyle';
+import theme from './style/theme';
 
 // Your top level component
 import App from './App';
@@ -14,17 +16,21 @@ export default App;
 
 // Render your app
 if (typeof document !== 'undefined') {
-  const renderMethod = module.hot
-    ? ReactDOM.render
-    : ReactDOM.hydrate || ReactDOM.render;
+  const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate || ReactDOM.render;
   const render = (Comp) => {
     renderMethod(
-      <React.Fragment>
-        <GlobalStyle />
-        <AppContainer>
-          <Comp />
-        </AppContainer>
-      </React.Fragment>,
+      <ThemeProvider theme={theme}>
+        <React.Fragment>
+          <GlobalStyle />
+          <AppContainer>
+            <Comp />
+          </AppContainer>
+          <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:200,300"
+            rel="stylesheet"
+          />
+        </React.Fragment>
+      </ThemeProvider>,
       document.getElementById('root')
     );
   };

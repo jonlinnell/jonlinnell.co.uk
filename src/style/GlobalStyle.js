@@ -4,7 +4,9 @@ import './normalize.css';
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
-    font-size: 12pt;
+    font-size: 16pt;
+    font-family: "Montserrat", sans-serif;
+    color: ${({ theme: { textPrimary } }) => textPrimary};
   }
 
   *, *::after, *::before {
@@ -12,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-
+    
   }
 `;
 
