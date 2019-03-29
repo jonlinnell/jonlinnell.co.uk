@@ -25,10 +25,6 @@ if (typeof document !== 'undefined') {
           <AppContainer>
             <Comp />
           </AppContainer>
-          <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:200,300"
-            rel="stylesheet"
-          />
         </React.Fragment>
       </ThemeProvider>,
       document.getElementById('root')
