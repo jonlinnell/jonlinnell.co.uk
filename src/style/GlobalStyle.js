@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import './normalize.css';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Nunito:200,300');
-
   html {
     box-sizing: border-box;
     font-size: 16pt;

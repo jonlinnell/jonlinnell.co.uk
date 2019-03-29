@@ -1,6 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
-import { SiteData } from 'react-static';
 import styled from 'styled-components';
 
 import media from './style/mediaQueries';
@@ -83,52 +81,39 @@ const SocMedLink = styled.a`
 `;
 
 const App = () => (
-  <SiteData>
-    {({ title }) => (
-      <React.Fragment>
-        <Helmet>
-          <title>{title}</title>
-        </Helmet>
-        <Main>
-          <ContentWrapper>
-            <HeroTitle>Hi, I&apos;m Jon Linnell.</HeroTitle>
-            <HeroTitle>
-              I&apos;m a fullstack JavaScript developer, photographer, and real human being.
-            </HeroTitle>
+  <Main>
+    <ContentWrapper>
+      <HeroTitle>Hi, I&apos;m Jon Linnell.</HeroTitle>
+      <HeroTitle>
+        I&apos;m a fullstack JavaScript developer, photographer, and real human being.
+      </HeroTitle>
 
-            <HeroText>
-              I&apos;m currently redeveloping this site, but in the meantime, you can find me and my
-              work on one of the platforms below.
-            </HeroText>
-            <SocMedLinksGrid>
-              <SocMedLink
-                href="https://github.com/jonlinnell"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SocMedLogo src={logoGithubWhite} alt="GitHub" />
-              </SocMedLink>
-              <SocMedLink
-                href="https://www.linkedin.com/in/jplinnell"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SocMedLogo src={logoLinkedinWhite} alt="LinkedIn" />
-              </SocMedLink>
-              <SocMedLink
-                href="https://instagram.com/jonlinnell"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SocMedLogo src={logoInstaWhite} alt="Instagram" />
-              </SocMedLink>
-            </SocMedLinksGrid>
-          </ContentWrapper>
-          <Footer />
-        </Main>
-      </React.Fragment>
-    )}
-  </SiteData>
+      <HeroText>
+        I&apos;m currently redeveloping this site, but in the meantime, you can find me and my work
+        on one of the platforms below.
+      </HeroText>
+      <SocMedLinksGrid>
+        <SocMedLink href="https://github.com/jonlinnell" target="_blank" rel="noopener noreferrer">
+          <SocMedLogo src={logoGithubWhite} alt="GitHub" />
+        </SocMedLink>
+        <SocMedLink
+          href="https://www.linkedin.com/in/jplinnell"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SocMedLogo src={logoLinkedinWhite} alt="LinkedIn" />
+        </SocMedLink>
+        <SocMedLink
+          href="https://instagram.com/jonlinnell"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SocMedLogo src={logoInstaWhite} alt="Instagram" />
+        </SocMedLink>
+      </SocMedLinksGrid>
+    </ContentWrapper>
+    <Footer />
+  </Main>
 );
 
 export default App;
