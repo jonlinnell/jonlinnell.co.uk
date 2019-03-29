@@ -43,8 +43,8 @@ const App = () => (
       <JonIs />
 
       <p style={{ fontWeight: 200 }}>
-        I&apos;m currently redeveloping this site, but in the meantime, you can find me and my work
-        on one of the platforms below.
+          I&apos;m currently redeveloping this site. In the meantime, you can find me and my
+          work on the platforms below.
       </p>
 
       <SocialMediaLinks />
