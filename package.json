@@ -13,6 +13,7 @@
     "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.3.12",
     "react-static": "^6.0.18",
+    "react-static-plugin-styled-components": "^6.3.0",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
