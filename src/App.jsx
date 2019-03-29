@@ -78,7 +78,7 @@ const SocMedLink = styled.a`
   ${media}
 
   &:hover > ${SocMedLogo} {
-    filter: brightness(0.3);
+    filter: brightness(0.8);
   }
 `;
 

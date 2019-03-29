@@ -7,8 +7,8 @@ const StyledFooter = styled.footer`
 
   padding: 4vh 0 1vh 0;
 
-  font-size: 0.5rem;
-  font-weight: 400;
+  font-size: 0.6rem;
+  font-weight: 300;
 `;
 
 const SourceLink = styled.a`
@@ -16,10 +16,16 @@ const SourceLink = styled.a`
   margin-left: 0.6rem;
   text-decoration: none;
 
-  transition: border-bottom ease-in 0.15s;
+  transition: filter ease-in 0.15s;
 
-  &:hover {
-    border-bottom: 1px solid ${({ theme: { textPrimary } }) => textPrimary};
+  @media (hover: hover) {
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+
+  &:visited {
+    color: ${({ theme: { textPrimary } }) => textPrimary};
   }
 `;
 
