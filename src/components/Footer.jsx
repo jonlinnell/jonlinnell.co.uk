@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Link from './Link';
+
 const StyledFooter = styled.footer`
   position: sticky;
   top: 100vh;
@@ -11,8 +13,7 @@ const StyledFooter = styled.footer`
   font-weight: 300;
 `;
 
-const SourceLink = styled.a`
-  color: ${({ theme: { textPrimary } }) => textPrimary};
+const SourceLink = styled(Link)`
   margin-left: 0.6rem;
   text-decoration: none;
 

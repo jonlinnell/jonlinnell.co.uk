@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import media from './style/mediaQueries';
 
 import Footer from './components/Footer';
+import HeroTitle from './components/HeroTitle';
 import JonIs from './components/JonIs';
 
 import logoGithubWhite from './images/github_white.png';
@@ -35,19 +36,6 @@ const ContentWrapper = styled.div`
   ${media.phone`
     width: 90vw;
   `}
-`;
-
-const HeroTitle = styled.h1`
-  font-size: 1.5rem;
-  font-weight: 300;
-
-  margin: 0;
-
-  color: white;
-
-  &:first-of-type {
-    margin-bottom: 1rem;
-  }
 `;
 
 const HeroText = styled.p`
@@ -85,9 +73,7 @@ const App = () => (
   <Main>
     <ContentWrapper>
       <HeroTitle>Hi, I&apos;m Jon Linnell.</HeroTitle>
-      <HeroTitle>
-        I&apos;m a fullstack JavaScript developer, photographer, and <JonIs />
-      </HeroTitle>
+      <JonIs />
 
       <HeroText>
         I&apos;m currently redeveloping this site, but in the meantime, you can find me and my work
