@@ -6,7 +6,7 @@ export default {
     title: 'Jon Linnell',
   }),
   plugins: ['react-static-plugin-styled-components'],
-  siteRoot: 'https://jonlinnell.co.uk',
+  siteRoot: `https://${process.env.NODE_ENV === 'development' ? 'dev.' : ''}jonlinnell.co.uk`,
   Document: ({
     Html, Head, Body, children, siteData,
   }) => (
