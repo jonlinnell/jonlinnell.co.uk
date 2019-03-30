@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import media from '../style/mediaQueries';
 
-import Link from './Link';
-
 const StyledFooter = styled.footer`
+  color: ${({ theme: { backgroundColor } }) => backgroundColor};
+
   position: sticky;
   top: 100vh;
 
@@ -23,13 +23,12 @@ const StyledFooter = styled.footer`
     padding-bottom: 0.2rem;
   `}
 
-  color: ${({ theme: { backgroundColor } }) => backgroundColor};
   font-size: 0.6rem;
   font-weight: 300;
 `;
 
-const SourceLink = styled(Link)`
-  color: ${({ theme: { backgroundColor } }) => backgroundColor} !important;
+const SourceLink = styled.a`
+  color: ${({ theme: { backgroundColor } }) => backgroundColor};
   margin-left: 0.6rem;
   text-decoration: none;
 
@@ -42,7 +41,7 @@ const SourceLink = styled(Link)`
   }
 
   &:visited {
-    color: ${({ theme: { textPrimary } }) => textPrimary};
+    color: ${({ theme: { backgroundColor } }) => backgroundColor};
   }
 `;
 

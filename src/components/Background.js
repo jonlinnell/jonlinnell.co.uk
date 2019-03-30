@@ -11,7 +11,7 @@ const Background = styled.div`
 
   z-index: -1;
 
-  background-color: ${({ theme }) => theme.backgroundColor || 'slategrey'};
+  background-color: ${({ theme }) => theme.backgroundColor};
 
   margin: ${({ minimised }) => (minimised ? '32px 32px calc(32px + 0.75rem) 32px' : 0)};
 
