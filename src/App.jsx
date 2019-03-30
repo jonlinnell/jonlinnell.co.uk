@@ -38,16 +38,20 @@ const ContentWrapper = styled.div`
 const App = () => {
   const [minimised, setMinimised] = useState(false);
 
-  const handleScroll = useCallback(() => {
-    const hero = document.getElementById('hero');
-    if (window.scrollY > (hero.clientHeight / 6)) {
-      setMinimised(true);
-    } else {
-      setMinimised(false);
-    }
-  }, [minimised]);
+  let handleScroll;
 
-  window.addEventListener('scroll', handleScroll);
+  if (typeof window !== 'undefined') {
+    handleScroll = useCallback(() => {
+      const hero = document.getElementById('hero');
+      if (window.scrollY > (hero.clientHeight / 6)) {
+        setMinimised(true);
+      } else {
+        setMinimised(false);
+      }
+    }, [minimised]);
+
+    window.addEventListener('scroll', handleScroll);
+  }
 
   return (
     <React.Fragment>
