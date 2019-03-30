@@ -38,18 +38,16 @@ const ContentWrapper = styled.div`
 const App = () => {
   const [minimised, setMinimised] = useState(false);
 
-  let handleScroll;
+  const handleScroll = useCallback(() => {
+    const hero = document.getElementById('hero');
+    if (window.scrollY > hero.clientHeight / 6) {
+      setMinimised(true);
+    } else {
+      setMinimised(false);
+    }
+  }, []);
 
   if (typeof window !== 'undefined') {
-    handleScroll = useCallback(() => {
-      const hero = document.getElementById('hero');
-      if (window.scrollY > (hero.clientHeight / 6)) {
-        setMinimised(true);
-      } else {
-        setMinimised(false);
-      }
-    }, [minimised]);
-
     window.addEventListener('scroll', handleScroll);
   }
 
@@ -67,8 +65,8 @@ const App = () => {
         </Page>
         <Page>
           <ContentWrapper>
-            I&apos;m still redeveloping on this site. I&apos;ll have some cool stuff
-            here soon, I promise!
+            I&apos;m still redeveloping on this site. I&apos;ll have some cool
+            stuff here soon, I promise!
           </ContentWrapper>
         </Page>
         <Footer />
