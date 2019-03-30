@@ -8,7 +8,5 @@ export default styled.h1`
 
   color: white;
 
-  &:first-of-type {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
 `;

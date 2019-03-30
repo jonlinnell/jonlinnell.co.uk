@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 
 import media from './style/mediaQueries';
@@ -7,16 +7,16 @@ import Footer from './components/Footer';
 import HeroTitle from './components/HeroTitle';
 import JonIs from './components/JonIs';
 import SocialMediaLinks from './components/SocialMediaLinks';
+import Page from './components/Page';
+import Background from './components/Background';
 
 const Main = styled.div`
   min-height: 100vh;
 
-  background-color: ${({ theme }) => theme.backgroundColor || 'slategrey'};
-
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   ${media.tablet`
     padding-top: 5vh;
@@ -35,23 +35,42 @@ const ContentWrapper = styled.div`
   `}
 `;
 
-const App = () => (
-  <Main>
-    <ContentWrapper>
-      <HeroTitle>Hi, I&apos;m Jon Linnell.</HeroTitle>
+const App = () => {
+  const [minimised, setMinimised] = useState(false);
 
-      <JonIs />
+  const handleScroll = useCallback(() => {
+    const hero = document.getElementById('hero');
+    if (window.scrollY > (hero.clientHeight / 6)) {
+      setMinimised(true);
+    } else {
+      setMinimised(false);
+    }
+  }, [minimised]);
 
-      <p style={{ fontWeight: 200 }}>
-          I&apos;m currently redeveloping this site. In the meantime, you can find me and my
-          work on the platforms below.
-      </p>
+  window.addEventListener('scroll', handleScroll);
 
-      <SocialMediaLinks />
+  return (
+    <React.Fragment>
+      <Background minimised={minimised} />
+      <Main>
+        <Page id="hero">
+          <ContentWrapper>
+            <HeroTitle>Hi, I&apos;m Jon Linnell.</HeroTitle>
+            <JonIs />
 
-    </ContentWrapper>
-    <Footer />
-  </Main>
-);
+            <SocialMediaLinks />
+          </ContentWrapper>
+        </Page>
+        <Page>
+          <ContentWrapper>
+            I&apos;m still redeveloping on this site. I&apos;ll have some cool stuff
+            here soon, I promise!
+          </ContentWrapper>
+        </Page>
+        <Footer />
+      </Main>
+    </React.Fragment>
+  );
+};
 
 export default App;

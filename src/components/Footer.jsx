@@ -1,19 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import media from '../style/mediaQueries';
+
 import Link from './Link';
 
 const StyledFooter = styled.footer`
   position: sticky;
   top: 100vh;
 
-  padding: 4vh 0 1vh 0;
+  padding-bottom: 16px;
 
+  ${media.desktop`
+    padding-bottom: 12px;
+  `}
+
+  ${media.tablet`
+    padding-bottom: 16px;
+  `}
+
+  ${media.phone`
+    padding-bottom: 0.2rem;
+  `}
+
+  color: ${({ theme: { backgroundColor } }) => backgroundColor};
   font-size: 0.6rem;
   font-weight: 300;
 `;
 
 const SourceLink = styled(Link)`
+  color: ${({ theme: { backgroundColor } }) => backgroundColor} !important;
   margin-left: 0.6rem;
   text-decoration: none;
 
