@@ -9,6 +9,7 @@ import JonIs from './components/JonIs';
 import SocialMediaLinks from './components/SocialMediaLinks';
 import Page from './components/Page';
 import Background from './components/Background';
+import ScrollArrow from './components/ScrollArrow';
 
 import GlobalStyle from './style/GlobalStyle';
 
@@ -69,6 +70,8 @@ const App = () => {
               <JonIs />
 
               <SocialMediaLinks />
+
+              <ScrollArrow minimised={minimised} />
             </ContentWrapper>
           </Page>
           <Page>
