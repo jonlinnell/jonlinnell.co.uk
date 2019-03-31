@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { OutboundLink } from 'react-ga';
 
 import media from '../style/mediaQueries';
 
@@ -26,9 +27,7 @@ const SocMedLogo = styled.img`
   transition: filter ease-in 0.15s;
 `;
 
-const SocMedLink = styled.a`
-  ${media}
-
+const SocMedLink = styled(OutboundLink)`
   &:hover > ${SocMedLogo} {
     filter: brightness(0.8);
   }
@@ -36,17 +35,28 @@ const SocMedLink = styled.a`
 
 export default () => (
   <SocMedLinksGrid>
-    <SocMedLink href="https://github.com/jonlinnell" target="_blank" rel="noopener noreferrer">
+    <SocMedLink
+      eventLabel="GitHub"
+      to="https://github.com/jonlinnell"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <SocMedLogo src={logoGithubWhite} alt="GitHub" />
     </SocMedLink>
     <SocMedLink
-      href="https://www.linkedin.com/in/jplinnell"
+      eventLabel="LinkedIn"
+      to="https://www.linkedin.com/in/jplinnell"
       target="_blank"
       rel="noopener noreferrer"
     >
       <SocMedLogo src={logoLinkedinWhite} alt="LinkedIn" />
     </SocMedLink>
-    <SocMedLink href="https://instagram.com/jonlinnell" target="_blank" rel="noopener noreferrer">
+    <SocMedLink
+      eventLabel="Instagram"
+      to="https://instagram.com/jonlinnell"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <SocMedLogo src={logoInstaWhite} alt="Instagram" />
     </SocMedLink>
   </SocMedLinksGrid>

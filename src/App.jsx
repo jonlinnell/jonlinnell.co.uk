@@ -1,5 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import ReactGA, { pageview } from 'react-ga';
 
 import media from './style/mediaQueries';
 
@@ -57,14 +58,28 @@ const HeroGrid = styled.div`
 const App = () => {
   const [minimised, setMinimised] = useState(false);
 
-  const handleScroll = useCallback(() => {
+  const handleScroll = () => {
     const hero = document.getElementById('hero');
     if (window.scrollY > hero.clientHeight / 6) {
       setMinimised(true);
     } else {
       setMinimised(false);
     }
+  };
+
+  useEffect(() => {
+    ReactGA.initialize('UA-137380850-1');
+
+    if (typeof window !== 'undefined') {
+      pageview(window.location.pathname);
+    }
   }, []);
+
+  useEffect(() => {
+    if (minimised) {
+      ReactGA.event({ category: 'Interaction', action: 'Page scrolled down' });
+    }
+  }, [minimised]);
 
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', handleScroll);

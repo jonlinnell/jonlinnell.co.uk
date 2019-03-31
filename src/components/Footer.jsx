@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { OutboundLink } from 'react-ga';
 
 import media from '../style/mediaQueries';
 
@@ -27,7 +28,7 @@ const StyledFooter = styled.footer`
   font-weight: 300;
 `;
 
-const SourceLink = styled.a`
+const SourceLink = styled(OutboundLink)`
   color: ${({ theme: { backgroundColor } }) => backgroundColor};
   margin-left: 0.6rem;
   text-decoration: none;
@@ -49,7 +50,8 @@ export default () => (
   <StyledFooter>
     Jon Linnell, {new Date(Date.now()).getUTCFullYear()}
     <SourceLink
-      href="https://github.com/jonlinnell/jonlinnell.co.uk"
+      eventLabel="View source on GitHub"
+      to="https://github.com/jonlinnell/jonlinnell.co.uk"
       target="_blank"
       rel="noopener noreferrer"
     >
