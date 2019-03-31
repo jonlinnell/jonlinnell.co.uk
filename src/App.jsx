@@ -43,6 +43,17 @@ const ContentWrapper = styled.div`
   `}
 `;
 
+const HeroGrid = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+
+  ${media.phone`
+    grid-template-rows: 1fr 6fr 1fr;
+    align-items: start;
+    height: 80vh;
+  `}
+`;
+
 const App = () => {
   const [minimised, setMinimised] = useState(false);
 
@@ -64,12 +75,14 @@ const App = () => {
       <React.Fragment>
         <Background minimised={minimised} />
         <Main>
-          <Page id="hero">
+          <Page id="hero" alignStartOnPhone>
             <ContentWrapper>
-              <HeroTitle>Hi, I&apos;m Jon Linnell.</HeroTitle>
-              <JonIs />
+              <HeroGrid>
+                <HeroTitle>Hi, I&apos;m Jon Linnell.</HeroTitle>
+                <JonIs />
 
-              <SocialMediaLinks />
+                <SocialMediaLinks />
+              </HeroGrid>
 
               <ScrollArrow minimised={minimised} />
             </ContentWrapper>

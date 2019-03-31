@@ -41,7 +41,7 @@ export default () => {
   }, []);
 
   return (
-    <HeroTitle style={{ fontSize: '1.3rem' }}>
+    <HeroTitle responsive>
       I&apos;m a fullstack JavaScript developer, photographer, and <span ref={ref} />
     </HeroTitle>
   );

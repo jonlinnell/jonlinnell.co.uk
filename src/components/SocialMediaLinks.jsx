@@ -11,10 +11,10 @@ const SocMedLinksGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
+  grid-gap: 1em;
 
   ${media.phone`
     grid-template-columns: 1fr;
-    grid-gap: 5vh;
   `}
 `;
 
