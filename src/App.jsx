@@ -89,8 +89,8 @@ const App = () => {
           </Page>
           <Page>
             <ContentWrapper>
-              I&apos;m still redeveloping on this site. I&apos;ll have some cool
-              stuff here soon, I promise!
+              I&apos;m still working on this site. I&apos;ll have some cool stuff here soon, I
+              promise!
             </ContentWrapper>
           </Page>
           <Footer />
