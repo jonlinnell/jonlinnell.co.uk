@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import ReactGA, { pageview } from 'react-ga';
+import { withSiteData } from 'react-static';
 
 import media from './style/mediaQueries';
 
@@ -55,7 +56,7 @@ const HeroGrid = styled.div`
   `}
 `;
 
-const App = () => {
+const App = ({ trackingId }) => {
   const [minimised, setMinimised] = useState(false);
 
   const handleScroll = () => {
@@ -68,7 +69,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    ReactGA.initialize('UA-137380850-1');
+    ReactGA.initialize(trackingId, { debug: !trackingId });
 
     if (typeof window !== 'undefined') {
       pageview(window.location.pathname);
@@ -116,4 +117,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withSiteData(App);

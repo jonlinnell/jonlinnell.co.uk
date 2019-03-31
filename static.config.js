@@ -1,12 +1,25 @@
 import React from 'react';
 
+const { DEV_SUBDOMAIN, NODE_ENV } = process.env;
+
+let trackingId;
+
+if (DEV_SUBDOMAIN) {
+  trackingId = 'UA-137380850-2';
+} else if (!DEV_SUBDOMAIN && NODE_ENV === 'production') {
+  trackingId = 'UA-137380850-3';
+} else {
+  trackingId = undefined;
+}
+
 /* eslint-disable react/jsx-filename-extension */
 export default {
   getSiteData: () => ({
     title: 'Jon Linnell',
+    trackingId,
   }),
   plugins: ['react-static-plugin-styled-components'],
-  siteRoot: `https://${process.env.DEV_SUBDOMAIN ? 'dev.' : ''}jonlinnell.co.uk`,
+  siteRoot: `https://${DEV_SUBDOMAIN ? 'dev.' : ''}jonlinnell.co.uk`,
   Document: ({
     Html, Head, Body, children, siteData,
   }) => (
