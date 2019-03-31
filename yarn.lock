@@ -5962,10 +5962,12 @@ react-side-effect@^1.1.0:
 react-static-plugin-styled-components@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/react-static-plugin-styled-components/-/react-static-plugin-styled-components-6.3.0.tgz#228050d349be0d5ac4481942c510039f90181f53"
+  integrity sha512-kyzWgHBcLLsP2giOtzvdeeAZZh8C0LpqwOQV8DBqGZr3eTnzpjMBsQbJMCK5LlOdtL9Mt+QJVyUbDoH4ggmt5g==
 
-react-static@^6.0.18:
+react-static@^6.3.6:
   version "6.3.6"
   resolved "https://registry.yarnpkg.com/react-static/-/react-static-6.3.6.tgz#e9d44e1e289fd31200646c6695f24d646a9d862a"
+  integrity sha512-p7lR5ZrVizmXh91Mvo3n7wTKV71wQTwpMSor22TujZFl7/p7U7gSxdo9OJw6ntZaFhjccXO9CNVheNffWMGXww==
   dependencies:
     "@babel/cli" "^7.1.5"
     "@babel/core" "^7.2.2"

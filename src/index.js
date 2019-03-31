@@ -3,10 +3,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { ThemeProvider } from 'styled-components';
 
-import GlobalStyle from './style/GlobalStyle';
-import theme from './style/theme';
+import './style/normalize.css';
 
 // Your top level component
 import App from './App';
@@ -19,14 +17,9 @@ if (typeof document !== 'undefined') {
   const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate || ReactDOM.render;
   const render = (Comp) => {
     renderMethod(
-      <ThemeProvider theme={theme}>
-        <React.Fragment>
-          <GlobalStyle />
-          <AppContainer>
-            <Comp />
-          </AppContainer>
-        </React.Fragment>
-      </ThemeProvider>,
+      <AppContainer>
+        <Comp />
+      </AppContainer>,
       document.getElementById('root')
     );
   };

@@ -2,10 +2,8 @@ import styled from 'styled-components';
 
 import media from '../style/mediaQueries';
 
-import { backgroundColor } from '../style/theme.json'; // TODO: Find out why I have to do this.
-
 const Background = styled.div`
-  background-color: ${backgroundColor};
+  background-color: ${props => props.theme.backgroundColor};
   
   transition: margin ease-out 0.3s;
 
