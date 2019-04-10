@@ -23,7 +23,7 @@ export default {
   Document: ({
     Html, Head, Body, children, siteData,
   }) => (
-    <Html lang="en-US">
+    <Html lang="en-GB">
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
