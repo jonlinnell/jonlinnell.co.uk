@@ -1,28 +1,28 @@
 {
-  "name": "react-static-example-blank",
-  "private": true,
-  "scripts": {
-    "start": "react-static start",
-    "stage": "react-static build --staging",
-    "build": "react-static build",
-    "lint": "eslint --ext js --ext jsx src static.config.js"
+  "name": "jonlinnell.co.uk",
+  "version": "1.0.0",
+  "description": "A personal site",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonlinnell/jonlinnell.co.uk.git"
   },
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
+  },
+  "author": "Jon Linnell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonlinnell/jonlinnell.co.uk/issues"
+  },
+  "homepage": "https://github.com/jonlinnell/jonlinnell.co.uk#readme",
   "dependencies": {
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "react-ga": "^2.5.7",
-    "react-helmet": "^5.2.0",
-    "react-hot-loader": "^4.3.12",
-    "react-static": "^6.3.6",
-    "react-static-plugin-styled-components": "^6.3.0",
-    "styled-components": "^4.2.0",
-    "typed.js": "^2.0.10"
+    "next": "^10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4"
+    "prettier": "^2.2.1"
   }
 }
