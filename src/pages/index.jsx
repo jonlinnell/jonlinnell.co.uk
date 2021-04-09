@@ -5,6 +5,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Jon Linnell</title>
+        <link rel="shortcut icon" type="image/png" href="/icon.png" />
       </Head>
 
       <main>
