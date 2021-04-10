@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </article>
         <footer className="text-sm font-extralight text-brand-dark dark:text-brand-contrast md:absolute md:bottom-2 pb-2 min-w-full text-center">
-          &copy; {new Date().getFullYear()} Jon Linnell
+          &copy; {new Date().getFullYear()} Jon Linnell {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
         </footer>
       </main>
     </div>
