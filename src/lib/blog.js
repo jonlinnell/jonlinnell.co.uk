@@ -1,13 +1,13 @@
-import { promises as fs } from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { promises as fs } from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-const BLOG_PATH = path.resolve(process.cwd(), 'content', 'blog');
+const BLOG_PATH = path.resolve(process.cwd(), "content", "blog");
 
-const NEWEST = 'NEWEST';
+const NEWEST = "NEWEST";
 
 const sortBy = {
-  [NEWEST]: (a, b) => a.date < b.date ? 1 : -1,
+  [NEWEST]: (a, b) => (a.date < b.date ? 1 : -1),
 };
 
 function formatBlogPost(postData) {
@@ -16,10 +16,10 @@ function formatBlogPost(postData) {
   const post = {
     ...data,
     date: data.date.valueOf(),
-    keywords: data.keywords.split(','),
+    keywords: data.keywords.split(","),
     content,
-    slug: postData.slice(0, -3).toString()
-  }
+    slug: postData.slice(0, -3).toString(),
+  };
 
   return post;
 }
@@ -29,20 +29,20 @@ function readBlogPost(file) {
 }
 
 export async function getBlogPosts({ sort = NEWEST, limit = 2, fields } = {}) {
-  const postFiles = (await fs.readdir(BLOG_PATH)).filter(file => /\.md$/.test(file));
+  const postFiles = (await fs.readdir(BLOG_PATH)).filter((file) => /\.md$/.test(file));
 
   let posts = [];
-  
+
   for (const i in postFiles) {
     const postFile = postFiles[i];
 
     const data = await readBlogPost(postFile);
-    
-    const post = formatBlogPost(data)
-    
+
+    const post = formatBlogPost(data);
+
     posts.push(post);
   }
-  
+
   return posts.sort(sortBy[sort]).slice(0, limit);
 }
 
