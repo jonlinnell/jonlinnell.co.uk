@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Heading from "../components/heading";
 import InlineHighlight from "../components/inline-highlight";
+import { getBlogPosts } from "../lib/blog";
 
 const DARK = "dark";
 
@@ -14,7 +15,20 @@ const toggleDarkMode = () => {
   }
 };
 
-export default function Home() {
+export async function getStaticProps() {
+  const blogPosts = await getBlogPosts({ limit: 5 });
+
+  return { props: { blogPosts } }
+}
+
+export default function Home({ blogPosts }) {
+  const blogPostItems = blogPosts.map(blogPost => (
+    <li>
+      <Heading variant="h5">{blogPost.title}</Heading>
+      <aside>{blogPost.date}</aside>
+    </li>
+  ))
+
   return (
     <div>
       <Head>
@@ -89,6 +103,11 @@ export default function Home() {
             </div>
             <div>
               <Heading variant="h3">Latest Posts</Heading>
+              <ul>
+                <li>
+                  {blogPostItems}
+                </li>
+              </ul>
             </div>
             <div>
               <Heading variant="h3">Some tiny projects I&apos;ve done</Heading>
