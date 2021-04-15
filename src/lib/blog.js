@@ -18,7 +18,6 @@ function formatBlogPost(postData) {
     date: data.date.valueOf(),
     keywords: data.keywords.split(","),
     content,
-    slug: postData.slice(0, -3).toString(),
   };
 
   return post;
@@ -38,7 +37,10 @@ export async function getBlogPosts({ sort = NEWEST, limit = 2, fields } = {}) {
 
     const data = await readBlogPost(postFile);
 
-    const post = formatBlogPost(data);
+    const post = {
+      ...formatBlogPost(data),
+      slug: postFile.slice(0, -3),
+    };
 
     posts.push(post);
   }
@@ -49,5 +51,9 @@ export async function getBlogPosts({ sort = NEWEST, limit = 2, fields } = {}) {
 export async function getBlogPostBySlug(slug) {
   const data = await readBlogPost(`${slug}.md`);
 
-  return formatBlogPost(data);
+  const postData = formatBlogPost(data);
+
+  console.log(postData);
+
+  return postData;
 }
