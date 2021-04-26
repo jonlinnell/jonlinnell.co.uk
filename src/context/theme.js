@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const DARK = "dark";
 export const LIGHT = "light";
@@ -17,14 +17,6 @@ export function ThemeProvider(props) {
       setTheme(DARK);
     }
   };
-
-  useEffect(() => {
-    if (theme === DARK) {
-      document.documentElement.classList.add(DARK);
-    } else {
-      document.documentElement.classList.remove(DARK);
-    }
-  }, [theme]);
 
   return (
     <ThemeContext.Provider

@@ -1,10 +1,13 @@
-import "tailwindcss/tailwind.css";
 import { ThemeProvider } from "../context/theme";
+import { globalStyles } from "../shared/styles";
 
 export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <>
+      {globalStyles}
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 }
