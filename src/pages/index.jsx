@@ -22,17 +22,15 @@ export default function Home({ blogPosts }) {
 
   return (
     <Layout>
-      <main>
-        <article id="who-am-i">
-          <Heading variant="h1">Hello, I&apos;m Jon</Heading>
-          <p>
-            I&apos;m a <InlineHighlight>Product Engineer</InlineHighlight>,{" "}
-            <InlineHighlight>photographer</InlineHighlight>, and{" "}
-            <InlineHighlight>general purpose nerd</InlineHighlight> from the Midlands, based in
-            London.
-          </p>
-        </article>
-      </main>
+      <article id="who-am-i">
+        <Heading variant="h1">Hello, I&apos;m Jon</Heading>
+        <p>
+          I&apos;m a <InlineHighlight>Product Engineer</InlineHighlight>,{" "}
+          <InlineHighlight>photographer</InlineHighlight>, and{" "}
+          <InlineHighlight>general purpose nerd</InlineHighlight> from the Midlands, based in
+          London.
+        </p>
+      </article>
     </Layout>
   );
 }
