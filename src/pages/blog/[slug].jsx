@@ -1,5 +1,5 @@
-import Layout from "../../components/layout";
-import { getBlogPostBySlug, getBlogPosts } from "../../lib/blog";
+import Layout from '../../components/layout';
+import { getBlogPostBySlug, getBlogPosts } from '../../lib/blog';
 
 export async function getStaticPaths() {
   const posts = await getBlogPosts({ limit: 100 });

@@ -1,10 +1,10 @@
-import { promises as fs } from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { promises as fs } from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-const BLOG_PATH = path.resolve(process.cwd(), "content", "blog");
+const BLOG_PATH = path.resolve(process.cwd(), 'content', 'blog');
 
-const NEWEST = "NEWEST";
+const NEWEST = 'NEWEST';
 
 const sortBy = {
   [NEWEST]: (a, b) => (a.date < b.date ? 1 : -1),
@@ -16,7 +16,7 @@ function formatBlogPost(postData) {
   const post = {
     ...data,
     date: data.date.valueOf(),
-    keywords: data.keywords.split(","),
+    keywords: data.keywords.split(','),
     content,
   };
 

@@ -1,6 +1,6 @@
-import Heading from "../components/heading";
-import InlineHighlight from "../components/inline-highlight";
-import Layout from "../components/layout";
+import Heading from '../components/heading';
+import InlineHighlight from '../components/inline-highlight';
+import Layout from '../components/layout';
 
 export default function AboutMe() {
   return (
@@ -18,8 +18,8 @@ export default function AboutMe() {
             love of code and nerd-related stuff.
           </p>
           <p>
-            The languages in which I&apos;m most proficient are{" "}
-            <InlineHighlight>JavaScript</InlineHighlight> and{" "}
+            The languages in which I&apos;m most proficient are{' '}
+            <InlineHighlight>JavaScript</InlineHighlight> and{' '}
             <InlineHighlight>TypeScript</InlineHighlight>.
           </p>
           <p>

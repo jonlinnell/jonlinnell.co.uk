@@ -6,17 +6,70 @@ const containerStyles = css`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 
-  margin: none;
+  padding: 1.275rem;
+
+  margin: 0;
 `;
 
 const mainContentContainerStyles = css`
-  flex-grow: 1;
+  display: flex;
+  flex: 1;
 `;
 
-export default function Layout({ children }) {
-  const { theme, toggleDarkMode } = useThemeContext();
+const topNavStyles = (theme) => css`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`;
 
+const footerStyles = (theme) => css`
+  text-align: center;
+  font-family: ${theme.fonts.heading};
+  color: ${theme.colours.secondary};
+  font-weight: 200;
+`;
+
+const nameLinkStyles = (theme) => css`
+  font-family: ${theme.fonts.heading};
+  font-size: 1.75rem;
+  color: ${theme.colours.secondary};
+  text-decoration: none;
+
+  flex-grow: 1;
+
+  &:visited {
+    color: ${theme.colours.secondary};
+  }
+`;
+
+const navLinkStyles = (theme) => css`
+  font-family: ${theme.fonts.heading};
+  color: ${theme.colours.brand.darkest};
+  text-decoration: none;
+
+  &:visited {
+    color: ${theme.colours.brand.darkest};
+  }
+`;
+
+const NameLink = () => (
+  <Link href="/" passHref>
+    <a css={nameLinkStyles}>Jon Linnell</a>
+  </Link>
+);
+
+const TopNav = ({ children }) => <header css={topNavStyles} children={children} />;
+
+const NavLink = ({ href, children }) => (
+  <Link href={href} passHref>
+    <a css={navLinkStyles}>{children}</a>
+  </Link>
+);
+
+export default function Layout({ children }) {
   return (
     <>
       <Head>
@@ -25,17 +78,17 @@ export default function Layout({ children }) {
       </Head>
 
       <div css={containerStyles}>
-        <header>
-          <Link href="/">Jon Linnell</Link>
+        <TopNav>
+          <NameLink />
           <nav>
-            <Link href="/about">about me</Link>
+            <NavLink href="/about">about me</NavLink>
             <button onClick={() => {}}>D</button>
           </nav>
-        </header>
+        </TopNav>
 
         <main css={mainContentContainerStyles}>{children}</main>
 
-        <footer>&copy; {new Date().getFullYear()} Jon Linnell</footer>
+        <footer css={footerStyles}>&copy; {new Date().getFullYear()} Jon Linnell</footer>
       </div>
     </>
   );

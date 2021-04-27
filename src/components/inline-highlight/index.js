@@ -1,1 +1,1 @@
-export { default } from "./inline-highlight";
+export { default } from './inline-highlight';
