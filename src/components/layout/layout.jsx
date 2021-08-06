@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   const { theme, toggleDarkMode } = useThemeContext();
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 border-t-4 text-gray-900 dark:text-white border-brand-primary dark:border-brand-lightest min-h-screen flex flex-col place-items-center justify-start sm:justify-between">
+    <div className="bg-gray-100 dark:bg-gray-900 border-t-4 text-gray-900 dark:text-white border-brand-primary dark:border-brand-lightest min-h-screen flex flex-col">
       <Head>
         <title>Jon Linnell</title>
         <link rel="shortcut icon" type="image/png" href="/icon.png" />
@@ -22,7 +22,7 @@ export default function Layout({ children }) {
         </nav>
       </header>
 
-      {children}
+      <main className="flex-grow">{children}</main>
 
       <footer className="text-sm font-extralight text-brand-dark mt-auto sm:m-0 pb-2 text-center">
         &copy; {new Date().getFullYear()} Jon Linnell
