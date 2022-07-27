@@ -8,22 +8,22 @@ const ThemeContext = createContext();
 export const useThemeContext = () => useContext(ThemeContext);
 
 export function ThemeProvider(props) {
-  const isServer = typeof window === "undefined";
+  const THEME_KEY = "mode:dark";
 
   const [theme, setTheme] = useState();
 
   const toggleDarkMode = () => {
     if (theme === DARK) {
-      localStorage.setItem("mode:dark", LIGHT);
+      localStorage.setItem(THEME_KEY, LIGHT);
       setTheme(LIGHT);
     } else {
-      localStorage.setItem("mode:dark", DARK);
+      localStorage.setItem(THEME_KEY, DARK);
       setTheme(DARK);
     }
   };
 
   useEffect(() => {
-    setTheme(localStorage.getItem("mode:dark") ?? LIGHT);
+    setTheme(localStorage.getItem(THEME_KEY) ?? LIGHT);
   }, []);
 
   useEffect(() => {

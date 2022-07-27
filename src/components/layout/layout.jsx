@@ -1,41 +1,35 @@
 import Head from "next/head";
-import Link from "next/link";
-import { useThemeContext, DARK } from "../../context/theme";
 import cn from "classnames";
+import Nav from "../nav";
+import Footer from "../footer";
 
-export default function Layout({ children, alignCenter }) {
-  const { theme, toggleDarkMode } = useThemeContext();
-
+export default function Layout({ children, alignCenter, title }) {
   return (
-    <div className="border-t-4 text-gray-900 dark:text-white border-brand-primary dark:border-brand-lightest min-h-screen flex flex-col align-middle sm:justify-between">
+    <div
+      className={cn([
+        "border-t-4",
+        "text-gray-900",
+        "dark:text-white",
+        "border-brand-primary",
+        "dark:border-brand-lightest",
+        "min-h-screen",
+        "grid",
+        "grid-flow-row",
+        "grid-rows-[auto_1fr_auto]",
+      ])}
+    >
       <Head>
-        <title>Jon Linnell</title>
+        <title>{title ? `${title} | ` : ""}Jon Linnell</title>
         <link rel="shortcut icon" type="image/png" href="/icon.png" />
       </Head>
 
-      <header className="p-2 md:p-4 min-w-full flex gap-2 justify-start">
-        <Link href="/">Jon Linnell</Link>
-        <nav className="ml-auto flex gap-3">
-          <Link href="/about">about me</Link>
-          <button className="text-brand-dark dark:text-brand-lightest" onClick={toggleDarkMode}>
-            {theme === DARK ? "🌚" : "🌞"}
-          </button>
-        </nav>
-      </header>
+      <Nav />
 
-      <div
-        className={cn(
-          alignCenter
-            ? "place-item-center align-middle justify-items-center"
-            : "place-items-start flex-grow"
-        )}
-      >
+      <div className={cn([], alignCenter ? "place-content-center flex" : "place-items-start ")}>
         {children}
       </div>
 
-      <footer className="text-sm font-extralight text-brand-dark mt-auto sm:m-0 pb-2 text-center">
-        &copy; {new Date().getFullYear()} Jon Linnell
-      </footer>
+      <Footer />
     </div>
   );
 }

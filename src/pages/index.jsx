@@ -18,19 +18,19 @@ export default function Home({ blogPosts }) {
   ));
 
   return (
-    <Layout alignCenter>
-      <main className="xl:mx-96 md:mx-32 pb-48">
-        <article id="who-am-i" className="p-4">
-          <Heading variant="h1" extraClassNames="mt-0">
-            Hello, I'm Jon 👋🏻
-          </Heading>
+    <Layout alignCenter={true}>
+      <main className="flex-shrink">
+        <div id="who-am-i">
+          <Heading variant="h1">Hello, I'm Jon 👋🏻</Heading>
           <p>
-            I'm a <InlineHighlight>Product Engineer</InlineHighlight>,{" "}
+            I'm a <InlineHighlight>software engineer</InlineHighlight>,{" "}
             <InlineHighlight>photographer</InlineHighlight>, and{" "}
-            <InlineHighlight>general purpose nerd</InlineHighlight> from the Midlands, based in
-            London.
+            <InlineHighlight>general purpose nerd</InlineHighlight> based in London.
           </p>
-        </article>
+        </div>
+        {/* <div id="blog">
+          <ul>{blogPostItems}</ul>
+        </div> */}
       </main>
     </Layout>
   );

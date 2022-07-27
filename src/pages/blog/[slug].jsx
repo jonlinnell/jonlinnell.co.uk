@@ -49,8 +49,8 @@ function Date({ children }) {
 
 export default function BlogPost({ title, date, slug, content, keywords }) {
   return (
-    <Layout>
-      <article className="mx-auto w-10/12 md:w-8/12 lg:w-5/12 break-normal">
+    <Layout title={title}>
+      <article className="prose dark:prose-invert lg:prose-lg mx-auto w-10/12 md:w-8/12 lg:w-5/12">
         <Heading variant="h1" className="text-center py-8 sm:py-5 lg:text-5xl">
           {title}
         </Heading>

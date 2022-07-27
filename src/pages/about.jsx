@@ -4,19 +4,22 @@ import Layout from "../components/layout";
 
 export default function AboutMe() {
   return (
-    <Layout>
-      <article className="p-4 md:w-6/12 mb-auto">
+    <Layout alignCenter>
+      <article className="prose dark:prose-invert">
         <Heading variant="h2">A bit about me</Heading>
         <p className="mt-2">
-          I'm a software 'engineer', with a value/delivery-oriented mindset and a commitment to
-          solid coding standards. (i.e. I'm not afraid of writing tests.)
+          I'm a software engineer, with a value/delivery-oriented mindset and a commitment to solid
+          coding standards. (i.e. I'm not afraid of writing tests or a big ol' linting PR.)
         </p>
         <p className="mt-2">
           I have a Communications BSc with a diploma in International Studies, and a life-long love
           of code and nerd-related stuff.
         </p>
         <p className="mt-2">
-          My language of choice is <InlineHighlight>TypeScript</InlineHighlight>.
+          <InlineHighlight>TypeScript</InlineHighlight> is my language of choice. I've been working
+          with JavaScript for the better part of a decade, and I have{" "}
+          {new Date().getFullYear() - 2015} years' experience implementing backend solutions with
+          Node.js, and frontend UIs with React.
         </p>
         <p className="mt-2">
           I can get by in <InlineHighlight>Python</InlineHighlight>, am generally proficient in
