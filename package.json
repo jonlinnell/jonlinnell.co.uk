@@ -29,7 +29,7 @@
     "gray-matter": "^4.0.2",
     "marked": "^4.0.18",
     "next": "^12.2.3",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-markdown": "^8.0.3",
