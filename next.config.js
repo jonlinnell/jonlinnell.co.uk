@@ -1,7 +1,6 @@
-module.exports = {
-  future: {
-    webpack5: true,
-  },
-  target: 'serverless',
+const config = {
+  target: "serverless",
   poweredByHeader: false,
-}
+};
+
+module.exports = config;

@@ -24,7 +24,7 @@ class MyDocument extends Document {
           ></script>
           <script dangerouslySetInnerHTML={{ __html: gtag }}></script>
         </Head>
-        <body>
+        <body className="bg-gray-100 dark:bg-gray-900">
           <Main />
           <NextScript />
         </body>

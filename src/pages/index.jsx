@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Link from "next/link";
-import { useEffect, useState } from "react";
 import Heading from "../components/heading";
 import InlineHighlight from "../components/inline-highlight";
 import Layout from "../components/layout";
@@ -21,14 +18,14 @@ export default function Home({ blogPosts }) {
   ));
 
   return (
-    <Layout>
+    <Layout alignCenter>
       <main className="xl:mx-96 md:mx-32 pb-48">
         <article id="who-am-i" className="p-4">
           <Heading variant="h1" extraClassNames="mt-0">
-            Hello, I&apos;m Jon
+            Hello, I'm Jon 👋🏻
           </Heading>
           <p>
-            I&apos;m a <InlineHighlight>Product Engineer</InlineHighlight>,{" "}
+            I'm a <InlineHighlight>Product Engineer</InlineHighlight>,{" "}
             <InlineHighlight>photographer</InlineHighlight>, and{" "}
             <InlineHighlight>general purpose nerd</InlineHighlight> from the Midlands, based in
             London.

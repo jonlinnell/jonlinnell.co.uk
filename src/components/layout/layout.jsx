@@ -1,12 +1,13 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useThemeContext, DARK, LIGHT } from "../../context/theme";
+import { useThemeContext, DARK } from "../../context/theme";
+import cn from "classnames";
 
-export default function Layout({ children }) {
+export default function Layout({ children, alignCenter }) {
   const { theme, toggleDarkMode } = useThemeContext();
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 border-t-4 text-gray-900 dark:text-white border-brand-primary dark:border-brand-lightest min-h-screen flex flex-col place-items-center justify-start sm:justify-between">
+    <div className="border-t-4 text-gray-900 dark:text-white border-brand-primary dark:border-brand-lightest min-h-screen flex flex-col align-middle sm:justify-between">
       <Head>
         <title>Jon Linnell</title>
         <link rel="shortcut icon" type="image/png" href="/icon.png" />
@@ -17,12 +18,20 @@ export default function Layout({ children }) {
         <nav className="ml-auto flex gap-3">
           <Link href="/about">about me</Link>
           <button className="text-brand-dark dark:text-brand-lightest" onClick={toggleDarkMode}>
-            {theme === DARK ? "D" : "L"}
+            {theme === DARK ? "🌚" : "🌞"}
           </button>
         </nav>
       </header>
 
-      {children}
+      <div
+        className={cn(
+          alignCenter
+            ? "place-item-center align-middle justify-items-center"
+            : "place-items-start flex-grow"
+        )}
+      >
+        {children}
+      </div>
 
       <footer className="text-sm font-extralight text-brand-dark mt-auto sm:m-0 pb-2 text-center">
         &copy; {new Date().getFullYear()} Jon Linnell

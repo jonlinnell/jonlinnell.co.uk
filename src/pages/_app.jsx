@@ -3,7 +3,7 @@ import { ThemeProvider } from "../context/theme";
 
 export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider>
+    <ThemeProvider attribute="class">
       <Component {...pageProps} />
     </ThemeProvider>
   );
