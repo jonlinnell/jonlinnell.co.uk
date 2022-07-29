@@ -29,7 +29,7 @@ export default function Home({ blogPosts }) {
           <InlineHighlight>general purpose nerd</InlineHighlight> based in London.
         </p>
       </Prose>
-      <section id="blog" className="mt-32 sm:mt-16">
+      <section id="blog" className="mt-32 sm:mt-16 invisible">
         <h2 className="mb-2">🧻 Recent Posts</h2>
         <ul>{blogPostItems}</ul>
       </section>

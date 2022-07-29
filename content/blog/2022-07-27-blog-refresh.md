@@ -1,6 +1,6 @@
 ---
 title: Blog Refresh
-date: 2021-07-27T10:00:00.000Z
+date: 2022-07-27T10:00:00.000Z
 keywords: general
 heroimage: /blog/images/testimage.png
 ---
