@@ -7,11 +7,10 @@ export default function Layout({ children, alignCenter, title }) {
   return (
     <div
       className={cn([
-        "border-t-4",
-        "text-gray-900",
-        "dark:text-white",
+        "border-t-8",
         "border-brand-primary",
-        "dark:border-brand-lightest",
+        "text-gray-900",
+        "dark:text-gray-100",
         "min-h-screen",
         "grid",
         "grid-flow-row",
@@ -25,7 +24,12 @@ export default function Layout({ children, alignCenter, title }) {
 
       <Nav />
 
-      <div className={cn([], alignCenter ? "place-content-center flex" : "place-items-start ")}>
+      <div
+        className={cn(
+          ["sm:p-2", "p-6", "m-0", "sm:mx-auto"],
+          alignCenter ? "place-content-center flex flex-col" : ""
+        )}
+      >
         {children}
       </div>
 

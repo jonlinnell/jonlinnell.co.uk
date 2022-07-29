@@ -24,7 +24,17 @@ function formatBlogPost(postData) {
   return post;
 }
 
-function readBlogPost(file) {
+async function readBlogPost(identifier) {
+  // `identifier` can be a slug or a filename
+
+  const allPosts = await fs.readdir(BLOG_PATH);
+
+  const includeExtension = !/\.md$/.test(identifier);
+
+  const file = allPosts.find((post) =>
+    new RegExp(`${identifier}${includeExtension ? ".md" : ""}$`).test(post)
+  );
+
   return fs.readFile(path.join(BLOG_PATH, file));
 }
 
@@ -33,14 +43,12 @@ export async function getBlogPosts({ sort = NEWEST, limit = 2, fields } = {}) {
 
   let posts = [];
 
-  for (const i in postFiles) {
-    const postFile = postFiles[i];
-
+  for (const postFile of postFiles) {
     const data = await readBlogPost(postFile);
 
     const post = {
       ...formatBlogPost(data),
-      slug: postFile.slice(0, -3),
+      slug: postFile.slice(11, -3),
     };
 
     posts.push(post);
@@ -49,8 +57,8 @@ export async function getBlogPosts({ sort = NEWEST, limit = 2, fields } = {}) {
   return posts.sort(comparators[sort]).slice(0, limit);
 }
 
-export async function getBlogPostBySlug(slug) {
-  const data = await readBlogPost(`${slug}.md`);
+export async function getBlogPostBySource(file) {
+  const data = await readBlogPost(file);
 
   const postData = formatBlogPost(data);
 
