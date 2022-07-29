@@ -5,11 +5,12 @@ export default function Footer({}) {
     <footer
       className={classNames([
         "text-sm",
-        "font-extralight",
-        "text-brand-dark",
+        "font-light",
+        "text-brand-contrast",
         "mt-auto",
         "sm:m-0",
-        "pb-2",
+        "pb-12",
+        "sm:pb-4",
         "text-center",
       ])}
     >

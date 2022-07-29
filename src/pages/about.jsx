@@ -1,19 +1,19 @@
-import Heading from "../components/heading";
 import InlineHighlight from "../components/inline-highlight";
 import Layout from "../components/layout";
+import Prose from "../components/prose";
 
 export default function AboutMe() {
   return (
-    <Layout alignCenter>
-      <article className="prose dark:prose-invert">
-        <Heading variant="h2">A bit about me</Heading>
+    <Layout title="About Me" alignCenter>
+      <Prose>
+        <h2>A bit about me</h2>
         <p className="mt-2">
-          I'm a software engineer, with a value/delivery-oriented mindset and a commitment to solid
-          coding standards. (i.e. I'm not afraid of writing tests or a big ol' linting PR.)
+          I'm a software engineer with a focus on value delivery and a commitment to solid coding
+          standards. (i.e. I'm not afraid of writing tests)
         </p>
         <p className="mt-2">
-          I have a Communications BSc with a diploma in International Studies, and a life-long love
-          of code and nerd-related stuff.
+          I have a BSc in Communications with a diploma in International Studies, and a life-long
+          love of code and nerd-related stuff.
         </p>
         <p className="mt-2">
           <InlineHighlight>TypeScript</InlineHighlight> is my language of choice. I've been working
@@ -50,7 +50,7 @@ export default function AboutMe() {
           photography <a href="#">here</a>, when I get around to that part of the site.
         </p>
         {/* <p>Want to know more? Why not get in touch 📧</p> */}
-      </article>
+      </Prose>
     </Layout>
   );
 }

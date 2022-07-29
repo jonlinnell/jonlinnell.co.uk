@@ -1,12 +1,6 @@
 import cn from "classnames";
 
-const baseStyles = cn(
-  "text-brand-primary",
-  "dark:text-brand-lightest",
-  "mb-2",
-  "mt-3",
-  "font-extralight"
-);
+const baseStyles = cn("text-brand-primary", "mb-2", "mt-3", "font-extralight");
 
 export default function Heading({ variant, children, className }) {
   switch (variant) {
