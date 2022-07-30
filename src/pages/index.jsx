@@ -1,3 +1,4 @@
+import cn from "classnames";
 import InlineHighlight from "../components/inline-highlight";
 import Layout from "../components/layout";
 import Prose from "../components/prose";
@@ -25,8 +26,10 @@ export default function Home({ blogPosts }) {
         <h1>Hello, I'm Jon 👋🏻</h1>
         <p>
           I'm a <InlineHighlight>software engineer</InlineHighlight>,{" "}
-          <InlineHighlight>photographer</InlineHighlight>, and{" "}
-          <InlineHighlight>general purpose nerd</InlineHighlight> based in London.
+          <a className={cn(["no-underline"])} href="/photography">
+            <InlineHighlight>photographer</InlineHighlight>
+          </a>
+          , and <InlineHighlight>general purpose nerd</InlineHighlight> based in London.
         </p>
       </Prose>
       <section id="blog" className="mt-32 sm:mt-16 invisible">

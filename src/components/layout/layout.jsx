@@ -3,7 +3,7 @@ import cn from "classnames";
 import Nav from "../nav";
 import Footer from "../footer";
 
-export default function Layout({ children, alignCenter, title }) {
+export default function Layout({ children, alignCenter, title = "" }) {
   return (
     <div
       className={cn([

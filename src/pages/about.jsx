@@ -47,7 +47,7 @@ export default function AboutMe() {
         </p>
         <p className="mt-2">
           I can also be found exploring cities wielding one of my SLRs. You can see some of my
-          photography <a href="#">here</a>, when I get around to that part of the site.
+          photography <a href="/photography">here</a>.
         </p>
         {/* <p>Want to know more? Why not get in touch 📧</p> */}
       </Prose>
