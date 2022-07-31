@@ -1,3 +1,9 @@
 [context.production.environment]
 NODE_ENV = "production"
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID = "UA-137380850-3"
+[[headers]]:
+  for = "/nextimg/*"
+  [headers.value]
+  Cache-Control = '''
+  public, max-age=604800, stale-while-revalidate=86400
+  '''
