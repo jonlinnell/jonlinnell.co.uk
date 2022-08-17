@@ -285,7 +285,7 @@ I'll try array lenghts of 10 through to 10,000,000 and compare the two.
 
 Numbers are boring, so here's a graph of the results:
 
-![](/array-performance.png)
+![A line graph comparing performance of Array.concat and spread-merge. The vertical axis is the number of records (from 10 to 10,000,000), the horizontal axis is the number of milliseconds elapsed while merging the arrays using the relevant method. Array.concat() is fastest by a wide margin; merging 20,000,000 elements in 99.69 milliseconds, a spread-merge took 465ms. {823x509}](/blog/images/array-performance.png)
 
 Oh have the numbers anyway:
 

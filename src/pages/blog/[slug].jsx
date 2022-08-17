@@ -5,11 +5,29 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark as codeSyntaxStyle } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Prose from "../../components/prose";
 import classNames from "classnames";
+import Image from "next/image";
 
 const Paragraph = ({ children }) => <p className="my-5">{children}</p>;
 
 const components = {
-  p: Paragraph,
+  p: (paragraph) => {
+    const { node } = paragraph;
+
+    if (node.children[0].tagName === "img") {
+      const image = node.children[0];
+
+      const altTextWithMetadata = image.properties.alt;
+
+      const altText = altTextWithMetadata.match(/(^.+) \{{1}/)?.[1] || altTextWithMetadata;
+      const width = parseInt(altTextWithMetadata.match(/\{(\d+)x/)?.[1] || "640", 10);
+      const height = parseInt(altTextWithMetadata.match(/x(\d+)\}/)?.[1] || "480", 10);
+      const caption = altTextWithMetadata.match(/\{caption: (.+)}/)?.[1];
+
+      return <Image src={image.properties.src} height={height} width={width} alt={altText} />;
+    }
+
+    return <Paragraph>{paragraph.children}</Paragraph>;
+  },
 
   code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || "");
@@ -59,8 +77,8 @@ export default function BlogPost({ title, date, slug, content, keywords }) {
           className={classNames([
             "text-brand-primary",
             "text-center",
-            "py-6",
-            "sm:py-2",
+            "py-2",
+            "md:py-6",
             "lg:text-5xl",
             "font-thin",
           ])}
