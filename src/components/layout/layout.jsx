@@ -3,7 +3,7 @@ import cn from "classnames";
 import Nav from "../nav";
 import Footer from "../footer";
 
-export default function Layout({ children, alignCenter, title = "" }) {
+export default function Layout({ children, alignCenter, title = "", classNames = [] }) {
   return (
     <div
       className={cn([
@@ -26,8 +26,9 @@ export default function Layout({ children, alignCenter, title = "" }) {
 
       <div
         className={cn(
-          ["sm:p-2", "p-6", "m-0", "sm:mx-auto"],
-          alignCenter ? "place-content-center flex flex-col" : ""
+          ["p-2", "md:p-6", "m-0", "mx-auto"],
+          alignCenter ? "place-content-center flex flex-col" : [],
+          classNames
         )}
       >
         {children}

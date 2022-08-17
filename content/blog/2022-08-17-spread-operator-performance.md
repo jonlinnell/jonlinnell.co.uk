@@ -1,5 +1,5 @@
 ---
-title: Is the Spread operator in JavaScript really that slow?
+title: How slow is the Spread operator in JavaScript?
 date: 2022-08-17T10:00:00.000Z
 keywords: js
 heroimage:
@@ -9,7 +9,7 @@ I was challenged on my use of the Spread operator in the return value of a reduc
 
 Being the professional, mature adult that I am, I immediately set out to prove them wrong.
 
-I was, of course, wrong.
+It was, of course, me who was wrong.
 
 ## TL;DR
 
@@ -235,9 +235,9 @@ Another `for` loop, but this time we're using the arrays' [built-in iterator](ht
 function mergeArrays(a, b) {
   const array = [];
 
-  for (const item in a) array.push(item);
+  for (const item of a) array.push(item);
 
-  for (const item in b) array.push(item);
+  for (const item of b) array.push(item);
 
   return a, b;
 }

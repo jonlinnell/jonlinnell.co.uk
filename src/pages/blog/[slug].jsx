@@ -71,8 +71,11 @@ function Date({ children }) {
 
 export default function BlogPost({ title, date, slug, content, keywords }) {
   return (
-    <Layout title={title}>
-      <Prose className="">
+    <Layout
+      title={title}
+      classNames={["w-screen", "sm:w-11/12", "md:w-8/12", "lg:w-4/12", "xl:w-3/12"]}
+    >
+      <Prose className="max-w-none">
         <h1
           className={classNames([
             "text-brand-primary",
