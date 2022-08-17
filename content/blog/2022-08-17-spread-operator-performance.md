@@ -9,9 +9,11 @@ I was challenged on my use of the Spread operator in the return value of a reduc
 
 Being the professional, mature adult that I am, I immediately set out to prove them wrong.
 
-## TLDR
-
 I was, of course, wrong.
+
+## TL;DR
+
+It gets exponentially slower the more elements it has to cover.
 
 `Array.concat()` is significantly more performant at scale than a spread-merge. Keep reading to find out how I tested this, and what else I covered along the way.
 
@@ -72,7 +74,7 @@ return [...people.filter((person) => person.id !== 2), { id: 2, name: "Fran" }];
 
 In this example, we're returning a new array containing all items in `people` with the exception of item with id `2`, and a new item.
 
-## So just how slow is it?
+## So how slow is it?
 
 Let's do some science and find out.
 
@@ -175,7 +177,7 @@ function mergeArrays<T>(a: T[], b: T[]): T[] {
 
 ## Hang on a second...
 
-This is nowhere near dramatic enough. If performance issues begin to reveal themselves at scale, then we need to crank up those numbers to get some actual results.
+This is nowhere near dramatic enough. If performance issues begin to reveal themselves at scale, then we need to adjust our methodology and crank up those numbers to get some actual results.
 
 ```js
 const arraySize = 1e6; // 1,000,000.
@@ -299,6 +301,16 @@ Both methods are level-pegging up to around 1000 elements, at which point a spre
 
 By eight-digits, the difference is enormous; `Array.concat()` merged 20,000,000 items into the same array 365ms faster than a spread-merge.
 
+## Why is it so much faster?
+
+This is down to how these two methods process data under-the-hood.
+
+I can't say for certain, and I'll be damned if I'm going to do any research that involves reading the native C++ implementation of Array prototype functions.
+
+My semi-educated guess, given the disparity in timings we see, is that the spread operator is iterating one-by-one through each element, assigning each one to a new space in memory in sequence.
+
+`Array.concat()`, however, I would expect to do some lower level memory manipulation to duplicate and stack the arrays next to each other. This would explain the very slight increase in time-complexity with increased elements; the number of elements matters to an extent, but isn't as big a dent in performance as iterating through every one of them.
+
 ## Conclusion
 
-A spread-merge is probably fine when you're sure you're dealing with no more than a few thousand items, but if you want to make sure your application scales beyond that, maybe give `Array.concat()` a try.
+A spread-merge is probably fine when you're sure you're dealing with no more than a few thousand items, but if you want to make sure your application scales beyond that, give `Array.concat()` a try.
