@@ -16,7 +16,7 @@ function formatBlogPost(postData) {
 
   const post = {
     ...data,
-    date: format(data.date, "eeee do MMMM yyyy"),
+    date: new Date(data.date).getTime(),
     keywords: data.keywords.split(","),
     content,
   };

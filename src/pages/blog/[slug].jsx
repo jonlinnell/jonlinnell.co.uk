@@ -1,9 +1,12 @@
 import Layout from "../../components/layout";
+import Keywords from "../../components/keywords";
+import { format } from "date-fns";
 import { getBlogPostBySource, getBlogPosts } from "../../lib/blog";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark as codeSyntaxStyle } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Prose from "../../components/prose";
+import InlineHighlight from "../../components/inline-highlight.jsx";
 import classNames from "classnames";
 import Image from "next/image";
 
@@ -66,15 +69,12 @@ export async function getStaticProps(context) {
 }
 
 function Date({ children }) {
-  return <span className="italic text-gray-700 dark:text-gray-200">{children}</span>;
+  return <div className="italic text-gray-700 dark:text-gray-200">{children}</div>;
 }
 
 export default function BlogPost({ title, date, slug, content, keywords }) {
   return (
-    <Layout
-      title={title}
-      classNames={["w-screen", "sm:w-11/12", "md:max-w-prose"]}
-    >
+    <Layout title={title} classNames={["w-screen", "sm:w-11/12", "md:max-w-prose"]}>
       <Prose className="max-w-none">
         <h1
           className={classNames([
@@ -88,8 +88,20 @@ export default function BlogPost({ title, date, slug, content, keywords }) {
         >
           {title}
         </h1>
-        <Date>{date}</Date>
+        <div className={classNames(["md:flex"])}>
+          <Date>{format(date, "eeee do MMMM yyyy")}</Date>
+          <div className={classNames(["md:ml-auto"])}>
+            <Keywords>{keywords}</Keywords>
+          </div>
+        </div>
         <ReactMarkdown components={components}>{content}</ReactMarkdown>
+      </Prose>
+
+      <Prose className={classNames(["mt-16", "sm:mt-8", "border-t-2", "border-brand-contrast"])}>
+        <Paragraph>
+          This article was written by <InlineHighlight contrast>Jon Linnell</InlineHighlight>, a
+          software engineer based in London, England.
+        </Paragraph>
       </Prose>
     </Layout>
   );

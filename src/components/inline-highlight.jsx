@@ -1,3 +1,5 @@
-export default function InlineHighlight({ children }) {
-  return <span className="text-brand-primary" children={children} />;
+export default function InlineHighlight({ children, contrast }) {
+  return (
+    <span className={contrast ? "text-brand-contrast" : "text-brand-primary"} children={children} />
+  );
 }
