@@ -8,6 +8,22 @@
     "src": "trio.jpg"
   },
   {
+    "title": "Northern Line",
+    "subtitle": "",
+    "details": "Angel Tube station",
+    "w": 1498,
+    "h": 1000,
+    "src": "northern_line.jpg"
+  },
+  {
+    "title": "Taxi",
+    "subtitle": "",
+    "details": "Bokeh in Soho",
+    "w": 1498,
+    "h": 1000,
+    "src": "soho_bokeh.jpg"
+  },
+  {
     "title": "St. Pauls",
     "subtitle": "",
     "details": "",
@@ -16,12 +32,44 @@
     "src": "st_pauls.jpg"
   },
   {
-    "title": "Skull",
+    "title": "Things",
     "subtitle": "",
-    "details": "Shoreditch, London",
-    "w": 2000,
-    "h": 2016,
-    "src": "skull.png"
+    "details": "Hackney Wick, London",
+    "w": 1600,
+    "h": 1068,
+    "src": "things.jpg"
+  },
+  {
+    "title": "Date",
+    "subtitle": "",
+    "details": "Tottenham Court Road",
+    "w": 667,
+    "h": 1000,
+    "src": "date.jpg"
+  },
+  {
+    "title": "Chinatown",
+    "subtitle": "",
+    "details": "Soho, London",
+    "w": 1000,
+    "h": 1498,
+    "src": "chinatown.jpg"
+  },
+  {
+    "title": "Pride '19",
+    "subtitle": "",
+    "details": "Pride in London 2019",
+    "w": 667,
+    "h": 1000,
+    "src": "pride_19.jpg"
+  },
+  {
+    "title": "Pride '22",
+    "subtitle": "",
+    "details": "Pride in London 2022",
+    "w": 667,
+    "h": 1000,
+    "src": "pride_22.jpg"
   },
   {
     "title": "City",
@@ -30,13 +78,5 @@
     "w": 4912,
     "h": 6140,
     "src": "sydenham_hill.jpg"
-  },
-  {
-    "title": "Things",
-    "subtitle": "",
-    "details": "Hackney Wick, London",
-    "w": 1600,
-    "h": 1068,
-    "src": "things.jpg"
   }
 ]
