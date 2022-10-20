@@ -1,3 +1,6 @@
+import Markdown from "react-markdown";
+import gfm from "remark-gfm";
+
 import Layout from "../../components/layout";
 import { getBlogPostBySlug, getBlogPosts } from "../../lib/blog";
 
@@ -22,7 +25,7 @@ export default function BlogPost({ title, date, slug, content, keywords }) {
         <h1>{title}</h1>
         <aside>{date}</aside>
         <hr />
-        <pre>{content}</pre>
+        <Markdown>{content}</Markdown>
       </article>
     </Layout>
   );

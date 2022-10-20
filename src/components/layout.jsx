@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useThemeContext, DARK, LIGHT } from "../../context/theme";
+import { useThemeContext, DARK, LIGHT } from "../context/theme";
 
 export default function Layout({ children }) {
   const { theme, toggleDarkMode } = useThemeContext();
