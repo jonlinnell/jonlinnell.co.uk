@@ -1,5 +1,4 @@
 [context.production.environment]
-NODE_ENV = "production"
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID = "UA-137380850-3"
 
 [[headers]]
