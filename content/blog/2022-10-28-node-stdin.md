@@ -1,19 +1,19 @@
 ---
-title: Piping data into a Node.js script
+title: How to pipe data into a Node.js script
 date: 2022-10-28T10:00:00.000Z
 keywords: js
 heroimage:
 ---
 
-Most folks who work with in a terminal will be familar with this kind of incantation:
+Most folks who work with a terminal will be familar with this kind of incantation:
 
 ```sh
 cat file.txt | pbcopy
 ```
 
-In this example, we get the contents of file.txt and _pipe_ it to the clipboard (on macOS); we transfer the output of one command into the input of another.
+In this example, we get the contents of file.txt and _pipe_ it (using the | operator) to the clipboard (on macOS); we transfer the output of one command into the input of another.
 
-This is a super-useful construct, and it's not unusual for \*nix nerds to pipe data from command to command to get what they need.
+This is a super-useful tool, and it's not unusual for \*nix nerds to pipe data from command to command to get what they need.
 
 For some jobs, it's tempting to create a Node script to do the high-level processing of data in a pipeline. So how do we access that data getting piped our way?
 
@@ -39,7 +39,7 @@ process.stdin.on("end", () => {
 });
 ```
 
-This is fine, but a little clunky. Thankfully, `process.stdin` implements an async iterator that makes this much easier to do.
+This is fine, but a little clunky. Thankfully, `process.stdin` now implements an async iterator that makes this much easier to do.
 
 ```js
 let data = "";
@@ -62,7 +62,7 @@ Avoid `console.log()`, as it appends a newline.
 
 ## Reading data line-by-line
 
-The `chunk` in the above example is usually a linear segment of bytes up to a certain arbitrary limit defined in the runtime. This isn't useful if we have a known line-by-line input coming into our app, say as an output from `grep`, or a file.
+The `chunk` in the above example is usually a linear segment of bytes up to a certain arbitrary limit defined by the runtime. This isn't useful if we have a known line-by-line input coming into our app, say as an output from `grep`, or a file.
 
 In this case, we can use the `readline` API available in Node.js, and hook up stdin as an input stream.
 
@@ -90,6 +90,7 @@ async function main() {
   });
 
   for await (const line of rl) {
+    // process a line at a time
     process.stdout.write(`line: ${line}\n`);
   }
 }
