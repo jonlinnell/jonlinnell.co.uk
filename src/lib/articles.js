@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { format } from "date-fns";
 
-const BLOG_PATH = path.resolve(process.cwd(), "content", "blog");
+const ARTICLES_PATH = path.resolve(process.cwd(), "content", "articles");
 
 const NEWEST = "NEWEST";
 
@@ -11,7 +11,7 @@ const comparators = {
   [NEWEST]: (a, b) => (a.date < b.date ? 1 : -1),
 };
 
-function formatBlogPost(postData) {
+function formatArticle(postData) {
   const { content, data } = matter(postData);
 
   const post = {
@@ -24,10 +24,10 @@ function formatBlogPost(postData) {
   return post;
 }
 
-async function readBlogPost(identifier) {
+async function readArticle(identifier) {
   // `identifier` can be a slug or a filename
 
-  const allPosts = await fs.readdir(BLOG_PATH);
+  const allPosts = await fs.readdir(ARTICLES_PATH);
 
   const includeExtension = !/\.md$/.test(identifier);
 
@@ -35,19 +35,19 @@ async function readBlogPost(identifier) {
     new RegExp(`${identifier}${includeExtension ? ".md" : ""}$`).test(post)
   );
 
-  return fs.readFile(path.join(BLOG_PATH, file));
+  return fs.readFile(path.join(ARTICLES_PATH, file));
 }
 
-export async function getBlogPosts({ sort = NEWEST, limit = 2, fields } = {}) {
-  const postFiles = (await fs.readdir(BLOG_PATH)).filter((file) => /\.md$/.test(file));
+export async function getArticles({ sort = NEWEST, limit = 2, fields } = {}) {
+  const postFiles = (await fs.readdir(ARTICLES_PATH)).filter((file) => /\.md$/.test(file));
 
   let posts = [];
 
   for (const postFile of postFiles) {
-    const data = await readBlogPost(postFile);
+    const data = await readArticle(postFile);
 
     const post = {
-      ...formatBlogPost(data),
+      ...formatArticle(data),
       slug: postFile.slice(11, -3),
     };
 
@@ -57,10 +57,10 @@ export async function getBlogPosts({ sort = NEWEST, limit = 2, fields } = {}) {
   return posts.sort(comparators[sort]).slice(0, limit);
 }
 
-export async function getBlogPostBySource(file) {
-  const data = await readBlogPost(file);
+export async function getArticleBySource(file) {
+  const data = await readArticle(file);
 
-  const postData = formatBlogPost(data);
+  const postData = formatArticle(data);
 
   return postData;
 }

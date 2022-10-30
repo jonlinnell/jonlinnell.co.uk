@@ -2,19 +2,19 @@ import classNames from "classnames";
 import { format } from "date-fns";
 import Layout from "../components/layout";
 import Keywords from "../components/keywords";
-import { getBlogPosts } from "../lib/blog";
+import { getArticles } from "../lib/articles";
 
 export async function getStaticProps() {
-  const posts = await getBlogPosts();
+  const articles = await getArticles();
 
-  return { props: { posts } };
+  return { props: { articles } };
 }
 
-function BlogPost({ slug, title, keywords, date: rawDate }) {
+function Article({ slug, title, keywords, date: rawDate }) {
   const date = new Date(rawDate);
   return (
     <li key={slug} className={classNames(["py-6", "md:py-3"])}>
-      <a href={`/blog/${slug}`}>
+      <a href={`/articles/${slug}`}>
         <h2 className={classNames(["text-3xl", "font-thin"])}>
           <span className={classNames(["text-brand-primary", "text-3xl"])}>☛</span>&nbsp;{title}
         </h2>
@@ -31,9 +31,9 @@ function BlogPost({ slug, title, keywords, date: rawDate }) {
   );
 }
 
-function Blog({ posts }) {
+function Articles({ articles }) {
   return (
-    <Layout title="Blog" classNames="max-w-prose w-11/12">
+    <Layout title="Articles" classNames="max-w-prose w-11/12">
       <h1
         className={classNames([
           "text-brand-primary",
@@ -43,15 +43,15 @@ function Blog({ posts }) {
           "font-thin",
         ])}
       >
-        Blog 🧻
+        Articles 🧻
       </h1>
       <ul>
-        {posts?.map((post) => (
-          <BlogPost {...post} />
+        {articles?.map((article) => (
+          <Article {...article} />
         ))}
       </ul>
     </Layout>
   );
 }
 
-export default Blog;
+export default Articles;

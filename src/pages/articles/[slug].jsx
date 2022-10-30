@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import Keywords from "../../components/keywords";
 import { format } from "date-fns";
-import { getBlogPostBySource, getBlogPosts } from "../../lib/blog";
+import { getArticleBySource, getArticles } from "../../lib/articles";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark as codeSyntaxStyle } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -55,7 +55,7 @@ const components = {
 };
 
 export async function getStaticPaths() {
-  const posts = await getBlogPosts({ limit: 100 });
+  const posts = await getArticles({ limit: 100 });
 
   const slugs = posts.map(({ slug }) => ({ params: { slug } }));
 
@@ -63,7 +63,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const post = await getBlogPostBySource(context.params.slug);
+  const post = await getArticleBySource(context.params.slug);
 
   return { props: post };
 }
@@ -72,7 +72,7 @@ function Date({ children }) {
   return <div className="italic text-gray-700 dark:text-gray-200">{children}</div>;
 }
 
-export default function BlogPost({ title, date, slug, content, keywords }) {
+export default function Article({ title, date, slug, content, keywords }) {
   return (
     <Layout title={title} classNames={["w-screen", "sm:w-11/12", "md:max-w-prose"]}>
       <Prose className="max-w-none">
@@ -88,9 +88,9 @@ export default function BlogPost({ title, date, slug, content, keywords }) {
         >
           {title}
         </h1>
-        <div className={classNames(["md:flex"])}>
-          <Date>{format(date, "eeee do MMMM yyyy")}</Date>
-          <div className={classNames(["md:ml-auto"])}>
+        <div className={classNames(["flex"])}>
+          <Date>{new Intl.DateTimeFormat("en-GB", { dateStyle: "long" }).format(date)}</Date>
+          <div className={classNames(["ml-auto", "text-right"])}>
             <Keywords>{keywords}</Keywords>
           </div>
         </div>

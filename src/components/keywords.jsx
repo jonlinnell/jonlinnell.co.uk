@@ -6,9 +6,9 @@ const tagStyles = {
   general: ["text-violet-300"],
 };
 
-export default function Keywords({ children: keywords }) {
+export default function Keywords({ children: keywords, className }) {
   return (
-    <div>
+    <div className={className}>
       {keywords.map((keyword, i) => (
         <span key={keyword} className={classNames(commonStyles, tagStyles[keyword])}>
           {keyword}
