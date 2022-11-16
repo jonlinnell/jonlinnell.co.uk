@@ -9,14 +9,14 @@ IDEs and text editors usually give us a quick and easy find-and-replace function
 
 Fortunately, that's not the case. The solution devides nicely into two steps:
 
-```sh
-grep -lr '<phrase or regex to match>' . | xargs sed -i 's/<regex to match>/<replacement value>/g'
+```bash
+grep -lr '<phrase or regex to match>' ./some/path | xargs sed -i 's/<regex to match>/<replacement value>/g'
 ```
 
 This is for GNU SED. **If you're using a Mac**, you have a slightly different version of SED, so you'll need the following command instead:
 
-```sh
-grep -lr '<phrase or regex to match>' . | xargs sed -i '' -e 's/<regex to match>/<replacement value>/g'
+```bash
+grep -lr '<phrase or regex to match>' ./some/path | xargs sed -i '' -e 's/<regex to match>/<replacement value>/g'
 ```
 
 Cheers Apple...
@@ -39,7 +39,7 @@ There's a good chance the recursive `grep` is traversing more directories than i
 
 You can be more specific with your path, or you can use the `--exclude-dir <some big dir>` option to skip a directory.
 
-```sh
-grep -lr '<search pattern>' --exclude-dir node_modules --exclude_dir __tests__ . | # ...
+```bash
+grep -lr '<search pattern>' --exclude-dir node_modules --exclude_dir __tests__ ./some/path/specifically | # ...
 
 ```
