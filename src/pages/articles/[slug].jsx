@@ -95,15 +95,15 @@ export default function Article({ title, date, slug, content, keywords }) {
           </div>
         </div>
         <ReactMarkdown components={components}>{content}</ReactMarkdown>
+        <Paragraph>
+          <a href="/articles">👈 Back to articles</a>
+        </Paragraph>
       </Prose>
 
       <Prose className={classNames(["mt-16", "sm:mt-8", "border-t-2", "border-brand-contrast"])}>
         <Paragraph>
           This article was written by <InlineHighlight contrast>Jon Linnell</InlineHighlight>, a
           software engineer based in London, England.
-        </Paragraph>
-        <Paragraph>
-          <a href="/articles">👈 Back to articles</a>
         </Paragraph>
       </Prose>
     </Layout>
