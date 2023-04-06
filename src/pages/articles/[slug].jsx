@@ -102,6 +102,9 @@ export default function Article({ title, date, slug, content, keywords }) {
           This article was written by <InlineHighlight contrast>Jon Linnell</InlineHighlight>, a
           software engineer based in London, England.
         </Paragraph>
+        <Paragraph>
+          <a href="/articles">👈 Back to articles</a>
+        </Paragraph>
       </Prose>
     </Layout>
   );

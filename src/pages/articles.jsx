@@ -5,7 +5,7 @@ import Keywords from "../components/keywords";
 import { getArticles } from "../lib/articles";
 
 export async function getStaticProps() {
-  const articles = await getArticles();
+  const articles = await getArticles({ limit: 5 });
 
   return { props: { articles } };
 }
