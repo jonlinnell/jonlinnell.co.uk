@@ -49,7 +49,7 @@ const components = {
         children={String(children).replace(/\n$/, "")}
         codeTagProps={{ className: classNames([]) }}
         style={theme === DARK ? codeThemeDark : codeThemeLight}
-        customStyle={{ padding: "1px, 0" }} // No idea why this fixes padding...
+        customStyle={{ padding: "1px, 0", margin: 0 }} // No idea why this fixes padding...
         language={match[1]}
         lineProps={{ style: { wordBreak: "break-all", whiteSpace: "pre-wrap" } }}
         PreTag={({ className, ...preProps }) => (
@@ -67,7 +67,20 @@ const components = {
         showLineNumbers
       />
     ) : (
-      <code className={classNames([className, "break-words"])}>{children}</code>
+      <code
+        className={classNames([
+          className,
+          "break-words",
+          "before:content-none",
+          "after:content-none",
+          "font-mono",
+          "font-medium",
+          "text-lime-800",
+          "dark:text-lime-200/75",
+        ])}
+      >
+        {children}
+      </code>
     );
   },
 };
