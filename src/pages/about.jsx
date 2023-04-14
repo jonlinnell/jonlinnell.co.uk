@@ -1,12 +1,14 @@
+import classNames from "classnames";
 import InlineHighlight from "../components/inline-highlight";
 import Layout from "../components/layout";
 import Prose from "../components/prose";
+import Heading from "../components/heading";
 
 export default function AboutMe() {
   return (
     <Layout title="About Me">
       <Prose>
-        <h2>A bit about me</h2>
+        <Heading variant="h1">A Bit About Me</Heading>
         <p className="mt-2">
           I'm a software engineer with a focus on value delivery and a commitment to solid coding
           standards. (i.e. I'm not afraid of writing tests)

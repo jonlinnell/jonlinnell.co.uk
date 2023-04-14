@@ -9,6 +9,7 @@ import Prose from "../../components/prose";
 import InlineHighlight from "../../components/inline-highlight.jsx";
 import classNames from "classnames";
 import Image from "next/image";
+import Heading from "../../components/heading";
 
 const Paragraph = ({ children }) => <p className="my-5">{children}</p>;
 
@@ -80,18 +81,9 @@ export default function Article({ title, date, content, keywords }) {
   return (
     <Layout title={title} classNames={["w-screen", "sm:w-11/12", "md:w-8/12", "xl:w-6/12"]}>
       <Prose className="max-w-none">
-        <h1
-          className={classNames([
-            "text-brand-primary",
-            "text-center",
-            "py-2",
-            "md:py-6",
-            "lg:text-5xl",
-            "font-thin",
-          ])}
-        >
+        <Heading variant="h1" className={["lg:text-5xl"]}>
           {title}
-        </h1>
+        </Heading>
         <div className={classNames(["flex"])}>
           <Date>{date}</Date>
           <div className={classNames(["ml-auto", "text-right"])}>

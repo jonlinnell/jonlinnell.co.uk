@@ -1,11 +1,16 @@
 import cn from "classnames";
 
-const baseStyles = cn("text-brand-primary", "mb-2", "mt-3", "font-extralight");
+const baseStyles = cn("text-brand-primary", "mb-2", "mt-3", "font-thin");
 
 export default function Heading({ variant, children, className }) {
   switch (variant) {
     case "h1":
-      return <h1 className={cn(baseStyles, className, "text-4xl")} children={children} />;
+      return (
+        <h1
+          className={cn(baseStyles, className, "text-4xl", "py-2", "md:py-4")}
+          children={children}
+        />
+      );
     case "h2":
       return <h2 className={cn(baseStyles, className, "text-3xl")} children={children} />;
     case "h3":
