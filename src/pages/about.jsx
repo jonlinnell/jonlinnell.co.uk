@@ -4,7 +4,7 @@ import Prose from "../components/prose";
 
 export default function AboutMe() {
   return (
-    <Layout title="About Me" alignCenter>
+    <Layout title="About Me">
       <Prose>
         <h2>A bit about me</h2>
         <p className="mt-2">
