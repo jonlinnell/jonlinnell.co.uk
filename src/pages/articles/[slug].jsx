@@ -1,18 +1,22 @@
-import Layout from "../../components/layout";
-import Keywords from "../../components/keywords";
-import { format } from "date-fns";
-import { getArticleBySource, getArticles } from "../../lib/articles";
-import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark as codeSyntaxStyle } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import Prose from "../../components/prose";
-import InlineHighlight from "../../components/inline-highlight.jsx";
-import classNames from "classnames";
-import Image from "next/image";
-import Heading from "../../components/heading";
 import Head from "next/head";
+import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import classNames from "classnames";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+  atomDark as codeThemeDark,
+  coy as codeThemeLight,
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { format } from "date-fns";
 
-const Paragraph = ({ children }) => <p className="my-5 md:text-lg md:leading-loose">{children}</p>;
+import Heading from "../../components/heading";
+import InlineHighlight from "../../components/inline-highlight.jsx";
+import Keywords from "../../components/keywords";
+import Layout from "../../components/layout";
+import Prose from "../../components/prose";
+import { Paragraph } from "../../components/paragraph";
+import { getArticleBySource, getArticles } from "../../lib/articles";
+import { useThemeContext, DARK } from "../../context/theme";
 
 const components = {
   p: (paragraph) => {
@@ -34,24 +38,36 @@ const components = {
     return <Paragraph>{paragraph.children}</Paragraph>;
   },
 
+  pre: ({ children }) => <pre className={classNames(["bg-transparent"])}>{children}</pre>,
+
   code({ node, inline, className, children, ...props }) {
+    const { theme } = useThemeContext();
     const match = /language-(\w+)/.exec(className || "");
 
     return !inline && match ? (
       <SyntaxHighlighter
         children={String(children).replace(/\n$/, "")}
-        style={codeSyntaxStyle}
+        codeTagProps={{ className: classNames([]) }}
+        style={theme === DARK ? codeThemeDark : codeThemeLight}
+        customStyle={{ padding: "1px, 0" }} // No idea why this fixes padding...
         language={match[1]}
         lineProps={{ style: { wordBreak: "break-all", whiteSpace: "pre-wrap" } }}
+        PreTag={({ className, ...preProps }) => (
+          <pre
+            className={classNames(className, [
+              "border",
+              "dark:border-gray-600/75",
+              "border-gray-400/50",
+              "text-base",
+            ])}
+            {...preProps}
+          />
+        )}
         wrapLines={true}
         showLineNumbers
-        PreTag="div"
-        {...props}
       />
     ) : (
-      <code className={classNames(className, "break-words")} {...props}>
-        {children}
-      </code>
+      <code className={classNames([className, "break-words"])}>{children}</code>
     );
   },
 };
