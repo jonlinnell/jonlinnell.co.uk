@@ -38,7 +38,7 @@ async function readArticle(identifier) {
   return fs.readFile(path.join(ARTICLES_PATH, file));
 }
 
-export async function getArticles({ sort = NEWEST, limit = 2, fields } = {}) {
+export async function getArticles({ sort = NEWEST, limit, fields } = {}) {
   const postFiles = (await fs.readdir(ARTICLES_PATH)).filter((file) => /\.md$/.test(file));
 
   let posts = [];

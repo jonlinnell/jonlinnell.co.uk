@@ -10,8 +10,9 @@ import InlineHighlight from "../../components/inline-highlight.jsx";
 import classNames from "classnames";
 import Image from "next/image";
 import Heading from "../../components/heading";
+import Head from "next/head";
 
-const Paragraph = ({ children }) => <p className="my-5">{children}</p>;
+const Paragraph = ({ children }) => <p className="my-5 md:text-lg md:leading-loose">{children}</p>;
 
 const components = {
   p: (paragraph) => {
@@ -79,7 +80,14 @@ function Date({ date }) {
 
 export default function Article({ title, date, content, keywords }) {
   return (
-    <Layout title={title} classNames={["w-screen", "sm:w-11/12", "md:w-8/12", "xl:w-6/12"]}>
+    <Layout title={title} classNames={["w-screen", "sm:w-11/12", "md:w-8/12", "xl:w-5/12"]}>
+      <Head>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={`${content.slice(0, 150)}... | Jon Linnell`} />
+        <meta property="article:published_time" content={format(date, "dd MM yyyy")} />
+        <meta property="og:type" content="article" />
+      </Head>
+
       <Prose className="max-w-none">
         <Heading variant="h1" className={["lg:text-5xl"]}>
           {title}
@@ -96,7 +104,15 @@ export default function Article({ title, date, content, keywords }) {
         </Paragraph>
       </Prose>
 
-      <Prose className={classNames(["mt-16", "sm:mt-8", "border-t-2", "border-brand-contrast"])}>
+      <Prose
+        className={classNames([
+          "mt-16",
+          "sm:mt-8",
+          "max-w-none",
+          "border-t-2",
+          "border-brand-contrast",
+        ])}
+      >
         <Paragraph>
           This article was written by <InlineHighlight contrast>Jon Linnell</InlineHighlight>, a
           software engineer based in London, England.
