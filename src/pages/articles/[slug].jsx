@@ -68,13 +68,17 @@ export async function getStaticProps(context) {
   return { props: post };
 }
 
-function Date({ children }) {
-  return <div className="italic text-gray-700 dark:text-gray-200">{children}</div>;
+function Date({ date }) {
+  return (
+    <div className="italic text-gray-700 dark:text-gray-200">
+      {new Intl.DateTimeFormat("en-GB", { dateStyle: "long" }).format(date)}
+    </div>
+  );
 }
 
-export default function Article({ title, date, slug, content, keywords }) {
+export default function Article({ title, date, content, keywords }) {
   return (
-    <Layout title={title} classNames={["w-screen", "sm:w-11/12", "md:max-w-prose"]}>
+    <Layout title={title} classNames={["w-screen", "sm:w-11/12", "md:w-8/12", "xl:w-6/12"]}>
       <Prose className="max-w-none">
         <h1
           className={classNames([
@@ -89,7 +93,7 @@ export default function Article({ title, date, slug, content, keywords }) {
           {title}
         </h1>
         <div className={classNames(["flex"])}>
-          <Date>{new Intl.DateTimeFormat("en-GB", { dateStyle: "long" }).format(date)}</Date>
+          <Date>{date}</Date>
           <div className={classNames(["ml-auto", "text-right"])}>
             <Keywords>{keywords}</Keywords>
           </div>
