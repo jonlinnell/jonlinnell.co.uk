@@ -7,6 +7,7 @@ const tagStyles = {
   general: ["text-violet-300"],
   unix: ["text-lime-500"],
   ai: ["text-indigo-300"],
+  dynamodb: ["text-indigo-600", "dark:text-indigo-400"],
 };
 
 export default function Keywords({ children: keywords, className }) {
