@@ -99,7 +99,7 @@ export async function getStaticProps(context) {
   return { props: post };
 }
 
-function Date({ date }) {
+function Date({ children: date }) {
   return (
     <div className="italic text-gray-700 dark:text-gray-200">
       {new Intl.DateTimeFormat("en-GB", { dateStyle: "long" }).format(date)}
@@ -108,6 +108,7 @@ function Date({ date }) {
 }
 
 export default function Article({ title, date, content, keywords }) {
+  console.log({date: date ? new Date(date) : 'no date'})
   return (
     <Layout title={title} classNames={["w-screen", "sm:w-11/12", "md:w-8/12", "xl:w-5/12"]}>
       <Head>
@@ -147,6 +148,6 @@ export default function Article({ title, date, content, keywords }) {
           software engineer based in London, England.
         </Paragraph>
       </Prose>
-    </Layout>
+    </Layout> 
   );
 }
