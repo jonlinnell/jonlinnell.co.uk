@@ -37,11 +37,12 @@ export default function AboutMe() {
           Node.js, and frontend UIs with React.
         </Paragraph>
         <Paragraph>
+          <InlineHighlight>Go</InlineHighlight> is rapidly becoming my favourite language to work in. I've been working on my Go skills, and recently delivered my first professional Go project, a small CLI tool for developers in my current company.
+        </Paragraph>
+        <Paragraph>
           I can get by in <InlineHighlight>Python</InlineHighlight>, am generally proficient in
-          shell scripting languages, IaC frameworks such as{" "}
-          <InlineHighlight>Terraform</InlineHighlight>, a small amount of{" "}
-          <InlineHighlight>Rust</InlineHighlight>, and I know just enough{" "}
-          <InlineHighlight>Go</InlineHighlight> to be able to order food in a restaurant and ask
+          shell scripting languages, IaC frameworks such as <InlineHighlight>Terraform</InlineHighlight>, and I know just enough{" "}
+          <InlineHighlight>Rust</InlineHighlight> to be able to order food in a restaurant and ask
           where the bathroom is.
         </Paragraph>
         <Paragraph>
