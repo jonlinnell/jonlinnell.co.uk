@@ -1,5 +1,5 @@
 ---
-title: Find-and-Replace in the Terminal
+title: How to recursively find-and-replace in the Terminal
 date: 2022-11-16T10:00:00.000Z
 keywords: unix
 heroimage: /blog/images/testimage.png
@@ -10,28 +10,20 @@ IDEs and text editors usually give us a quick and easy find-and-replace function
 Fortunately, that's not the case. The solution devides nicely into two steps:
 
 ```bash
-grep -lr '<phrase or regex to match>' ./some/path | xargs sed -i 's/<regex to match>/<replacement value>/g'
+grep -lr '<phrase or regex to match>' ./some/path | xargs perl -pi -e 's/<regex to match>/<replacement value>/g'
 ```
-
-This is for GNU SED. **If you're using a Mac**, you have a slightly different version of SED, so you'll need the following command instead:
-
-```bash
-grep -lr '<phrase or regex to match>' ./some/path | xargs sed -i '' -e 's/<regex to match>/<replacement value>/g'
-```
-
-Cheers Apple...
 
 ## What does it do?
 
 This command searches a directory for files with contents matching a certain string, then replaces the string using a regex substitution.
 
-`grep` searches file contents and outputs matches to the terminal.
+`grep` searches file contents and outputs matches to the terminal. If you're using some spicier regex, try adding the `-P` flag, which forces grep to interpret the expression as a PCRE (Perl-compatible regular expression.) 
 
 The `-l` flag tells it to only output the file name if a match occurs, not every line where a match is found. The `-r` command, in combination with the path in the final position in the arguments list, tells Grep to search **r**ecursively.
 
-`sed`, or **S**tream **Ed**itor is a core Unix tool for... editing streams. It can also be used to edit files in-place, as we're doing here. `-i` tells the interpreter to execute the following command against every line in a file.
+`xargs` is a hugely powerful and useful Unix tool for supplying the output from one command to an arbitrary number of commands. In this case, each line of output from `grep` is being piped into xargs, which then runs a `perl` command for each; it's the same command, just with the filename from `grep` at the end.
 
-`xargs` is a hugely powerful and useful Unix tool for supplying the output from one command to an arbitrary number of commands. In this case, each line of output from `grep` is being piped into xargs, which then runs a `sed` command for each; it's the same command, just with the filename from `grep` at the end.
+`perl` is a scripting language much beloved of older Unix developers, and had an important part to play in the late-90s/early-2000s internet. In this case, we're simply using it to interpret a regex substitution on each line of a file. The `-p` flag essentially loops through a file evaluating a given command for each line of the file. The `-i` flag indicates that changes should be written to the file in-place. You can omit this flag to output to stdout and preview the results. `-e` is used to specify the exact Perl code to be executed.
 
 ## It's slow — how can I speed it up?
 

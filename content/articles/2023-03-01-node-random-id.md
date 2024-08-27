@@ -1,11 +1,11 @@
 ---
-title: Generating Random IDs with Node.js
+title: How to generate random IDs in Node.js
 date: 2023-03-01T10:00:00.000Z
 keywords: js,ts
 heroimage: /blog/images/testimage.png
 ---
 
-I often need a random ID for some reason or other, whether it's a unique non-sequential ID for a data store, a way of differentiating otherwise identical items in the DOM, or a cryptographically secure token.
+I often need to generate random IDs for some reason or other, whether it's a unique non-sequential ID for a data store, a way of differentiating otherwise identical items in the DOM, or a cryptographically secure token.
 
 The JS/TS ecosystem provides us with many tools to do this.
 
@@ -16,7 +16,7 @@ A Unique Universal Identifier is a 32-digit code, recognisable by its 8-4-4-4-12
 Creating a UUID in Node.js is easy. There's the excellent, lightweight [node-uuid]() library that's been around for years, but (spoiler) there is an even easier way that I'll get to next.
 
 ```ts
-import { v4: uuid } from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 const id = uuid();
 // id => 'ddcace95-1db2-4a05-9249-d42e8c9c19a3'
