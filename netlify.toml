@@ -1,5 +1,5 @@
 [context.production.environment]
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID = "UA-137380850-3"
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID = "G-6CPN4DELXW"
 
 [[headers]]
   for = "/nextimg/*"
