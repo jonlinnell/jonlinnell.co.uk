@@ -10,7 +10,7 @@ export default function AboutMe() {
   return (
     <Layout
       title="About Me"
-      classNames={classNames(["w-screen", "sm:w-11/12", "md:w-8/12", "xl:w-5/12"])}
+      classNames={classNames(["w-screen", "sm:w-11/12", "md:w-8/12", "xl:w-6/12"])}
     >
       <Head>
         <meta property="og:title" content="Jon Linnell | About me" />
