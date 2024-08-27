@@ -14,15 +14,14 @@ export async function getStaticProps() {
 function Article({ slug, title, keywords, date: rawDate }) {
   const date = new Date(rawDate);
   return (
-    <li key={slug} className={classNames([])}>
+    <li key={slug} >
       <a href={`/articles/${slug}`}>
-        <Heading variant="h3">
-          <span className={classNames(["text-brand-primary", "text-3xl"])}>☛</span>&nbsp;{title}
+        <Heading variant="h3" className={classNames(['dark:text-white', 'text-black'])}>
+          <span className={classNames(["text-3xl", "w-full"])}>☛</span>&nbsp;{title}
         </Heading>
 
-        <div className={classNames(["flex", "mt-2", "text-sm", "md:text-base"])}>
-          <p className={classNames(["hidden", "md:block"])}>{format(date, "do MMMM yyyy")}</p>
-          <p className={classNames(["block", "md:hidden"])}>{format(date, "dd/MM/yyyy")}</p>
+        <div className={classNames(["flex", "mt-2", "text-sm", "md:text-base", "text-brand-primary"])}>
+          <p>{format(date, "do MMMM yyyy")}</p>
           <div className="ml-4">
             <Keywords>{keywords}</Keywords>
           </div>
@@ -54,14 +53,14 @@ function Articles({ articles }) {
   }, {});
 
   return (
-    <Layout title="Articles" classNames="max-w-prose w-11/12">
+    <Layout title="Articles" classNames="max-w-prose">
       <Heading variant="h1">Recent Posts 🧻</Heading>
       <ul className={classNames(["mt-0"])}>
         {articles?.slice(0, 3).map((article) => (
           <Article {...article} />
         ))}
       </ul>
-      <Heading variant="h2" className={classNames(["mt-6", "md:mt-24"])}>
+      <Heading variant="h2" className={classNames(["mt-12", "md:mt-24"])}>
         All Posts
       </Heading>
       <ul>
