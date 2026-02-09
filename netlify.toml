@@ -15,4 +15,6 @@ NEXT_PUBLIC_GOOGLE_ANALYTICS_ID = "G-6CPN4DELXW"
   to = "/cv.pdf"
   status = 301
   force = true
+  [redirects.headers]
+    Content-Disposition: attachment; filename="CV — Jon Linnell.pdf"
 
