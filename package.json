@@ -1,45 +1,23 @@
 {
-  "name": "jonlinnell.co.uk",
-  "version": "1.0.0",
-  "description": "A personal site",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jonlinnell/jonlinnell.co.uk.git"
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "start": "next start",
-    "format": "prettier --write src"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "author": "Jon Linnell",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/jonlinnell/jonlinnell.co.uk/issues"
-  },
-  "homepage": "https://github.com/jonlinnell/jonlinnell.co.uk#readme",
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.4",
-    "autoprefixer": "^10.4.7",
-    "classnames": "^2.3.1",
-    "date-fns": "^2.29.1",
-    "gray-matter": "^4.0.2",
-    "next": "^12.2.3",
-    "postcss": "^8.4.14",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-markdown": "^8.0.3",
-    "react-syntax-highlighter": "^15.5.0",
-    "tailwindcss": "^3.1.6"
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.10",
+    "tailwindcss": "^4.3.3"
   },
-  "devDependencies": {
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.33",
-    "prettier": "^2.2.1",
-    "typescript": "^5.0.3"
-  },
-  "volta": {
-    "node": "14.20.0",
-    "yarn": "1.22.19"
+  "allowScripts": {
+    "esbuild": true
   }
 }

@@ -1,6 +1,11 @@
 node_modules/
+dist
+AGENTS.md
+CLAUDE.md
 .DS_Store
 .next
 .wip
 *.log
 out
+.astro
+.vscode
